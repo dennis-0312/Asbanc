@@ -1,0 +1,107 @@
+{
+	"factura": {
+		"IDE": {
+			"numeracion": "F991-00000007",
+			"fechaEmision": "2023-06-05",
+			"codTipoDocumento": "01",
+			"tipoMoneda": "PEN",
+			"fechaVencimiento": "2023-06-05"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20492867081",
+			"razonSocial": "PRUEBAS EXPRESS JSON - Inafectas",
+			"direccion": "CAL. PALAS ATENEA NRO. 124 URB. LA CAMPIÑA - CHORRILLOS - LIMA - LIMA",
+			"correoElectronico": "correo@correo.com"
+		},
+		"CAB": {
+			"inafectas": {
+				"codigo": "1002",
+				"totalVentas": "2000.00"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "9998",
+					"montoImpuesto": "0.00"
+				}
+			],
+			"importeTotal": "2000.00",
+			"tipoOperacion": "0101",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "DOS MIL CON 00/100 SOLES"
+				}
+			],
+			"montoTotalImpuestos": "0.00"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "INAFECTO1",
+				"descripcionProducto": "Descripción del Producto o Servicio Detallado Inafecto número 1",
+				"cantidadItems": "10",
+				"unidad": "NIU",
+				"valorUnitario": "100.0000000000",
+				"precioVentaUnitario": "100.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "9998",
+						"montoImpuesto": "0.00",
+						"tipoAfectacion": "30",
+						"montoBase": "1000.00",
+						"porcentaje": "0.00"
+					}
+				],
+				"valorVenta": "1000.00",
+				"precioVenta": "1000.00",
+				"codProductoSunat": "84131601",
+				"montoTotalImpuestos": "0.00"
+			},
+			{
+				"numeroItem": "2",
+				"codigoProducto": "INAFECTO2",
+				"descripcionProducto": "Descripción del Producto o Servicio Detallado Inafecto número 2",
+				"cantidadItems": "20",
+				"unidad": "NIU",
+				"valorUnitario": "50.0000000000",
+				"precioVentaUnitario": "50.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "9998",
+						"montoImpuesto": "0.00",
+						"tipoAfectacion": "30",
+						"montoBase": "1000.00",
+						"porcentaje": "0.00"
+					}
+				],
+				"valorVenta": "1000.00",
+				"precioVenta": "1000.00",
+				"codProductoSunat": "84131601",
+				"montoTotalImpuestos": "0.00"
+			}
+		],
+		"ADI": [
+			{
+				"tituloAdicional": "Forma de Pago",
+				"valorAdicional": "Crédito a 30 días"
+			},
+			{
+				"tituloAdicional": "METODO DE PAGO",
+				"valorAdicional": "VISA"
+			}
+		]
+	}
+}

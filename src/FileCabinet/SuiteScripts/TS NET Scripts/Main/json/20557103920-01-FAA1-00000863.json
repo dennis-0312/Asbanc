@@ -1,0 +1,116 @@
+{
+	"factura": {
+		"IDE": {
+			"numeracion": "FAA1-00000863",
+			"fechaEmision": "2023-04-28",
+			"codTipoDocumento": "01",
+			"tipoMoneda": "PEN",
+			"formaPago": "Credito",
+			"montoNetoPendientePago": "2350.25"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20492867081",
+			"razonSocial": "PRUEBAS EXPRESS JSON - FPCredito",
+			"direccion": "CAL. PALAS ATENEA NRO. 124 URB. LA CAMPIÑA - CHORRILLOS - LIMA - LIMA",
+			"correoElectronico": "jnakamura@esconcorp.com"
+		},
+		"DRF": [
+			{
+				"tipoDocRelacionado": "09",
+				"numeroDocRelacionado": "G337-00036406"
+			}
+		],	
+		"CAB": {
+			"gravadas": {
+				"codigo": "1001",
+				"totalVentas": "2000.00"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "1000",
+					"montoImpuesto": "360.00"
+				}
+			],
+			"importeTotal": "2360.00",
+			"tipoOperacion": "0101",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "DOS MIL TRESCIENTOS SESENTA CON 00/100 DOLARES"
+				}
+			],
+			"montoTotalImpuestos": "360.00"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "GRAVADO1",
+				"descripcionProducto": "Descripción del Producto o Servicio Detallado Gravado número 1",
+				"cantidadItems": "10",
+				"unidad": "NIU",
+				"valorUnitario": "100.00",
+				"precioVentaUnitario": "118.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "180.00",
+						"tipoAfectacion": "10",
+						"montoBase": "1000.00",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "1000.00",
+				"precioVenta": "1180.00",
+				"codProductoSunat": "84131601",
+				"montoTotalImpuestos": "180.00"
+			},
+			{
+				"numeroItem": "2",
+				"codigoProducto": "GRAVADO2",
+				"descripcionProducto": "Descripción del Producto o Servicio Detallado Gravado número 2",
+				"cantidadItems": "20",
+				"unidad": "NIU",
+				"valorUnitario": "50.00",
+				"precioVentaUnitario": "59.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "180.00",
+						"tipoAfectacion": "10",
+						"montoBase": "1000.00",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "1000.00",
+				"precioVenta": "1180.00",
+				"codProductoSunat": "84131601",
+				"montoTotalImpuestos": "180.00"
+			}
+		],
+		"CUO": [
+			{
+				"idCuota": "Cuota001",
+				"montoPago": "1175.13",
+				"fechaPago": "2023-08-31"
+			},
+			{
+				"idCuota": "Cuota002",
+				"montoPago": "1175.12",
+				"fechaPago": "2023-09-30"
+			}
+		]
+	}
+}

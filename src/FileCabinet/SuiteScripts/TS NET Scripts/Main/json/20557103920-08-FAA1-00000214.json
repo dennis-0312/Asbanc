@@ -1,0 +1,79 @@
+{
+	"notaDebito": {
+		"IDE": {
+			"numeracion": "FAA1-00000214",
+			"fechaEmision": "2023-06-07",
+			"tipoMoneda": "PEN"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20492867081",
+			"razonSocial": "PRUEBAS EXPRESS JSON - Inafectas",
+			"direccion": "CAL. PALAS ATENEA NRO. 124 URB. LA CAMPIÑA - CHORRILLOS - LIMA - LIMA",
+			"correoElectronico": "correo@correo.com"
+		},
+		"DRF": [
+			{
+				"tipoDocRelacionado": "01",
+				"numeroDocRelacionado": "FAA1-00000186",
+				"codigoMotivo": "02",
+				"descripcionMotivo": "Aumento en el valor"
+			}
+		],
+		"CAB": {
+			"inafectas": {
+				"codigo": "1002",
+				"totalVentas": "100.00"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "9998",
+					"montoImpuesto": "0.00"
+				}
+			],
+			"importeTotal": "100.00",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "CIEN CON 00/100 SOLES"
+				}
+			],
+			"montoTotalImpuestos": "0.00"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "ND0001",
+				"descripcionProducto": "AUMENTO EN EL VALOR",
+				"cantidadItems": "1.00",
+				"unidad": "NIU",
+				"valorUnitario": "100.00",
+				"precioVentaUnitario": "100.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "9998",
+						"montoImpuesto": "0.00",
+						"tipoAfectacion": "30",
+						"montoBase": "100.00",
+						"porcentaje": "0.00"
+					}
+				],
+				"valorVenta": "100.00",
+				"montoTotalImpuestos": "0.00"
+			}
+		],
+		"ADI": []
+	}
+}

@@ -1,0 +1,81 @@
+{
+    "factura": {
+        "IDE": {
+            "numeracion": "F001-3",
+            "fechaEmision": "2023-06-23",
+            "codTipoDocumento": "01",
+            "tipoMoneda": "PEN",
+            "fechaVencimiento": "2023-07-08"
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "Parent Company : ASBANC",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "ubigeo": "",
+            "direccion": "Av. San Borja Norte 523",
+            "departamento": " ",
+            "provincia": "LIMA",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "6",
+            "numeroDocId": "20100152941",
+            "razonSocial": "PEDRO MATEO JUAN",
+            "direccion": "San Borja Lima",
+            "departamento": "Lima",
+            "provincia": "Perú",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "+51987654321",
+            "correoElectronico": "pedromateo@gmail.com"
+        },
+        "CAB": {
+            "gravadas": {
+                "codigo": "1001",
+                "totalVentas": "12000.00"
+            },
+            "totalImpuestos": [
+                {
+                    "idImpuesto": "1000",
+                    "montoImpuesto": "2160.00"
+                }
+            ],
+            "importeTotal": "14160.00",
+            "tipoOperacion": "0101",
+            "leyenda": [
+                {
+                    "codigo": "1000",
+                    "descripcion": "CATORCE MIL CIENTO SESENTA SOLES "
+                }
+            ],
+            "montoTotalImpuestos": "2160.00"
+        },
+        "DET": [
+            {
+                "numeroItem": "1",
+                "codigoProducto": "AUSPICIO ESPECIAL",
+                "descripcionProducto": "AUSPICIO ESPECIAL DESC",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "12000",
+                "precioVentaUnitario": "14160",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "2160.00",
+                        "tipoAfectacion": "10",
+                        "montoBase": "12000.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "12000.00",
+                "montoTotalImpuestos": "2160"
+            }
+        ]
+    }
+}

@@ -1,0 +1,102 @@
+{
+	"resumenComprobantes": {
+		"IDE": {
+			"numeracion": "RC-20230606-1",
+			"fechaEmision": "2023-06-06",
+			"fechaReferencia": "2023-06-05"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"monedaItem": "PEN",
+				"numeracionItem": "BAA1-00000185",
+				"tipoComprobanteItem": "03",
+				"numeroDocIdAdq": "11111111",
+				"tipoDocIdAdq": "1",
+				"estadoItem": "3",
+				"importeTotal": "236.00",
+				"gravadas": {
+					"codigo": "01",
+					"totalVentas": "200.00"
+				},
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "36.00"
+					}
+				]
+			},
+			{
+				"numeroItem": "2",
+				"monedaItem": "PEN",
+				"numeracionItem": "BAA1-00000186",
+				"tipoComprobanteItem": "03",
+				"numeroDocIdAdq": "11111111",
+				"tipoDocIdAdq": "1",
+				"estadoItem": "3",
+				"importeTotal": "100.00",
+				"inafectas": {
+					"codigo": "03",
+					"totalVentas": "100.00"
+				},
+				"totalImpuestos": [
+					{
+						"idImpuesto": "9999",
+						"montoImpuesto": "0.00"
+					}
+				]
+			},
+			{
+				"numeroItem": "3",
+				"monedaItem": "PEN",
+				"numeracionItem": "BAA1-00000187",
+				"tipoComprobanteItem": "03",
+				"numeroDocIdAdq": "11111111",
+				"tipoDocIdAdq": "1",
+				"estadoItem": "3",
+				"importeTotal": "100.00",
+				"inafectas": {
+					"codigo": "02",
+					"totalVentas": "100.00"
+				},
+				"totalImpuestos": [
+					{
+						"idImpuesto": "9999",
+						"montoImpuesto": "0.00"
+					}
+				]
+			},
+			{
+				"numeroItem": "4",
+				"monedaItem": "PEN",
+				"numeracionItem": "BAA1-00000188",
+				"tipoComprobanteItem": "03",
+				"numeroDocIdAdq": "11111111",
+				"tipoDocIdAdq": "1",
+				"estadoItem": "3",
+				"importeTotal": "100.00",
+				"inafectas": {
+					"codigo": "05",
+					"totalVentas": "84.75"
+				},
+				"totalImpuestos": [
+					{
+						"idImpuesto": "9999",
+						"montoImpuesto": "15.25"
+					}
+				]
+			}
+		]
+	}
+}

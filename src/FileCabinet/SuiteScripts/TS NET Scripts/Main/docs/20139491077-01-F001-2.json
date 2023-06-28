@@ -1,0 +1,67 @@
+{
+    "factura": {
+        "IDE": {
+            "numeracion": "F001-2",
+            "fechaEmision": "2023-06-19",
+            "codTipoDocumento": "01",
+            "tipoMoneda": "PEN",
+            "fechaVencimiento": ""
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "Parent Company : ASBANC",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "direccion": "Av. San Borja Norte 523",
+            "departamento": " ",
+            "provincia": "LIMA",
+            "distrito": "",
+            "codigoPais": "",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "1",
+            "numeroDocId": "",
+            "razonSocial": "PEDRO MATEO JUAN",
+            "direccion": " ",
+            "departamento": "",
+            "provincia": "",
+            "distrito": "",
+            "codigoPais": "",
+            "telefono": "",
+            "correoElectronico": ""
+        },
+        "DRF": [],
+        "CAB": {
+            "inicializador": "Inicializador, debe ser borrado"
+        },
+        "ADI": [
+            {
+                "tituloAdicional": "@@condPago",
+                "valorAdicional": "Contado"
+            },
+            {
+                "tituloAdicional": "@@dirDestino",
+                "valorAdicional": "103"
+            },
+            {
+                "tituloAdicional": "@@transportista",
+                "valorAdicional": "160"
+            },
+            {
+                "tituloAdicional": "@@rucTransportista",
+                "valorAdicional": "23"
+            },
+            {
+                "tituloAdicional": "@@placaVehic",
+                "valorAdicional": "2"
+            },
+            {
+                "tituloAdicional": "@@nroInterno",
+                "valorAdicional": ""
+            }
+        ]
+    }
+}

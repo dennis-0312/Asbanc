@@ -1,0 +1,112 @@
+{
+	"factura": {
+		"IDE": {
+			"numeracion": "F991-00000010",
+			"fechaEmision": "2023-06-05",
+			"codTipoDocumento": "01",
+			"tipoMoneda": "PEN"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCON",
+			"razonSocial": "RAZON SOCIAL",
+			"ubigeo": "150140",
+			"direccion": "DIRECCION",
+			"distrito": "SANTIAGO DE SURCO",
+			"provincia": "LIMA",
+			"departamento": "LIMA",
+			"codigoPais": "PE",
+			"telefono": "-",
+			"correoElectronico": "correo@correo.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"razonSocial": "RAZON SOCIAL",
+			"direccion": "SANTIAGO DE SURCO",
+			"correoElectronico": "correo@correo.com"
+		},
+		"CAB": {
+			"gravadas": {
+				"codigo": "1001",
+				"totalVentas": "60.48"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "1000",
+					"montoImpuesto": "10.89"
+				}
+			],
+			"importeTotal": "71.37",
+			"tipoOperacion": "0101",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "SETENTA Y UNO CON 37/100 SOLES"
+				}
+			],
+			"montoTotalImpuestos": "10.89",
+			"cargoDescuento": [
+				{
+					"indicadorCargoDescuento": "false",
+					"codigoCargoDescuento": "02",
+					"factorCargoDescuento": "0.20",
+					"montoCargoDescuento": "15.12",
+					"montoBaseCargoDescuento": "75.60"
+				}
+			]
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "0001",
+				"descripcionProducto": "ALIMENTOS",
+				"cantidadItems": "1.00",
+				"unidad": "NIU",
+				"valorUnitario": "25.20",
+				"precioVentaUnitario": "29.74",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "4.54",
+						"tipoAfectacion": "10",
+						"montoBase": "25.20",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "25.20",
+				"codProductoSunat": "90101501",
+				"montoTotalImpuestos": "4.54"
+			},
+			{
+				"numeroItem": "2",
+				"codigoProducto": "0002",
+				"descripcionProducto": "BEBIDAS",
+				"cantidadItems": "2.00",
+				"unidad": "NIU",
+				"valorUnitario": "25.20",
+				"precioVentaUnitario": "29.74",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "9.07",
+						"tipoAfectacion": "10",
+						"montoBase": "50.40",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "50.40",
+				"codProductoSunat": "90101501",
+				"montoTotalImpuestos": "9.07"
+			}
+		],
+		"ADI": [
+			{
+				"tituloAdicional": "Forma de Pago",
+				"valorAdicional": "Pago al contado"
+			}
+		]
+	}
+}

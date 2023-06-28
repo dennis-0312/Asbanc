@@ -1,0 +1,45 @@
+{
+	"comunicacionBaja": {
+		"IDE": {
+			"numeracion": "RA-20230605-1",
+			"fechaEmision": "2023-06-05"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com"
+		},
+		"CBR": {
+			"fechaReferencia": "2023-06-05"
+		},
+		"DBR": [
+			{
+				"numeroItem": "1",
+				"tipoComprobanteItem": "01",
+				"serieItem": "FAA1",
+				"correlativoItem": "00000185",
+				"motivoBajaItem": "Pruebas Express"
+			},
+			{
+				"numeroItem": "2",
+				"tipoComprobanteItem": "07",
+				"serieItem": "FAA1",
+				"correlativoItem": "00000185",
+				"motivoBajaItem": "Pruebas Express"
+			},
+			{
+				"numeroItem": "3",
+				"tipoComprobanteItem": "08",
+				"serieItem": "FAA1",
+				"correlativoItem": "00000211",
+				"motivoBajaItem": "Pruebas Express"
+			}
+		]
+	}
+}

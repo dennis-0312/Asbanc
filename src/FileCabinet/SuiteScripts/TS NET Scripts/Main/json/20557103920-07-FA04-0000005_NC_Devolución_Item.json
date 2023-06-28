@@ -1,0 +1,107 @@
+{
+	"notaCredito": {
+		"IDE": {
+			"numeracion": "FA04-00000053",
+			"fechaEmision": "2023-06-05",
+			"tipoMoneda": "PEN"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "NOMBRE COMERCIAL EMISOR",
+			"razonSocial": "RAZON SOCIAL EMISOR",
+			"ubigeo": "150131",
+			"direccion": "DIRECCION EMISOR",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "correo@correo.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20603221720",
+			"razonSocial": "RAZON SOCIAL RECEPTOR",
+			"direccion": "DIRECCION RECEPTOR"
+		},
+		"DRF": [
+			{
+				"tipoDocRelacionado": "01",
+				"numeroDocRelacionado": "F001-00004062",
+				"codigoMotivo": "07",
+				"descripcionMotivo": "Devolución por ítem"
+			}
+		],
+		"CAB": {
+			"gravadas": {
+				"codigo": "1001",
+				"totalVentas": "300.00"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "1000",
+					"montoImpuesto": "54.00"
+				}
+			],
+			"importeTotal": "354.00",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "TRESCIENTOS CINCUENTA Y CUATRO CON 00/100 SOLES"
+				}
+			],
+			"montoTotalImpuestos": "54.00"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "1",
+				"descripcionProducto": "Magnesio + Zinc Vivactiv Tableta Efervescente Sabor Naranja",
+				"cantidadItems": "2.00",
+				"unidad": "NIU",
+				"valorUnitario": "100.00",
+				"precioVentaUnitario": "118.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "36.00",
+						"tipoAfectacion": "10",
+						"montoBase": "200.00",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "200.00",
+				"montoTotalImpuestos": "36.00"
+			},
+			{
+				"numeroItem": "2",
+				"codigoProducto": "2",
+				"descripcionProducto": "Mucovit Jarabe",
+				"cantidadItems": "5.00",
+				"unidad": "NIU",
+				"valorUnitario": "20.00",
+				"precioVentaUnitario": "23.60",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "18.00",
+						"tipoAfectacion": "10",
+						"montoBase": "100.00",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "100.00",
+				"montoTotalImpuestos": "18.00"
+			}
+		],
+		"ADI": [
+			{
+				"tituloAdicional": "Forma de Pago",
+				"valorAdicional": "Pago al Contado"
+			},
+			{
+				"tituloAdicional": "______________________________",
+				"valorAdicional": "______________________________"
+			}
+		]
+	}
+}

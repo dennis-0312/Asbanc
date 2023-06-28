@@ -1,0 +1,80 @@
+{
+	"notaCredito": {
+		"IDE": {
+			"numeracion": "FAA1-00000188",
+			"fechaEmision": "2023-06-07",
+			"tipoMoneda": "PEN"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20492867081",
+			"razonSocial": "RAZON SOCIAL DEL RECEPTOR - Gratuita",
+			"direccion": "DIRECCION COMPLETA",
+			"correoElectronico": "correo@correo.com"
+		},
+		"DRF": [
+			{
+				"tipoDocRelacionado": "01",
+				"numeroDocRelacionado": "F991-00000009",
+				"codigoMotivo": "01",
+				"descripcionMotivo": "Anulación de la operación"
+			}
+		],
+		"CAB": {
+			"gratuitas": {
+				"codigo": "1004",
+				"totalVentas": "847.46"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "9996",
+					"montoImpuesto": "152.54"
+				}
+			],
+			"importeTotal": "0.00",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "CERO CON 00/100 SOLES"
+				}
+			],
+			"montoTotalImpuestos": "0.00"
+		},
+		"DET": [
+			{
+				"numeroItem": "001",
+				"codigoProducto": "A0001",
+				"descripcionProducto": "PRODUCTO A001",
+				"cantidadItems": "1",
+				"unidad": "NIU",
+				"valorUnitario": "0.00",
+				"precioVentaUnitario": "0.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "9996",
+						"montoImpuesto": "152.54",
+						"tipoAfectacion": "11",
+						"montoBase": "847.46",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "847.46",
+				"valorRefOpOnerosas":"847.46",
+				"montoTotalImpuestos": "0.00"
+			}
+		],
+		"ADI": []
+	}
+}

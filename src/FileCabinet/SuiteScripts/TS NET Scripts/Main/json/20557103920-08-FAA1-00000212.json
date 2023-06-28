@@ -1,0 +1,79 @@
+{
+	"notaDebito": {
+		"IDE": {
+			"numeracion": "FAA1-00000860",
+			"fechaEmision": "2023-04-28",
+			"tipoMoneda": "USD"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20492867081",
+			"razonSocial": "PRUEBAS EXPRESS JSON",
+			"direccion": "CAL. PALAS ATENEA NRO. 124 URB. LA CAMPIÑA - CHORRILLOS - LIMA - LIMA",
+			"correoElectronico": "jnakamura@esconcorp.com"
+		},
+		"DRF": [
+			{
+				"tipoDocRelacionado": "01",
+				"numeroDocRelacionado": "FAA1-00000860",
+				"codigoMotivo": "01",
+				"descripcionMotivo": "Intereses por mora"
+			}
+		],
+		"CAB": {
+			"gravadas": {
+				"codigo": "1001",
+				"totalVentas": "100.00"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "1000",
+					"montoImpuesto": "18.00"
+				}
+			],
+			"importeTotal": "118.00",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "CIENTO DIECIOCHO CON 00/100 DOLARES"
+				}
+			],
+			"montoTotalImpuestos": "18.00"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "ND0001",
+				"descripcionProducto": "INTERESES POR MORA",
+				"cantidadItems": "1.00",
+				"unidad": "NIU",
+				"valorUnitario": "100.00",
+				"precioVentaUnitario": "118.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "18.00",
+						"tipoAfectacion": "10",
+						"montoBase": "100.00",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "100.00",
+				"montoTotalImpuestos": "18.00"
+			}
+		],
+		"ADI": []
+	}
+}

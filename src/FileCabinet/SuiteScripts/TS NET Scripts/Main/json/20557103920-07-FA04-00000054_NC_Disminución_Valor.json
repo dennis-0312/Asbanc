@@ -1,0 +1,87 @@
+{
+	"notaCredito": {
+		"IDE": {
+			"numeracion": "FA04-00000054",
+			"fechaEmision": "2023-06-05",
+			"tipoMoneda": "PEN"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "NOMBRE COMERCIAL EMISOR",
+			"razonSocial": "RAZON SOCIAL EMISOR",
+			"ubigeo": "150131",
+			"direccion": "DIRECCION EMISOR",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "correo@correo.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20603221720",
+			"razonSocial": "RAZON SOCIAL RECEPTOR",
+			"direccion": "DIRECCION RECEPTOR"
+		},
+		"DRF": [
+			{
+				"tipoDocRelacionado": "01",
+				"numeroDocRelacionado": "F001-00004062",
+				"codigoMotivo": "09",
+				"descripcionMotivo": "Disminución en el valor"
+			}
+		],
+		"CAB": {
+			"gravadas": {
+				"codigo": "1001",
+				"totalVentas": "20.00"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "1000",
+					"montoImpuesto": "3.60"
+				}
+			],
+			"importeTotal": "23.60",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "VEINTITRES CON 60/100 SOLES"
+				}
+			],
+			"montoTotalImpuestos": "3.60"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "1",
+				"descripcionProducto": "Magnesio + Zinc Vivactiv Tableta Efervescente Sabor Naranja",
+				"cantidadItems": "1.00",
+				"unidad": "NIU",
+				"valorUnitario": "20.00",
+				"precioVentaUnitario": "23.60",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "3.60",
+						"tipoAfectacion": "10",
+						"montoBase": "20.00",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "20.00",
+				"montoTotalImpuestos": "3.60"
+			}
+		],
+		"ADI": [
+			{
+				"tituloAdicional": "Forma de Pago",
+				"valorAdicional": "Pago al Contado"
+			},
+			{
+				"tituloAdicional": "______________________________",
+				"valorAdicional": "______________________________"
+			}
+		]
+	}
+}

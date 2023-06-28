@@ -1,0 +1,95 @@
+{
+	"notaCredito": {
+		"IDE": {
+			"numeracion": "FAA1-00000862",
+			"fechaEmision": "2023-04-28",
+			"tipoMoneda": "PEN",
+			"formaPago": "Credito",
+			"montoNetoPendientePago": "2350.25"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20557103920",
+			"nombreComercial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"razonSocial": "ESCONTECH DEL PERU SOCIEDAD ANONIMA CERRADA  -  ESCONTECH DEL PERU S.A.C.",
+			"ubigeo": "150140",
+			"direccion": "AV. EL DERBY 055",
+			"codigoPais": "PE",
+			"telefono": "123456789",
+			"correoElectronico": "rr@gmail.com",
+			"codigoAsigSUNAT": "0000"
+		},
+		"REC": {
+			"tipoDocId": "6",
+			"numeroDocId": "20492867081",
+			"razonSocial": "PRUEBAS EXPRESS JSON",
+			"direccion": "CAL. PALAS ATENEA NRO. 124 URB. LA CAMPIÑA - CHORRILLOS - LIMA - LIMA",
+			"correoElectronico": "jnakamura@esconcorp.com"
+		},
+		"DRF": [
+			{
+				"tipoDocRelacionado": "01",
+				"numeroDocRelacionado": "FAA1-00000863",
+				"codigoMotivo": "13",
+				"descripcionMotivo": "Modificación de los montos y fechas de las cuotas"
+			}
+		],
+		"CAB": {
+			"gravadas": {
+				"codigo": "1001",
+				"totalVentas": "0.00"
+			},
+			"totalImpuestos": [
+				{
+					"idImpuesto": "1000",
+					"montoImpuesto": "0.00"
+				}
+			],
+			"importeTotal": "0.00",
+			"tipoOperacion": "0101",
+			"leyenda": [
+				{
+					"codigo": "1000",
+					"descripcion": "CERO CON 00/100 DOLARES"
+				}
+			],
+			"montoTotalImpuestos": "0.00"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"codigoProducto": "Mod01",
+				"descripcionProducto": "Modificación de los montos y fechas de las cuotas",
+				"cantidadItems": "10",
+				"unidad": "NIU",
+				"valorUnitario": "0.00",
+				"precioVentaUnitario": "0.00",
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "0.00",
+						"tipoAfectacion": "10",
+						"montoBase": "0.00",
+						"porcentaje": "18.00"
+					}
+				],
+				"valorVenta": "0.00",
+				"precioVenta": "0.00",
+				"codProductoSunat": "84131601",
+				"montoTotalImpuestos": "0.00"
+			}
+		],
+		"CUO": [
+			{
+				"idCuota": "Cuota001",
+				"montoPago": "1000.12",
+				"fechaPago": "2023-09-30"
+			},
+			{
+				"idCuota": "Cuota002",
+				"montoPago": "1350.13",
+				"fechaPago": "2023-10-31"
+			}
+		]
+	}
+}

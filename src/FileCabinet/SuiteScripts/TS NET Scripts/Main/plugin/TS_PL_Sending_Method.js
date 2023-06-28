@@ -42,8 +42,8 @@ define(['N/email', 'N/encode', 'N/format', 'N/https', 'N/record', 'N/search'],
 
         function send(pluginContext) {
             try {
-                var MSG_NO_EMAIL = translator.getString("ei.sending.sendernoemail");
-                var MSG_SENT_DETAILS = translator.getString("ei.sending.sentdetails");
+                // var MSG_NO_EMAIL = translator.getString("ei.sending.sendernoemail");
+                // var MSG_SENT_DETAILS = translator.getString("ei.sending.sentdetails");
 
                 var senderDetails = pluginContext.sender;
                 var customer = pluginContext.customer;
@@ -52,47 +52,51 @@ define(['N/email', 'N/encode', 'N/format', 'N/https', 'N/record', 'N/search'],
                 var result = {};
                 var parameters;
 
-                if (!senderDetails.email) {
-                    parameters = {
-                        EMPLOYEENAME: senderDetails.name
-                    };
-                    stringFormatter.setString(MSG_NO_EMAIL);
-                    stringFormatter.replaceParameters(parameters);
-                    result = {
-                        success: false,
-                        message: stringFormatter.toString()
-                    };
-                } else {
-                    var invoiceSendDetails = {
-                        number: transaction.number,
-                        poNumber: transaction.poNum,
-                        transactionType: transaction.type,
-                        eInvoiceContent: pluginContext.eInvoiceContent,
-                        attachmentFileIds: pluginContext.attachmentFileIds
-                    };
-                    notifier.notifyRecipient(senderDetails.id, recipientList, invoiceSendDetails);
+                result = {
+                    success: false,
+                    message: transaction
+                };
+                
+                // if (!senderDetails.email) {
+                //     parameters = {
+                //         EMPLOYEENAME: senderDetails.name
+                //     };
+                //     stringFormatter.setString(MSG_NO_EMAIL);
+                //     stringFormatter.replaceParameters(parameters);
+                //     result = {
+                //         success: false,
+                //         message: stringFormatter.toString()
+                //     };
+                // } else {
+                //     var invoiceSendDetails = {
+                //         number: transaction.number,
+                //         poNumber: transaction.poNum,
+                //         transactionType: transaction.type,
+                //         eInvoiceContent: pluginContext.eInvoiceContent,
+                //         attachmentFileIds: pluginContext.attachmentFileIds
+                //     };
+                //     notifier.notifyRecipient(senderDetails.id, recipientList, invoiceSendDetails);
 
-                    parameters = {
-                        SENDER: senderDetails.email,
-                        RECIPIENTS: recipientList.join(", ")
-                    };
-                    stringFormatter.setString(MSG_SENT_DETAILS);
-                    stringFormatter.replaceParameters(parameters);
+                //     parameters = {
+                //         SENDER: senderDetails.email,
+                //         RECIPIENTS: recipientList.join(", ")
+                //     };
+                //     stringFormatter.setString(MSG_SENT_DETAILS);
+                //     stringFormatter.replaceParameters(parameters);
 
-                    result = {
-                        success: true,
-                        message: stringFormatter.toString()
-                    };
-                }
-
+                //     result = {
+                //         success: true,
+                //         message: stringFormatter.toString()
+                //     };
+                // }
             } catch (error) {
                 result = {
                     success: false,
                     message: error.message
                 };
             }
-            return result;
 
+            return result;
         }
 
         return {
