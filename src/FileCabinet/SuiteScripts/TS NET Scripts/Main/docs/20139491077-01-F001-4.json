@@ -1,0 +1,139 @@
+{
+    "factura": {
+        "IDE": {
+            "numeracion": "F001-4",
+            "fechaEmision": "2023-07-04",
+            "codTipoDocumento": "01",
+            "tipoMoneda": "PEN",
+            "fechaVencimiento": ""
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "Parent Company : ASBANC",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "ubigeo": "",
+            "direccion": "Av. San Borja Norte 523",
+            "departamento": " ",
+            "provincia": "LIMA",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "6",
+            "numeroDocId": "20100102413",
+            "razonSocial": "PEDRO MATEO JUAN",
+            "direccion": "Av Brasil cdra 26 ",
+            "departamento": "",
+            "provincia": "",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": ""
+        },
+        "CAB": {
+            "gravadas": {
+                "codigo": "1001",
+                "totalVentas": "300.00"
+            },
+            "totalImpuestos": [
+                {
+                    "idImpuesto": "1000",
+                    "montoImpuesto": "54.00"
+                }
+            ],
+            "importeTotal": "354.52",
+            "tipoOperacion": "0101",
+            "leyenda": [
+                {
+                    "codigo": "1000",
+                    "descripcion": "TRESCIENTOS ONCE SOLES CON CINCUENTA Y DOS CENTIMOS"
+                },
+                {
+                    "codigo": "2006",
+                    "descripcion": "OPERACION SUJETA AL SISTEMA DE PAGO DE OBLIGACIONES TRIBUTARIAS"
+                }
+            ],
+            "montoTotalImpuestos": "54.00"
+        },
+        "DET": [
+            {
+                "numeroItem": "1",
+                "codigoProducto": "AUSPICIO ESPECIAL",
+                "descripcionProducto": "Test",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "100",
+                "precioVentaUnitario": "118",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "18.00",
+                        "tipoAfectacion": "10",
+                        "montoBase": "100.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "100.00",
+                "montoTotalImpuestos": "18"
+            },
+            {
+                "numeroItem": "2",
+                "codigoProducto": "AUSPICIO ESPECIAL",
+                "descripcionProducto": "Test",
+                "cantidadItems": "2",
+                "unidad": "ZZ",
+                "valorUnitario": "100",
+                "precioVentaUnitario": "118",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "36.00",
+                        "tipoAfectacion": "10",
+                        "montoBase": "200.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "200.00",
+                "montoTotalImpuestos": "36"
+            }
+        ],
+        "ADI": [
+            {
+                "tituloAdicional": "Forma de Pago",
+                "valorAdicional": "Contado"
+            },
+            {
+                "tituloAdicional": "Detracciones",
+                "valorAdicional": "Operación sujeta al Sistema de Pago de Obligaciones Tributarias.\nDepositar a la cuenta del Banco de la Nación \nNro 12-312-312345.\nMedio de Pago:001\nMonto: 42.48\nTipo de Cambio: 1.00\nPorcentaje: 12.0"
+            },
+            {
+                "tituloAdicional": "METODO DE PAGO",
+                "valorAdicional": "VISA"
+            },
+            {
+                "tituloAdicional": "@@codBienServDetr",
+                "valorAdicional": "022"
+            },
+            {
+                "tituloAdicional": "@@numCuentaBcoNacionDetr",
+                "valorAdicional": "12-312-312345"
+            },
+            {
+                "tituloAdicional": "@@medioPagoDetr",
+                "valorAdicional": "001"
+            },
+            {
+                "tituloAdicional": "@@montoDetr",
+                "valorAdicional": "42.48"
+            },
+            {
+                "tituloAdicional": "@@porcDetr",
+                "valorAdicional": "12.0"
+            }
+        ]
+    }
+}

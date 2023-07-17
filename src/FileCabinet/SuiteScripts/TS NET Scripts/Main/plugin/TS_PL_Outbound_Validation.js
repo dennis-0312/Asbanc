@@ -15,6 +15,16 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
      * @param{runtime} runtime
      * @param{search} search
      */
+    /**
+    * @param {Object} pluginContext
+.   * @param {String} pluginContext.content
+    * @param {String} pluginContext.transactionInfo.transactionId
+    * @param {String} pluginContext.transactionInfo.transactionType
+    * @param {Number} pluginContext.userId
+    * @returns {Object} result
+    * @returns {string} result.success
+    * @returns {String} result.message
+    */
     function (config, email, encode, file, format, https, record, runtime, search) {
         var FOLDER_PDF = 513;          //SB: 513   PR: ? - ok
         var internalId = '';
@@ -24,8 +34,20 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
             var result = { success: false, message: "Validation failed." };
             try {
                 var transactionId = pluginContext.transactionInfo.transactionId;
-                // userId = pluginContext.sender.id;
-                var response = createRequest(transactionId);
+                var tranType = pluginContext.transactionInfo.transactionType
+                var response;
+                switch (tranType) {
+                    case 'invoice':
+                        response = createRequest(transactionId);
+                        break;
+                    case 'creditmemo':
+                        response = createRequestCreditMemo(transactionId);
+                        break;
+                    default:
+                        result.success = false;
+                        result.message = 'Tracacción no válida';
+                        break;
+                }
                 result.success = true;
                 result.message = response;
                 return result;
@@ -35,6 +57,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
             }
             return result;
         }
+
 
         function createRequest(documentid) {
             var json = new Array();
@@ -52,7 +75,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
             var fulfillment = 0;
 
             try {
-                var searchLoad = search.create({
+                var searchLoad = search.create({//^Electronic Invoicing Factura - DEVELOPER
                     type: "transaction",
                     filters:
                         [
@@ -85,7 +108,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "formulatext", formula: "'0000'", label: "19 Cod Sunat" }),//18
                             // REC---------------------------------------------------------------------------------------------------------------------
                             search.createColumn({ name: "formulatext", formula: "CASE WHEN {customer.custentity_pe_document_type} = 'Registro Unico De Contribuyentes' THEN '6' WHEN {customer.custentity_pe_document_type} = 'Documento Nacional De Identidad (DNI)' THEN '1' WHEN {customer.custentity_pe_document_type} = 'Otros Tipos De Documentos' THEN '0' END", label: "20 Doc. Type ID REC" }),//19
-                            search.createColumn({ name: "vatregnumber", join: "customer", label: "21 Tax Number" }),
+                            search.createColumn({ name: "custentity_pe_document_number", join: "customer", label: "21 Tax Number" }),
                             search.createColumn({ name: "companyname", join: "customer", label: "22 Company Name" }),
                             search.createColumn({ name: "billaddress1" }),
                             search.createColumn({ name: "billaddress2", label: "24 Address 2" }),
@@ -115,10 +138,19 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "tranid", join: "createdFrom", label: "41 Document Number" }),
                             // REC---------------------------------------------------------------------------------------------------------------------
                             search.createColumn({ name: "formulatext", formula: "CONCAT({customer.firstname}, CONCAT('-', {customer.lastname}))", label: "42 Formula (Text)" }),//41
-                            search.createColumn({ name: "custbody_pe_free_operation", label: "43 Transferencia Libre" })
+                            search.createColumn({ name: "custbody_pe_free_operation", label: "43 Transferencia Libre" }),
+                            // ADI DETRACCION---------------------------------------------------------------------------------------------------------------------
+                            search.createColumn({ name: "custbody_pe_ei_forma_pago", label: "formaPagoDetr" }),
+                            search.createColumn({ name: "custbody_pe_concept_detraction", label: "conceptDetr" }),
+                            search.createColumn({ name: "custrecord_pe_detraccion_account", join: "subsidiary", label: "numCuentaBcoNacionDetr" }),
+                            search.createColumn({ name: "custcol_4601_witaxamount", label: "montoDetrac" }),
+                            search.createColumn({ name: "custbody_pe_percentage_detraccion", label: "porcentajeDetr" }),
+                            search.createColumn({ name: "exchangerate", label: "Exchange Rate" })
+
+
                         ]
                 });
-                var searchResult = searchLoad.run().getRange({ start: 0, end: 1 });
+                var searchResult = searchLoad.run().getRange({ start: 0, end: 200 });
                 // IDE---------------------------------------------------------------------------------------------------------------------
                 var numeracion = searchResult[0].getValue(searchLoad.columns[0]);
                 var fechaEmision = searchResult[0].getValue({ name: "trandate" });
@@ -147,8 +179,8 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var column19 = searchResult[0].getValue(searchLoad.columns[18]);
                 // REC---------------------------------------------------------------------------------------------------------------------
                 var column20 = searchResult[0].getValue(searchLoad.columns[19]);
-                var column21 = searchResult[0].getValue({ name: "vatregnumber", join: "customer" });
-                //var column21 = searchResult[0].getValue({ name: "custentity_pe_document_number", join: "customer" });
+                //var column21 = searchResult[0].getValue({ name: "vatregnumber", join: "customer" });
+                var column21 = searchResult[0].getValue({ name: "custentity_pe_document_number", join: "customer" });
                 var column22 = searchResult[0].getValue({ name: "companyname", join: "customer" });
                 var column23 = searchResult[0].getValue({ name: "billaddress1" });
                 var column24 = searchResult[0].getValue({ name: "billaddress2" });
@@ -166,43 +198,36 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     column32 = column32[2] + '-' + column32[1] + '-' + column32[0];
                 }
                 // ADI---------------------------------------------------------------------------------------------------------------------
-                var column33 = searchResult[0].getText({ name: "custbody_pe_ei_forma_pago" });
-                var column34 = searchResult[0].getValue({ name: "custbody_pe_document_type" });
-                var column35 = searchResult[0].getValue({ name: "custbody_pe_serie" });
-                var column36 = searchResult[0].getValue({ name: "internalid", join: "customer" });
-                var column37 = searchResult[0].getValue(searchLoad.columns[36]);
-                // COM---------------------------------------------------------------------------------------------------------------------
-                var column38 = searchResult[0].getText({ name: "createdfrom" });
-                var column39 = searchResult[0].getText({ name: "location" });
-                // REC---------------------------------------------------------------------------------------------------------------------
-                var column40 = searchResult[0].getValue(searchLoad.columns[39]);
-                // COM---------------------------------------------------------------------------------------------------------------------
-                var column41 = searchResult[0].getValue({ name: "tranid", join: "createdFrom" });
-                var column42 = searchResult[0].getValue(searchLoad.columns[41]);
+                var formaPagoDetr = searchResult[0].getText({ name: "custbody_pe_ei_forma_pago", label: "formaPagoDetr" });
+                var metodoPagoDetr = 'VISA';
+                var conceptDetr = searchResult[0].getText({ name: "custbody_pe_concept_detraction", label: "conceptDetr" });
+                if (conceptDetr.length > 0) {
+                    conceptDetr = conceptDetr.split(' ')[0];
+                }
+
+                var numCuentaBcoNacionDetr = searchResult[0].getValue({ name: "custrecord_pe_detraccion_account", join: "subsidiary", label: "numCuentaBcoNacionDetr" });
+                numCuentaBcoNacionDetr = '12-312-312345'
+                var montoDetr = 0;
+                var suma = 0
+                for (var i in searchResult) {
+                    montoDetr = searchResult[i].getValue({ name: "custcol_4601_witaxamount", label: "montoDetr" });
+                    if (montoDetr.length > 0) {
+                        suma += parseFloat(montoDetr)
+                    }
+                }
+                montoDetr = suma.toFixed(2);
+                var medioPagoDetr = '001';
+                var porcentajeDetr = searchResult[0].getValue({ name: "custbody_pe_percentage_detraccion", label: "porcentajeDetr" });
+                if (porcentajeDetr.includes("%")) {
+                    porcentajeDetr = porcentajeDetr.replace(/%/g, '');
+                }
+                var tipoCambio = searchResult[0].getValue({ name: "exchangerate", label: "Exchange Rate" });
+
+
                 // FREE--------------------------------------------------------------------------------------------------------------------
                 var column43 = searchResult[0].getValue({ name: "custbody_pe_free_operation" });
 
-
-
-
-
-
-
-                // // ADI---------------------------------------------------------------------------------------------------------------------
-                // var column43 = searchResult[0].getText(searchLoad.columns[42]);
-                // var column44 = searchResult[0].getValue(searchLoad.columns[43]);
-                // // IDE---------------------------------------------------------------------------------------------------------------------
-                // var column45 = searchResult[0].getValue(searchLoad.columns[44]);
-                // // REC---------------------------------------------------------------------------------------------------------------------
-                // var column46 = searchResult[0].getValue(searchLoad.columns[45]);
-                // if (tipoMoneda == '03') {
-                //     column22 = column46;
-                // }
-                // FREE---------------------------------------------------------------------------------------------------------------------
-
-
-
-                /*********************************** INICIO COLUMNAS ADICIONALES PARA LOS CASOS DE AEROPUERTO ***********************************/
+                //*********************************** CONSTRUCCION DE TRAMA ***************************************/
                 var nmro_documento = '';
                 var razon_social = '';
                 var direccion_cliente = '';
@@ -211,29 +236,6 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 nmro_documento = column21;
                 razon_social = column22;
                 direccion_cliente = column23 + ' ' + column24;
-
-
-                /*********************************** FIN COLUMNAS ADICIONALES PARA LOS CASOS DE AEROPUERTO ***********************************/
-
-
-                /*********************************** INICIO PROMOCIÓN ***********************************/
-
-                // IL COUPON CODE ----------------------------------------------------------------------------------------------------------------
-                // var column52 = searchResult[0].getValue(searchLoad.columns[51]);
-                // // IL PURCHASE DISCOUNT ----------------------------------------------------------------------------------------------------------------
-                // var column53 = searchResult[0].getValue(searchLoad.columns[52]);
-
-                // var objPromocion = null;
-                // if (column52) {
-                //     objPromocion = getPromocion(column52);
-                //     objPromocion.monto_dscto = column53;
-                // }
-
-                // /*********************************** FIN PROMOCIÓN ***********************************/
-
-                // // NOTA --------------------------------------------------------------------------------------------------------------
-                // var column54 = searchResult[0].getValue(searchLoad.columns[53]);
-
 
                 jsonIDE = {
                     numeracion: numeracion,
@@ -308,9 +310,6 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             arrayCAB.push(detail.totalimpuestosgra.pop());
                         }
                     }
-
-
-
                     var ina = detail.inafectas;
                     if (ina != 'Vacio') {
                         jsonCAB.inafectas = detail.inafectas;
@@ -327,6 +326,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                         'codigo': '1002',
                         'descripcion': 'TRANSFERENCIA GRATUITA DE UN BIEN Y/O SERVICIO PRESTADO GRATUITAMENTE'
                     });
+
                     var grav = detail.gravadas;
                     var totalVentasGra = 0;
                     var montoImpuestoGra = 0;
@@ -393,52 +393,20 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 }
                 delete jsonCAB.inicializador;
 
-                jsonADI = [
-                    // {
-                    //     tituloAdicional: "@@codCliente",
-                    //     valorAdicional: detail.codigocliente
-                    // },
-                    {
-                        tituloAdicional: "@@condPago",
-                        valorAdicional: column33
-                    },
-                    {
-                        tituloAdicional: "@@dirDestino",
-                        valorAdicional: column34
-                    },
-                    {
-                        tituloAdicional: "@@transportista",
-                        valorAdicional: column35
-                    },
-                    {
-                        tituloAdicional: "@@rucTransportista",
-                        valorAdicional: column36
-                    },
-                    {
-                        tituloAdicional: "@@placaVehic",
-                        valorAdicional: column37
-                    },
-                    // {
-                    //     tituloAdicional: "@@zona",
-                    //     valorAdicional: codubigeo.codubigeo
-                    // },
-                    // {
-                    //     tituloAdicional: "@@modulo",
-                    //     valorAdicional: column43
-                    // },
-                    {
-                        tituloAdicional: "@@nroInterno",
-                        valorAdicional: column06
-                    },
-                    // {
-                    //     tituloAdicional: "@@vendedor",
-                    //     valorAdicional: column44
-                    // },
-                    // {
-                    //     tituloAdicional: "@@localidad",
-                    //     valorAdicional: codubigeo.ubigeolocalidad
-                    // }
-                ]
+                // jsonDRF = [
+                //     {
+                //         tipoDocRelacionado: tipoDocRelacionado,
+                //         numeroDocRelacionado: numeroDocRelacionado,
+                //         codigoMotivo: codigoMotivo,
+                //         descripcionMotivo: descripcionMotivo
+                //     }
+                // ]
+
+
+                //^Operación sujeta al Sistema de Pago de Obligaciones Tributarias.\nDepositar a la cuenta del Banco de la Nación \nNro. 12-312-312345.\nMedio de Pago: 001 - Depósito en cuenta\nMonto: 991.20\nTipo de Cambio: 3.50000\nPorcentaje: 12.00%
+                var detracciones = 'Operación sujeta al Sistema de Pago de Obligaciones Tributarias.\nDepositar a la cuenta del Banco de la Nación \nNro ' + numCuentaBcoNacionDetr + '.\nMedio de Pago:' + medioPagoDetr + '\nMonto: ' + montoDetr + '\nTipo de Cambio: ' + tipoCambio + '\nPorcentaje: ' + porcentajeDetr
+
+                jsonADI = []
 
                 jsonMain = {
                     IDE: jsonIDE,
@@ -446,34 +414,66 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     REC: jsonREC,
                     //DRF: jsonDRF,
                     CAB: jsonCAB,
-                    DET: detail.det
-                    //ADI: jsonADI
+                    DET: detail.det,
+                    ADI: jsonADI
+                }
+
+                //logStatus(documentid, detail.applywh);
+                if (detail.applywh == true) {
+                    jsonADI = [
+                        {
+                            tituloAdicional: "Forma de Pago",
+                            valorAdicional: formaPagoDetr
+                        },
+                        {
+                            tituloAdicional: "Detracciones",
+                            valorAdicional: detracciones
+                        },
+                        {
+                            tituloAdicional: "METODO DE PAGO",
+                            valorAdicional: metodoPagoDetr
+                        },
+                        {
+                            tituloAdicional: "@@codBienServDetr",
+                            valorAdicional: conceptDetr
+                        },
+                        {
+                            tituloAdicional: "@@numCuentaBcoNacionDetr",
+                            valorAdicional: numCuentaBcoNacionDetr
+                        },
+                        {
+                            tituloAdicional: "@@medioPagoDetr",
+                            valorAdicional: medioPagoDetr
+                        },
+                        {
+                            tituloAdicional: "@@montoDetr",
+                            valorAdicional: montoDetr
+                        },
+                        {
+                            tituloAdicional: "@@porcDetr",
+                            valorAdicional: porcentajeDetr
+                        }
+                    ]
+
+                    jsonLeyenda.push({
+                        "codigo": "2006",
+                        "descripcion": "OPERACION SUJETA AL SISTEMA DE PAGO DE OBLIGACIONES TRIBUTARIAS"
+                    })
+                    jsonMain.ADI = jsonADI;
                 }
 
                 var filename = column08 + '-' + codTipoDocumento + '-' + numeracion;
                 var ticket = codTipoDocumento + '-' + numeracion
                 if (codTipoDocumento == '01') {
                     json = JSON.stringify({ "factura": jsonMain });
-                } else if (tipoMoneda == '03') {
+                } else if (codTipoDocumento == '03') {
                     json = JSON.stringify({ "boleta": jsonMain });
                 }
 
-                // return {
-                //     request: json,
-                //     filenameosce: filename,
-                //     numbering: numeracion,
-                //     serie: column39,
-                //     correlativo: column41,
-                //     emailrec: column40,
-                //     emisname: column10,
-                //     typedoc: column38,
-                //     typedoccode: tipoMoneda,
-                // }
-
                 var filejson = generateFileJSON(filename, json);
                 var filejson = file.load({ id: filejson });
-                var transactionID = setRecord(documentid, ticket, /*urlpdf, urlxml, urlcdr,*/ filejson.url /*encodepdf, array*/)
-                return 'Transacción ' + ticket + ' generada';
+                setRecord(codTipoDocumento, documentid, ticket, /*urlpdf, urlxml, urlcdr,*/ filejson.id /*encodepdf, array*/)
+                return 'Transacción ' + ticket + ' generada ' + ' - ' + detail.applywh;
             } catch (error) {
                 //logError(array[0], array[1], 'Error-createRequest', JSON.stringify(e));
                 return error;
@@ -504,16 +504,15 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
             //Flag discount
             var anydiscoutnigv = '';
             // var jsontest = new Array();
-            const TAX_CODE_GRAVADA = 'VAT_PE:S-PE'
+            const TAX_CODE_GRAVADA = 'IGV_PE:S-PE'
+            const TAX_CODE_INAFECTA = 'IGV_PE:Inaf-PE'
+            const TAX_CODE_EXENTA = 'IGV_PE:E-PE'
+            const TAXT_CODE_UNDEF = 'IGV_PE:UNDEF-PE'
+            var applyDetr = false;
 
             try {
                 var openRecord = '';
                 openRecord = record.load({ type: record.Type.INVOICE, id: documentid, isDynamic: true });
-                // try {
-                //     openRecord = record.load({ type: record.Type.INVOICE, id: documentid, isDynamic: true });
-                // } catch (error) {
-                //     openRecord = record.load({ type: record.Type.CASH_SALE, id: documentid, isDynamic: true });
-                // }
 
                 var total = openRecord.getValue({ fieldId: 'total' });
                 var taxtotal = openRecord.getValue({ fieldId: 'taxtotal' });
@@ -544,6 +543,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     var factorcargodescuento = 0.0;
                     var montocargodescuento = 0.0;
                     var round = 0.0;
+                    var taxcode_display_discount = '';
 
 
                     var item_display = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'item_display', line: i });
@@ -570,10 +570,16 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     //logStatus(documentid, 'tax1amt1: ' + tax1amt);
                     var montoimpuesto = parseFloat(openRecord.getSublistValue({ sublistId: 'item', fieldId: 'tax1amt', line: i }));
                     var isicbp = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'custcol_pe_is_icbp', line: i });
+                    var applywh = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'custcol_4601_witaxapplies', line: i });
+                    if (applyDetr == false) {
+                        applyDetr = applywh;
+                    }
+
+                    //logStatus(documentid, 'Entré a DESCUENTO: ' + taxcode_display);
 
                     if (itemtype == 'InvtPart' || itemtype == 'Service' || itemtype == 'NonInvtPart') {
                         precioVentaUnitario = (rate + (rate * (taxrate1 / 100)));
-
+                        //logStatus(documentid, precioVentaUnitario);
                         round = precioVentaUnitario.toString().split('.');
                         if (typeof round[1] != 'undefined') {
                             precioVentaUnitario = round[1].length > 7 ? precioVentaUnitario.toFixed(7) : precioVentaUnitario;
@@ -602,9 +608,10 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
 
                             try {
                                 itemtype_discount = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'itemtype', line: i + 1 });
+                                taxcode_display_discount = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'taxcode_display', line: i + 1 });
                             } catch (error) { }
 
-                            if (itemtype_discount == 'Discount') {
+                            if (itemtype_discount == 'Discount' && taxcode_display_discount != TAXT_CODE_UNDEF) {
                                 anydiscountline = 'any';
                             } else {
                                 jsonGravadas = {
@@ -625,7 +632,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             //     montoImpuesto: summontoImpuestoGRA.toFixed(2)
                             // });
 
-                        } else if (taxcode_display == 'IGV_PE:E-PE') { // EXONERADAS
+                        } else if (taxcode_display == TAX_CODE_EXENTA) { // EXONERADAS
                             if (freeop == true) {
                                 idimpuesto = '9996'; // Gratuito
                                 codigo = '1004'; // Total valor de venta - operaciones exoneradas
@@ -648,10 +655,11 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
 
                             try {
                                 itemtype_discount = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'itemtype', line: i + 1 });
+                                taxcode_display_discount = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'taxcode_display', line: i + 1 });
                                 //log.debug('AnyDiscount', itemtype_discount);
                             } catch (error) { }
 
-                            if (itemtype_discount == 'Discount') {
+                            if (itemtype_discount == 'Discount' && taxcode_display_discount != TAXT_CODE_UNDEF) {
                                 anydiscountline = 'any';
                             } else {
                                 jsonExoneradas = {
@@ -664,7 +672,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                                 idImpuesto: idimpuesto,
                                 montoImpuesto: summontoImpuestoEXO.toFixed(2)
                             });
-                        } else if (taxcode_display == 'IGV_PE:Inaf-PE') { // INAFECTAS
+                        } else if (taxcode_display == TAX_CODE_INAFECTA) { // INAFECTAS
                             if (freeop == true) {
                                 idimpuesto = '9996'; // Gratuito
                                 codigo = '1004'; // Total valor de venta - operaciones inafectas
@@ -686,10 +694,10 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             }
                             try {
                                 itemtype_discount = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'itemtype', line: i + 1 });
-                                //log.debug('AnyDiscount', itemtype_discount);
+                                taxcode_display_discount = openRecord.getSublistValue({ sublistId: 'item', fieldId: 'taxcode_display', line: i + 1 });
                             } catch (error) { }
 
-                            if (itemtype_discount == 'Discount') {
+                            if (itemtype_discount == 'Discount' && taxcode_display_discount != TAXT_CODE_UNDEF) {
                                 anydiscountline = 'any';
                             } else {
                                 jsonInafectas = {
@@ -726,7 +734,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             tax1amt = tax1amt - tax1amt_discount_line;
                             //logStatus(documentid, 'tax1amt2: ' + tax1amt);
 
-                            if (taxcode_display == 'IGV_PE:S-PE') {  // GRAVADAS
+                            if (taxcode_display == TAX_CODE_GRAVADA) {  // GRAVADAS
                                 indicadorcargodescuento = 'false'; // (cargo = true , Descuento = false)
                                 codigocargocescuento = '00'; // Descuentos que afectan la base imponible del IGV
                                 sumtotalVentasGRA -= amount_discount_line;
@@ -739,7 +747,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                                     idImpuesto: idimpuesto,
                                     montoImpuesto: summontoImpuestoGRA.toFixed(2)
                                 });
-                            } else if (taxcode_display == 'IGV_PE:E-PE') {
+                            } else if (taxcode_display == TAX_CODE_EXENTA) {
                                 indicadorcargodescuento = 'false'; // (cargo = true , Descuento = false)
                                 codigocargocescuento = '00'; // Descuentos que no afectan la base imponible del IGV
                                 sumtotalVentasEXO -= amount_discount_line;
@@ -747,7 +755,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                                     codigo: codigo,
                                     totalVentas: sumtotalVentasEXO.toFixed(2)
                                 }
-                            } else if (taxcode_display == 'IGV_PE:Inaf-PE') {
+                            } else if (taxcode_display == TAX_CODE_INAFECTA) {
                                 indicadorcargodescuento = 'false'; // (cargo = true , Descuento = false)
                                 codigocargocescuento = '00'; // Descuentos que no afectan la base imponible del IGV
                                 sumtotalVentasINA -= amount_discount_line;
@@ -832,6 +840,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                                 montoTotalImpuestos: parseFloat(tax1amt).toFixed(2)
                             });
                         } else {
+                            //logStatus(documentid, 'Json: ' + precioVentaUnitario);
                             json.push({
                                 numeroItem: (i + 1).toString(),
                                 codigoProducto: item_display,
@@ -847,8 +856,8 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                         }
                     } else if (itemtype == 'Subtotal') {
                         montobasecargodescuento = amount; //subtotal
-                    } else if (itemtype == 'Discount' && is_discount_line == false) {
-                        if (taxcode_display == 'IGV_PE:S-PE') {  // GRAVADAS
+                    } else if (itemtype == 'Discount' && is_discount_line == false && taxcode_display != TAXT_CODE_UNDEF) {
+                        if (taxcode_display == TAX_CODE_GRAVADA) {  // GRAVADAS
                             indicadorcargodescuento = 'false'; // (cargo = true , Descuento = false)
                             codigocargocescuento = '02'; // Descuentos globales que afectan la base imponible del IGV
                             anydiscoutnigv = 'any';
@@ -876,6 +885,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             montoBaseCargoDescuento: montobasecargodescuento.toString()
                         });
                     }
+
                 }
 
                 if (anydiscoutnigv == 'any') {
@@ -909,7 +919,8 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     importetotal: total.toFixed(2),
                     montototalimpuestos: taxtotal.toFixed(2),
                     codigocliente: codcustomer,
-                    anydiscoutnigv: anydiscoutnigv
+                    anydiscoutnigv: anydiscoutnigv,
+                    applywh: applyDetr
                 }
 
                 //! ACTIVAR PARA DESCUENTOS
@@ -919,25 +930,25 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     }
                     jsonReturn.cargodescuento = jsonCargoDescuento;
 
-                }
-                // else if (jsonCargoDescuento.length == 0 && _objPromocion != null && _objPromocion['p_dsctoglobal']) {
-                //     var amount_prom = (_objPromocion.monto_dscto).replace('-', '');
-                //     var jsonTotalDescuentosProm = new Array();
-                //     var jsonCargoDescuentoProm = new Array();
-                //     if (codigocargodescuento_prom == '03') {
-                //         jsonTotalDescuentosProm.push({ codigo: "2005", totalDescuentos: amount_prom })
-                //         jsonReturn.totaldescuentos = jsonTotalDescuentosProm;
-                //     }
+                    // }
+                    // else if (jsonCargoDescuento.length == 0 && _objPromocion != null && _objPromocion['p_dsctoglobal']) {
+                    //     var amount_prom = (_objPromocion.monto_dscto).replace('-', '');
+                    //     var jsonTotalDescuentosProm = new Array();
+                    //     var jsonCargoDescuentoProm = new Array();
+                    //     if (codigocargodescuento_prom == '03') {
+                    //         jsonTotalDescuentosProm.push({ codigo: "2005", totalDescuentos: amount_prom })
+                    //         jsonReturn.totaldescuentos = jsonTotalDescuentosProm;
+                    //     }
 
-                //     jsonCargoDescuentoProm.push({
-                //         indicadorCargoDescuento: 'false',
-                //         codigoCargoDescuento: codigocargodescuento_prom,
-                //         factorCargoDescuento: _objPromocion.p_descuento,
-                //         montoCargoDescuento: amount_prom,
-                //         montoBaseCargoDescuento: subtotal_global_prom.toString()
-                //     });
-                //     jsonReturn.cargodescuento = jsonCargoDescuentoProm
-                // }
+                    //     jsonCargoDescuentoProm.push({
+                    //         indicadorCargoDescuento: 'false',
+                    //         codigoCargoDescuento: codigocargodescuento_prom,
+                    //         factorCargoDescuento: _objPromocion.p_descuento,
+                    //         montoCargoDescuento: amount_prom,
+                    //         montoBaseCargoDescuento: subtotal_global_prom.toString()
+                    //     });
+                    //     jsonReturn.cargodescuento = jsonCargoDescuentoProm
+                }
 
                 return jsonReturn;
             } catch (error) {
@@ -1028,7 +1039,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "phone", join: "subsidiary", label: "telefono" }),
                             search.createColumn({ name: "email", join: "subsidiary", label: "correoElectronico" }),
                             // REC---------------------------------------------------------------------------------------------------------------------
-                            search.createColumn({ name: "vatregnumber", join: "customer", label: "numeroDocIdREC" }),
+                            search.createColumn({ name: "custentity_pe_document_number", join: "customer", label: "numeroDocIdREC" }),
                             search.createColumn({ name: "companyname", join: "customer", label: "razonSocialREC" }),
                             search.createColumn({ name: "billaddress1", label: "direccionREC1" }),
                             search.createColumn({ name: "billaddress2", label: "direccionREC2" }),
@@ -1038,7 +1049,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "email", join: "customer", label: "correoElectronicoREC" }),
                             search.createColumn({ name: "internalid", join: "customer", label: "emailrec" }),
                             // DRF---------------------------------------------------------------------------------------------------------------------
-                            search.createColumn({ name: "custrecord_pe_codigo_motivo", join: "CUSTBODY_PE_REASON", label: "codigoMotivo" }),
+                            search.createColumn({ name: "custrecord_pe_codigo_motivo_2", join: "CUSTBODY_PE_REASON", label: "codigoMotivo" }),
                             search.createColumn({ name: "name", join: "CUSTBODY_PE_REASON", label: "descripcionMotivo" }),
                             // CAB---------------------------------------------------------------------------------------------------------------------
                             search.createColumn({ name: "custrecord_pe_cod_fact_2", join: "CUSTBODY_PE_EI_OPERATION_TYPE", label: "tipoOperacion" }),
@@ -1046,17 +1057,11 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "custbody_pe_document_type", label: "typedoc" }),
                             search.createColumn({ name: "custbody_pe_serie", label: "serie" }),
                             // ADI---------------------------------------------------------------------------------------------------------------------
-                            // search.createColumn({ name: "custbody_pe_document_date_ref", label: "fechaVencADI" }),
-                            // search.createColumn({ name: "custbody_pe_ei_forma_pago", label: "condPagoADI" }),
-                            // search.createColumn({ name: "location", label: "moduloADI" }),
-                            // search.createColumn({ name: "custbody_pe_delivery_address", join: "createdFrom", label: "dirDestinoADI" }),
-                            // search.createColumn({ name: "custbody_pe_car_plate", join: "createdFrom", label: "placaVehicADI" }),
-                            // search.createColumn({ name: "custbody_pe_ruc_empresa_transporte", join: "createdFrom", label: "rucTransportistaADI" }),
                         ]
                 });
 
                 var searchResult = searchLoad.run().getRange({ start: 0, end: 1 });
-                //?FORMULAS ===========================================================================================================================================
+                //?FORMULAS ======================================================================================================================================================
                 // IDE---------------------------------------------------------------------------------------------------------------------
                 var numeracion = searchResult[0].getValue(searchLoad.columns[0]);
                 var codTipoDocumento = searchResult[0].getValue(searchLoad.columns[1]);
@@ -1102,7 +1107,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var telefono = searchResult[0].getValue({ name: "phone", join: "subsidiary", label: "telefono" });
                 var correoElectronico = searchResult[0].getValue({ name: "email", join: "subsidiary", label: "correoElectronico" });
                 // REC---------------------------------------------------------------------------------------------------------------------
-                var numeroDocIdREC = searchResult[0].getValue({ name: "vatregnumber", join: "customer", label: "numeroDocIdREC" });
+                var numeroDocIdREC = searchResult[0].getValue({ name: "custentity_pe_document_number", join: "customer", label: "numeroDocIdREC" });
                 var razonSocialREC = searchResult[0].getValue({ name: "companyname", join: "customer", label: "razonSocialREC" });
                 var direccionREC1 = searchResult[0].getValue({ name: "billaddress1", label: "direccionREC1" });
                 var direccionREC2 = searchResult[0].getValue({ name: "billaddress2", label: "direccionREC2" });
@@ -1111,7 +1116,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var distritoREC = searchResult[0].getValue({ name: "address3", join: "customer", label: "distritoREC" });
                 var correoElectronicoREC = searchResult[0].getValue({ name: "email", join: "customer", label: "correoElectronicoREC" });
                 // DRF---------------------------------------------------------------------------------------------------------------------
-                var codigoMotivo = searchResult[0].getValue({ name: "custrecord_pe_codigo_motivo", join: "CUSTBODY_PE_REASON", label: "codigoMotivo" });
+                var codigoMotivo = searchResult[0].getValue({ name: "custrecord_pe_codigo_motivo_2", join: "CUSTBODY_PE_REASON", label: "codigoMotivo" });
                 var descripcionMotivo = searchResult[0].getValue({ name: "name", join: "CUSTBODY_PE_REASON", label: "descripcionMotivo" });
                 // CAB---------------------------------------------------------------------------------------------------------------------
                 var tipoOperacion = searchResult[0].getValue({ name: "custrecord_pe_cod_fact", join: "CUSTBODY_PE_EI_OPERATION_TYPE", label: "tipoOperacion" });
@@ -1164,82 +1169,82 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     correoElectronico: correoElectronicoREC
                 }
 
-                //var detail = getDetailCreditMemo(documentid, array);
+                var detail = getDetailCreditMemo(documentid);
 
-                // var flag = JSON.stringify(detail);
-                // generateFileTXT('errortest2', flag, array);
+                var flag = JSON.stringify(detail);
+                //generateFileTXT('errortest2', flag);
 
-                // var monto = NumeroALetras(detail.importetotal, { plural: 'SOLES', singular: 'SOLES', centPlural: 'CENTIMOS', centSingular: 'CENTIMO' });
-                // jsonLeyenda = [
-                //     {
-                //         codigo: "1000",
-                //         descripcion: monto
-                //     }
-                // ]
+                var monto = NumeroALetras(detail.importetotal, { plural: 'SOLES', singular: 'SOLES', centPlural: 'CENTIMOS', centSingular: 'CENTIMO' });
+                jsonLeyenda = [
+                    {
+                        codigo: "1000",
+                        descripcion: monto
+                    }
+                ]
 
                 //Objeto comodín para inicializar el json, luego será eliminado
-                // jsonCAB = {
-                //     inicializador: 'Inicializador, debe ser borrado'
-                // }
+                jsonCAB = {
+                    inicializador: 'Inicializador, debe ser borrado'
+                }
 
-                // var grav = detail.gravadas;
-                // if (grav != 'Vacio') {
-                //     jsonCAB.gravadas = detail.gravadas;
-                //     arrayImporteTotal.push(parseFloat(detail.gravadas.totalVentas))
-                //     arrayCAB.push(detail.totalimpuestosgra.pop());
-                // }
+                var grav = detail.gravadas;
+                if (grav != 'Vacio') {
+                    jsonCAB.gravadas = detail.gravadas;
+                    arrayImporteTotal.push(parseFloat(detail.gravadas.totalVentas))
+                    arrayCAB.push(detail.totalimpuestosgra.pop());
+                }
 
-                // var ina = detail.inafectas;
-                // if (ina != 'Vacio') {
-                //     jsonCAB.inafectas = detail.inafectas;
-                //     arrayImporteTotal.push(parseFloat(detail.inafectas.totalVentas))
-                //     arrayCAB.push(detail.totalimpuestosina.pop());
-                // }
+                var ina = detail.inafectas;
+                if (ina != 'Vacio') {
+                    jsonCAB.inafectas = detail.inafectas;
+                    arrayImporteTotal.push(parseFloat(detail.inafectas.totalVentas))
+                    arrayCAB.push(detail.totalimpuestosina.pop());
+                }
 
-                // var exo = detail.exoneradas;
-                // if (exo != 'Vacio') {
-                //     jsonCAB.exoneradas = detail.exoneradas;
-                //     arrayImporteTotal.push(parseFloat(detail.exoneradas.totalVentas))
-                //     arrayCAB.push(detail.totalimpuestosexo.pop());
-                // }
+                var exo = detail.exoneradas;
+                if (exo != 'Vacio') {
+                    jsonCAB.exoneradas = detail.exoneradas;
+                    arrayImporteTotal.push(parseFloat(detail.exoneradas.totalVentas))
+                    arrayCAB.push(detail.totalimpuestosexo.pop());
+                }
 
-                // jsonCAB.totalImpuestos = arrayCAB;
-                // if (typeof detail.cargodescuento != 'undefined') {
-                //     jsonCAB.totalDescuentos = detail.totaldescuentos;
-                // }
+                jsonCAB.totalImpuestos = arrayCAB;
+                if (typeof detail.cargodescuento != 'undefined') {
+                    jsonCAB.totalDescuentos = detail.totaldescuentos;
+                }
 
-                // for (var i in arrayImporteTotal) {
-                //     sumaImporteTotal += arrayImporteTotal[i];
-                // }
-                // var importTotal = sumaImporteTotal + parseFloat(detail.montototalimpuestos);
-                // //var importTotal = parseFloat(detail.gravadas.totalVentas) + parseFloat(detail.inafectas.totalVentas) + parseFloat(detail.exoneradas.totalVentas) + parseFloat(detail.montototalimpuestos);
-                // jsonCAB.importeTotal = importTotal.toFixed(2)
-                // //jsonCAB.importeTotal = detail.importetotal.toString();
-                // jsonCAB.tipoOperacion = tipoOperacion;
-                // jsonCAB.leyenda = jsonLeyenda;
-                // jsonCAB.montoTotalImpuestos = detail.montototalimpuestos;
+                for (var i in arrayImporteTotal) {
+                    sumaImporteTotal += arrayImporteTotal[i];
+                }
+                var importTotal = sumaImporteTotal + parseFloat(detail.montototalimpuestos);
+                //var importTotal = parseFloat(detail.gravadas.totalVentas) + parseFloat(detail.inafectas.totalVentas) + parseFloat(detail.exoneradas.totalVentas) + parseFloat(detail.montototalimpuestos);
+                jsonCAB.importeTotal = importTotal.toFixed(2)
+                //jsonCAB.importeTotal = detail.importetotal.toString();
+                jsonCAB.tipoOperacion = tipoOperacion;
+                jsonCAB.leyenda = jsonLeyenda;
+                jsonCAB.montoTotalImpuestos = detail.montototalimpuestos;
 
-                // if (typeof detail.cargodescuento != 'undefined') {
-                //     // jsonCAB.totalDescuentos = detail.totaldescuentos;
-                //     jsonCAB.cargoDescuento = detail.cargodescuento;
-                // }
-                // delete jsonCAB.inicializador;
+                if (typeof detail.cargodescuento != 'undefined') {
+                    // jsonCAB.totalDescuentos = detail.totaldescuentos;
+                    jsonCAB.cargoDescuento = detail.cargodescuento;
+                }
+                delete jsonCAB.inicializador;
 
-                // // var fulfillment = 0;
-                // // if (column46 != '') fulfillment = openFulfillment(column46);
+                // var fulfillment = 0;
+                // if (column46 != '') fulfillment = openFulfillment(column46);
 
-                // jsonDRF = [
-                //     {
-                //         tipoDocRelacionado: tipoDocRelacionado,
-                //         numeroDocRelacionado: numeroDocRelacionado,
-                //         codigoMotivo: codigoMotivo,
-                //         descripcionMotivo: descripcionMotivo
-                //     }
-                //     // {
-                //     //     tipoDocRelacionado: "09",
-                //     //     numeroDocRelacionado: fulfillment.guia
-                //     // }
-                // ]
+                jsonDRF = [
+                    {
+                        tipoDocRelacionado: tipoDocRelacionado,
+                        numeroDocRelacionado: numeroDocRelacionado,
+                        codigoMotivo: codigoMotivo,
+                        descripcionMotivo: descripcionMotivo
+                    }
+                    // {
+                    //     tipoDocRelacionado: "09",
+                    //     numeroDocRelacionado: fulfillment.guia
+                    // }
+                ]
 
                 // jsonADI = [
                 //     {
@@ -1308,7 +1313,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     REC: jsonREC,
                     DRF: jsonDRF,
                     CAB: jsonCAB,
-                    //DET: detail.det,
+                    DET: detail.det,
                     // ADI: jsonADI
                 }
 
@@ -1330,14 +1335,20 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 //     typedoc: typedoc,
                 //     typedoccode: codTipoDocumento
                 // };
-                return json;
-            } catch (e) {
+                var ticket = codTipoDocumento + '-' + numeracion
+                var filejson = generateFileJSON(filename, json);
+                var filejson = file.load({ id: filejson });
+                setRecord(codTipoDocumento, documentid, ticket, /*urlpdf, urlxml, urlcdr,*/ filejson.id /*encodepdf, array*/)
+                return 'Transacción ' + ticket + ' generada ' + ' - JSON: ' + filejson.id;
+                //return json;
+            } catch (error) {
                 //logError(array[0], array[1], 'Error-createRequestCreditMemo', JSON.stringify(e));
+                return error;
             }
         }
 
 
-        function getDetailCreditMemo(documentid, array) {
+        function getDetailCreditMemo(documentid) {
             var json = new Array();
             var jsonGravadas = ['Vacio'];
             var jsonInafectas = ['Vacio'];
@@ -1621,8 +1632,9 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     }
                     return jsonReturn;
                 }
-            } catch (e) {
-                logError(array[0], array[1], 'Error-getDetailCreditMemo', JSON.stringify(e));
+            } catch (error) {
+                //logError(array[0], array[1], 'Error-getDetailCreditMemo', JSON.stringify(e));
+                logStatus(documentid, error);
             }
         }
         //!============================================================================================================================================
@@ -1633,7 +1645,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 logStatus.setValue('custrecord_pe_ei_document', internalid);
                 logStatus.setValue('custrecord_pe_ei_document_status', docstatus);
                 logStatus.save();
-            } catch (e) {
+            } catch (error) {
 
             }
         }
@@ -1690,15 +1702,15 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
         }
 
 
-        function setRecord(/*recordtype*/ internalid, tranid, /*urlpdf, urlxml, urlcdr,*/ urljson /*encodepdf, array*/) {
+        function setRecord(recordtype, internalid, tranid, /*urlpdf, urlxml, urlcdr,*/ urljson /*encodepdf, array*/) {
             var recordload = '';
             try {
-                // if (recordtype != '') {
-                //     recordload = record.load({ type: record.Type.INVOICE, id: internalid, isDynamic: true })
-                // } else {
-                //     recordload = record.load({ type: record.Type.CREDIT_MEMO, id: internalid });
-                // }
-                recordload = record.load({ type: record.Type.INVOICE, id: internalid, isDynamic: true })
+                if (recordtype == '07') {
+                    recordload = record.load({ type: record.Type.CREDIT_MEMO, id: internalid });
+                } else {
+                    recordload = record.load({ type: record.Type.INVOICE, id: internalid, isDynamic: true })
+                }
+                //recordload = record.load({ type: record.Type.INVOICE, id: internalid, isDynamic: true })
                 recordload.setValue('custbody_pe_fe_ticket_id', tranid);
                 recordload.setValue('custbody_pe_ei_printed_xml_req', urljson);
                 // recordload.setValue('custbody_pe_ei_printed_xml_res', urlxml);
@@ -1714,11 +1726,10 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 // recordload.setValue('custrecord_pe_ei_printed_cdr_res', urlcdr);
                 // recordload.save();
                 return recordload;
-            } catch (e) {
+            } catch (error) {
                 //logError(array[0], array[1], 'Error-setRecord', e.message);
             }
         }
-
 
         //BLOQUE DE CONVERSIÓN MONTO EN LETRAS================================================================================================================================================================================================
         function Unidades(num) {

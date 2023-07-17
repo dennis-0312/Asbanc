@@ -1,0 +1,78 @@
+{
+    "notaCredito": {
+        "IDE": {
+            "numeracion": "F001-6",
+            "fechaEmision": "2023-07-07",
+            "tipoMoneda": "PEN"
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "direccion": "  San Borja LIMA ",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "1",
+            "numeroDocId": "20100152941",
+            "razonSocial": "PEDRO MATEO JUAN",
+            "direccion": "San Borja Lima",
+            "correoElectronico": "pedromateo@gmail.com"
+        },
+        "DRF": [
+            {
+                "tipoDocRelacionado": "01",
+                "numeroDocRelacionado": "F001-6",
+                "codigoMotivo": "01",
+                "descripcionMotivo": "Anulacion de la operacion"
+            }
+        ],
+        "CAB": {
+            "inafectas": {
+                "codigo": "1002",
+                "totalVentas": "12000.00"
+            },
+            "totalImpuestos": [
+                {
+                    "idImpuesto": "9998",
+                    "montoImpuesto": "0.00"
+                }
+            ],
+            "importeTotal": "12000.00",
+            "tipoOperacion": null,
+            "leyenda": [
+                {
+                    "codigo": "1000",
+                    "descripcion": "DOCE MIL  SOLES "
+                }
+            ],
+            "montoTotalImpuestos": "0"
+        },
+        "DET": [
+            {
+                "numeroItem": "1",
+                "codigoProducto": "AUSPICIO",
+                "descripcionProducto": "AUSPICIO ESPECIAL DESC",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "12000",
+                "precioVentaUnitario": "12000",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "9998",
+                        "montoImpuesto": "0",
+                        "tipoAfectacion": "30",
+                        "montoBase": "12000.00",
+                        "porcentaje": "0"
+                    }
+                ],
+                "valorVenta": "12000.00",
+                "montoTotalImpuestos": "0"
+            }
+        ]
+    }
+}
