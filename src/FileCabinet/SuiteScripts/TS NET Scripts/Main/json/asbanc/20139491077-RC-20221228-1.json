@@ -1,0 +1,44 @@
+{
+	"resumenComprobantes": {
+		"IDE": {
+			"numeracion": "RC-20221228-1",
+			"fechaEmision": "2022-12-28",
+			"fechaReferencia": "2022-12-21"
+		},
+		"EMI": {
+			"tipoDocId": "6",
+			"numeroDocId": "20139491077",
+			"nombreComercial": "ASOCIACIÓN DE BANCOS DEL PERÚ",
+			"razonSocial": "ASOCIACIÓN DE BANCOS DEL PERÚ",
+			"ubigeo": "140140",
+			"direccion": "AV. SAN BORJA NORTE 523",
+			"provincia": "LIMA",
+			"departamento": "LIMA",
+			"distrito": "SAN BORJA",
+			"codigoPais": "PE",
+			"telefono": "(51-1) 612-3333"
+		},
+		"DET": [
+			{
+				"numeroItem": "1",
+				"monedaItem": "PEN",
+				"numeracionItem": "B001-00001553",
+				"tipoComprobanteItem": "03",
+				"tipoDocIdAdq": "1",
+				"numeroDocIdAdq": "44858976",
+				"estadoItem": "3",
+				"importeTotal": "129.00",
+				"gratuitas": {
+					"codigo": "05",
+					"totalVentas": "109.32"
+				},
+				"totalImpuestos": [
+					{
+						"idImpuesto": "1000",
+						"montoImpuesto": "19.68"
+					}
+				]
+			}
+		]
+	}
+}

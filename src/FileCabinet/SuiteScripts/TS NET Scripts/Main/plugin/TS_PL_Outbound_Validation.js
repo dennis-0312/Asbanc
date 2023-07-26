@@ -3,7 +3,7 @@
  * @NScriptType plugintypeimpl
  * @NModuleScope Public
  */
-define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/record', 'N/runtime', 'N/search'],
+define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/record', 'N/runtime', 'N/search', 'N/log'],
     /**
      * @param{config} config
      * @param{email} email
@@ -25,12 +25,22 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
     * @returns {string} result.success
     * @returns {String} result.message
     */
-    function (config, email, encode, file, format, https, record, runtime, search) {
+
+    function (config, email, encode, file, format, https, record, runtime, search, log) {
         var FOLDER_PDF = 513;          //SB: 513   PR: ? - ok
         var internalId = '';
         var userId = '';
+        var FORMA_PAGO_CREDITO = 2;
+        var REASON_AUMENTO_DE_VALOR = 4;
+        var FACTURA = 1;
+        var BOLETA = 3;
+        var NOTA_DEBITO = 8;
 
         function validate(pluginContext) {
+            log.debug({
+                title: 'Custom Log - Debug',
+                details: 'This is a debug message.'
+            });
             var result = { success: false, message: "Validation failed." };
             try {
                 var transactionId = pluginContext.transactionInfo.transactionId;
@@ -43,6 +53,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     case 'creditmemo':
                         response = createRequestCreditMemo(transactionId);
                         break;
+
                     default:
                         result.success = false;
                         result.message = 'Tracacción no válida';
@@ -70,12 +81,13 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
             var arrayCAB = new Array();
             var jsonLeyenda = new Array();
             var jsonADI = new Array();
+            var jsonCUO = new Array();
             var jsonADI2 = new Array();
             var factura = new Array();
             var fulfillment = 0;
 
             try {
-                var searchLoad = search.create({//^Electronic Invoicing Factura - DEVELOPER
+                var searchLoad = search.create({
                     type: "transaction",
                     filters:
                         [
@@ -89,7 +101,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "formulatext", formula: "CONCAT({custbody_pe_serie}, CONCAT('-', {custbody_pe_number}))", label: "numeracion" }),//0
                             search.createColumn({ name: "trandate", label: "2 Date" }),
                             search.createColumn({ name: "datecreated", label: "3 Date Created" }),
-                            search.createColumn({ name: "formulatext", formula: "CASE WHEN {custbody_pe_document_type} = 'Factura' THEN '01' WHEN {custbody_pe_document_type} = 'Boleta de Venta' THEN '03' END", label: "codTipoDocumento" }),//3
+                            search.createColumn({ name: "formulatext", formula: "CASE WHEN {custbody_pe_document_type} = 'Factura' THEN '01' WHEN {custbody_pe_document_type} = 'Boleta de Venta' THEN '03' WHEN {custbody_pe_document_type} = 'Nota de Debito' THEN '08' END", label: "codTipoDocumento" }),//3
                             search.createColumn({ name: "symbol", join: "Currency", label: "5 Symbol" }),
                             search.createColumn({ name: "otherrefnum", join: "createdFrom", label: "6 PO/Check Number" }),
                             // EMI---------------------------------------------------------------------------------------------------------------------
@@ -145,14 +157,23 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "custrecord_pe_detraccion_account", join: "subsidiary", label: "numCuentaBcoNacionDetr" }),
                             search.createColumn({ name: "custcol_4601_witaxamount", label: "montoDetrac" }),
                             search.createColumn({ name: "custbody_pe_percentage_detraccion", label: "porcentajeDetr" }),
-                            search.createColumn({ name: "exchangerate", label: "Exchange Rate" })
-
-
+                            search.createColumn({ name: "exchangerate", label: "Exchange Rate" }),
+                            search.createColumn({ name: "custbody_pe_reason", label: "reason" }),
+                            // IMM:REFERENCIA
+                            search.createColumn({ name: "formulatext", formula: "CASE WHEN {custbody_pe_document_type_ref} = 'Factura' THEN '01' WHEN {custbody_pe_document_type_ref} = 'Boleta de Venta' THEN '03' END", label: "tipoDocRelacionado" }),
+                            search.createColumn({ name: "custbody_pe_document_series_ref", label: "ref_series" }),
+                            search.createColumn({ name: "custbody_pe_document_number_ref", label: "ref_number" }),
                         ]
                 });
                 var searchResult = searchLoad.run().getRange({ start: 0, end: 200 });
                 // IDE---------------------------------------------------------------------------------------------------------------------
                 var numeracion = searchResult[0].getValue(searchLoad.columns[0]);
+                var reason = searchResult[0].getValue({ name: "custbody_pe_reason", label: "reason" });
+                // IMM:REFERENCIA
+                var ref_tipo_doc = searchResult[0].getValue({ name: "formulatext", label: "tipoDocRelacionado" });
+                var series_ref = searchResult[0].getValue({ name: "custbody_pe_document_series_ref", label: "series_ref" });
+                var ref_number = searchResult[0].getValue({ name: "custbody_pe_document_number_ref", label: "ref_number" });
+
                 var fechaEmision = searchResult[0].getValue({ name: "trandate" });
                 fechaEmision = fechaEmision.split('/');
                 fechaEmision = fechaEmision[2] + '-' + fechaEmision[1] + '-' + fechaEmision[0];
@@ -199,6 +220,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 }
                 // ADI---------------------------------------------------------------------------------------------------------------------
                 var formaPagoDetr = searchResult[0].getText({ name: "custbody_pe_ei_forma_pago", label: "formaPagoDetr" });
+                var formaPagoDetrVal = searchResult[0].getValue({ name: "custbody_pe_ei_forma_pago", label: "formaPagoDetr" });
                 var metodoPagoDetr = 'VISA';
                 var conceptDetr = searchResult[0].getText({ name: "custbody_pe_concept_detraction", label: "conceptDetr" });
                 if (conceptDetr.length > 0) {
@@ -211,8 +233,10 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var suma = 0
                 for (var i in searchResult) {
                     montoDetr = searchResult[i].getValue({ name: "custcol_4601_witaxamount", label: "montoDetr" });
+                    //logStatus(documentid, 'montoDetr: ' + i + ' - ' + montoDetr);
                     if (montoDetr.length > 0) {
                         suma += parseFloat(montoDetr)
+                        break;
                     }
                 }
                 montoDetr = suma.toFixed(2);
@@ -236,7 +260,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 nmro_documento = column21;
                 razon_social = column22;
                 direccion_cliente = column23 + ' ' + column24;
-
+                column05 = 'PEN' //^Arreglar
                 jsonIDE = {
                     numeracion: numeracion,
                     fechaEmision: fechaEmision,
@@ -382,7 +406,21 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 }
 
                 jsonCAB.totalImpuestos = arrayCAB;
-                jsonCAB.importeTotal = column43 == true ? '0.00' : detail.importetotal.toString();
+
+
+                /* The code is checking the values of two variables, `detail.applywh` and `column43`,
+                and based on their values, it sets the value of `jsonCAB.importeTotal`. Probar para mañanaa detracción */
+                if (detail.applywh == true) {
+                    var importe = parseFloat(detail.importetotal) + parseFloat(montoDetr);
+                    jsonCAB.importeTotal = importe.toString();
+                } else if (column43 == true) {
+                    jsonCAB.importeTotal = '0.00';
+                } else {
+                    jsonCAB.importeTotal = detail.importetotal.toString();
+                }
+
+
+                //jsonCAB.importeTotal = column43 == true ? '0.00' : detail.importetotal.toString();
                 jsonCAB.tipoOperacion = column31;
                 jsonCAB.leyenda = jsonLeyenda;
                 jsonCAB.montoTotalImpuestos = column43 == true ? '0.00' : detail.montototalimpuestos.toString();
@@ -407,6 +445,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var detracciones = 'Operación sujeta al Sistema de Pago de Obligaciones Tributarias.\nDepositar a la cuenta del Banco de la Nación \nNro ' + numCuentaBcoNacionDetr + '.\nMedio de Pago:' + medioPagoDetr + '\nMonto: ' + montoDetr + '\nTipo de Cambio: ' + tipoCambio + '\nPorcentaje: ' + porcentajeDetr
 
                 jsonADI = []
+                jsonCUO = []
 
                 jsonMain = {
                     IDE: jsonIDE,
@@ -415,7 +454,21 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     //DRF: jsonDRF,
                     CAB: jsonCAB,
                     DET: detail.det,
-                    ADI: jsonADI
+                    ADI: jsonADI,
+                    CUO: jsonCUO
+                }
+                if (codTipoDocumento == '08' && reason == REASON_AUMENTO_DE_VALOR) {
+                    //IMM: se agregó este caso para ubicar bien a jsonDRF
+                    jsonMain = {
+                        IDE: jsonIDE,
+                        EMI: jsonEMI,
+                        REC: jsonREC,
+                        DRF: jsonDRF,
+                        CAB: jsonCAB,
+                        DET: detail.det,
+                        ADI: jsonADI,
+                        CUO: jsonCUO
+                    }
                 }
 
                 //logStatus(documentid, detail.applywh);
@@ -462,12 +515,54 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     jsonMain.ADI = jsonADI;
                 }
 
+                if (formaPagoDetrVal == FORMA_PAGO_CREDITO) {
+                    jsonCUO = getCuotes(documentid);
+                    jsonMain.CUO = jsonCUO;
+                }
+
                 var filename = column08 + '-' + codTipoDocumento + '-' + numeracion;
                 var ticket = codTipoDocumento + '-' + numeracion
-                if (codTipoDocumento == '01') {
+                if (codTipoDocumento == FACTURA) {
                     json = JSON.stringify({ "factura": jsonMain });
-                } else if (codTipoDocumento == '03') {
+                } else if (codTipoDocumento == BOLETA) {
                     json = JSON.stringify({ "boleta": jsonMain });
+                } else if (codTipoDocumento == NOTA_DEBITO) {
+                    if (reason == 14) {
+                        jsonDRF = [{
+                            codigoMotivo: "03",
+                            descripcionMotivo: "Penalidades/ otros conceptos"
+                        }];
+                        jsonMain.DRF = jsonDRF;
+                        jsonMain.CAB.sumOtrosCargos = "0.00";
+                        jsonMain.CAB.totalAnticipos = "0.00";
+                    }
+
+                    //IMM: ND Tipo 02 Aumento en el Valor
+                    if (reason == 4) {
+
+                        jsonDRF = [{
+                            tipoDocRelacionado: ref_tipo_doc,
+                            numeroDocRelacionado: series_ref + "-" + (ref_number.toString().padStart(8, '0')),
+                            codigoMotivo: "02",
+                            descripcionMotivo: "Aumento en el valor"
+                        }];
+                        jsonMain.DRF = jsonDRF;
+
+                        //Eliminando campos innecesarios
+                        delete jsonMain.IDE.codTipoDocumento;
+                        delete jsonMain.IDE.fechaVencimiento;
+                        delete jsonMain.EMI.departamento;
+                        delete jsonMain.EMI.provincia;
+                        delete jsonMain.EMI.distrito;
+                        delete jsonMain.REC.departamento;
+                        delete jsonMain.REC.provincia;
+                        delete jsonMain.REC.distrito;
+                        delete jsonMain.REC.codigoPais;
+                        delete jsonMain.REC.telefono;
+                        delete jsonMain.CAB.tipoOperacion;
+                    }
+
+                    json = JSON.stringify({ "notaDebito": jsonMain });
                 }
 
                 var filejson = generateFileJSON(filename, json);
@@ -811,6 +906,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                         }
 
                         if (freeop == true) {
+                            log.debug('MSK', 'description 1: ' + description)
                             json.push({
                                 numeroItem: (i + 1).toString(),
                                 codigoProducto: item_display,
@@ -826,6 +922,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                                 montoTotalImpuestos: '0.00'
                             });
                         } else if (anydiscountline == 'any') {
+                            log.debug('MSK', 'description 2: ' + description)
                             json.push({
                                 numeroItem: (i + 1).toString(),
                                 codigoProducto: item_display,
@@ -841,6 +938,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             });
                         } else {
                             //logStatus(documentid, 'Json: ' + precioVentaUnitario);
+                            log.debug('MSK', 'description 3: ' + description)
                             json.push({
                                 numeroItem: (i + 1).toString(),
                                 codigoProducto: item_display,
@@ -1057,6 +1155,12 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                             search.createColumn({ name: "custbody_pe_document_type", label: "typedoc" }),
                             search.createColumn({ name: "custbody_pe_serie", label: "serie" }),
                             // ADI---------------------------------------------------------------------------------------------------------------------
+                            // search.createColumn({ name: "custbody_pe_document_date_ref", label: "fechaVencADI" }),
+                            // search.createColumn({ name: "custbody_pe_ei_forma_pago", label: "condPagoADI" }),
+                            // search.createColumn({ name: "location", label: "moduloADI" }),
+                            // search.createColumn({ name: "custbody_pe_delivery_address", join: "createdFrom", label: "dirDestinoADI" }),
+                            // search.createColumn({ name: "custbody_pe_car_plate", join: "createdFrom", label: "placaVehicADI" }),
+                            // search.createColumn({ name: "custbody_pe_ruc_empresa_transporte", join: "createdFrom", label: "rucTransportistaADI" }),
                         ]
                 });
 
@@ -1474,6 +1578,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                                 porcentaje: taxrate1.toString()
                             });
 
+                            log.debug('MSK', 'description 4: ' + description)
                             json.push({
                                 numeroItem: (i + 1).toString(),
                                 codigoProducto: item_display,
@@ -1601,6 +1706,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                                 porcentaje: taxrate1.toString()
                             });
 
+                            log.debug('MSK', 'description 5: ' + description)
                             json.push({
                                 numeroItem: (i + 1).toString(),
                                 codigoProducto: item_display,
@@ -1662,7 +1768,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var unit = getunit.custitem_pe_cod_measure_unit;
                 return unit;
             } catch (e) {
-
+                log.debug('MSK', 'error: ' + e)
             }
         }
 
@@ -1726,9 +1832,56 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 // recordload.setValue('custrecord_pe_ei_printed_cdr_res', urlcdr);
                 // recordload.save();
                 return recordload;
-            } catch (error) {
+            } catch (e) {
                 //logError(array[0], array[1], 'Error-setRecord', e.message);
             }
+        }
+
+        function getCuotes(documentid) {
+            var jsonCUO = new Array();
+            var objInvoice = search.create({
+                type: "invoice",
+                filters:
+                    [
+                        ["type", "anyof", "CustInvc"],
+                        "AND",
+                        ["internalid", "anyof", documentid],
+                        "AND",
+                        ["installment.installmentnumber", "isnotempty", ""]
+                    ],
+                columns:
+                    [
+                        search.createColumn({ name: "internalid", summary: "GROUP", label: "Internal ID" }),
+                        search.createColumn({ name: "tranid", summary: "GROUP", label: "Document Number" }),
+                        search.createColumn({ name: "installmentnumber", join: "installment", summary: "GROUP", sort: search.Sort.ASC, label: "Installment Number" }),
+                        search.createColumn({ name: "duedate", join: "installment", summary: "GROUP", label: "Due Date" }),
+                        search.createColumn({ name: "amount", join: "installment", summary: "SUM", label: "Amount" })
+                    ]
+            });
+            var searchResultCount = objInvoice.runPaged().count;
+            if (searchResultCount > 0) {
+                objInvoice.run().each(function (result) {
+                    var idCuota = "Cuota" + result.getValue({ name: "installmentnumber", join: "installment", summary: "GROUP", label: "Installment Number" });
+                    var fechaPago = result.getValue({ name: "duedate", join: "installment", summary: "GROUP", label: "Due Date" });
+                    var montoPago = result.getValue({ name: "amount", join: "installment", summary: "SUM", label: "Amount" });
+                    fechaPago = formatDate(fechaPago);
+                    logStatus(documentid, fechaPago);
+                    jsonCUO.push({
+                        idCuota: idCuota,
+                        montoPago: montoPago,
+                        fechaPago: fechaPago
+                    });
+                    return true;
+                });
+            }
+            return jsonCUO;
+        }
+
+        function formatDate(fechaPago) {
+            var day = fechaPago.split('/')[0];
+            var year = fechaPago.split('/')[2];
+            var month = fechaPago.split('/')[1];
+            return year + '-' + month + '-' + day;
         }
 
         //BLOQUE DE CONVERSIÓN MONTO EN LETRAS================================================================================================================================================================================================

@@ -1,0 +1,122 @@
+{
+    "factura": {
+        "IDE": {
+            "numeracion": "F001-00000067",
+            "fechaEmision": "2023-07-24",
+            "codTipoDocumento": "01",
+            "tipoMoneda": "USD",
+            "fechaVencimiento": ""
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "Parent Company : ASBANC",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "ubigeo": "",
+            "direccion": "Av. San Borja Norte 523",
+            "departamento": " ",
+            "provincia": "LIMA",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "6",
+            "numeroDocId": "20607288209",
+            "razonSocial": "STAR NEWTECH INVESTMENTS S.A.C.",
+            "direccion": "AV. MANUEL OLGUIN 375 INT. 1001 SANTIAGO DE SURCO",
+            "departamento": "LIMA",
+            "provincia": "LIMA",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "+51945236856",
+            "correoElectronico": "starnewtechinvestments@gmail.com"
+        },
+        "CAB": {
+            "gravadas": {
+                "codigo": "1001",
+                "totalVentas": "290.00"
+            },
+            "totalImpuestos": [
+                {
+                    "idImpuesto": "1000",
+                    "montoImpuesto": "52.20"
+                }
+            ],
+            "importeTotal": "342.20",
+            "tipoOperacion": "0101",
+            "leyenda": [
+                {
+                    "codigo": "1000",
+                    "descripcion": "TRESCIENTOS CUARENTA Y DOS SOLES CON VEINTE CENTIMOS"
+                }
+            ],
+            "montoTotalImpuestos": "52.20"
+        },
+        "DET": [
+            {
+                "numeroItem": "1",
+                "codigoProducto": "AUSPICIO ESPECIAL",
+                "descripcionProducto": "AUSPICIO ESPECIAL",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "20",
+                "precioVentaUnitario": "23.6",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "3.60",
+                        "tipoAfectacion": "10",
+                        "montoBase": "20.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "20.00",
+                "montoTotalImpuestos": "3.6"
+            },
+            {
+                "numeroItem": "2",
+                "codigoProducto": "ALO BANCO CUOTA SOCIOS",
+                "descripcionProducto": "ALO BANCO CUOTA SOCIOS",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "70",
+                "precioVentaUnitario": "82.6",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "12.60",
+                        "tipoAfectacion": "10",
+                        "montoBase": "70.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "70.00",
+                "montoTotalImpuestos": "12.6"
+            },
+            {
+                "numeroItem": "3",
+                "codigoProducto": "BANCARED ENLACE 1MB ALTERNO-LIMA",
+                "descripcionProducto": "BANCARED ENLACE 1MB ALTERNO-LIMA",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "200",
+                "precioVentaUnitario": "236",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "36.00",
+                        "tipoAfectacion": "10",
+                        "montoBase": "200.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "200.00",
+                "montoTotalImpuestos": "36"
+            }
+        ],
+        "ADI": []
+    }
+}
