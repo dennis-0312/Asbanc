@@ -1,0 +1,98 @@
+{
+    "notaCredito": {
+        "IDE": {
+            "numeracion": "F001-00000006",
+            "fechaEmision": "2023-07-14",
+            "tipoMoneda": "PEN"
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "direccion": "  San Borja LIMA ",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "6",
+            "numeroDocId": "20100102413",
+            "razonSocial": "PEDRO MATEO JUAN",
+            "direccion": "Av Brasil cdra 26 ",
+            "correoElectronico": ""
+        },
+        "DRF": [
+            {
+                "tipoDocRelacionado": "01",
+                "numeroDocRelacionado": "F001-00000064",
+                "codigoMotivo": "",
+                "descripcionMotivo": ""
+            }
+        ],
+        "CAB": {
+            "gravadas": {
+                "codigo": "1001",
+                "totalVentas": "36000.00"
+            },
+            "totalImpuestos": [
+                {
+                    "idImpuesto": "1000",
+                    "montoImpuesto": "6480.00"
+                }
+            ],
+            "importeTotal": "42480.00",
+            "tipoOperacion": null,
+            "leyenda": [
+                {
+                    "codigo": "1000",
+                    "descripcion": "CUARENTA Y DOS MIL CUATROCIENTOS OCHENTA SOLES "
+                }
+            ],
+            "montoTotalImpuestos": "6480"
+        },
+        "DET": [
+            {
+                "numeroItem": "1",
+                "codigoProducto": "AUSPICIO",
+                "descripcionProducto": "AUSPICIO ESPECIAL DESC",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "12000",
+                "precioVentaUnitario": "14160",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "2160",
+                        "tipoAfectacion": "10",
+                        "montoBase": "12000.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "12000.00",
+                "montoTotalImpuestos": "2160"
+            },
+            {
+                "numeroItem": "2",
+                "codigoProducto": "AUSPICIO",
+                "descripcionProducto": "AUSPICIO ESPECIAL DESC",
+                "cantidadItems": "2",
+                "unidad": "ZZ",
+                "valorUnitario": "12000",
+                "precioVentaUnitario": "14160",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "4320",
+                        "tipoAfectacion": "10",
+                        "montoBase": "24000.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "24000.00",
+                "montoTotalImpuestos": "4320"
+            }
+        ]
+    }
+}

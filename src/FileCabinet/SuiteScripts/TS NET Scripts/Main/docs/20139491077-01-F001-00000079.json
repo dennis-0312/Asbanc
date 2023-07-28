@@ -1,0 +1,100 @@
+{
+    "factura": {
+        "IDE": {
+            "numeracion": "F001-00000079",
+            "fechaEmision": "2023-07-27",
+            "codTipoDocumento": "01",
+            "tipoMoneda": "PEN",
+            "formaPago": "Credito",
+            "montoNetoPendientePago": "1770"
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "Parent Company : ASBANC",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "ubigeo": "",
+            "direccion": "Av. San Borja Norte 523",
+            "departamento": " ",
+            "provincia": "LIMA",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "6",
+            "numeroDocId": "20607288209",
+            "razonSocial": "STAR NEWTECH INVESTMENTS S.A.C.",
+            "direccion": "AV. MANUEL OLGUIN 375 INT. 1001 SANTIAGO DE SURCO",
+            "departamento": "LIMA",
+            "provincia": "LIMA",
+            "distrito": "",
+            "codigoPais": "PE",
+            "telefono": "+51945236856",
+            "correoElectronico": "starnewtechinvestments@gmail.com"
+        },
+        "CAB": {
+            "gravadas": {
+                "codigo": "1001",
+                "totalVentas": "1500.00"
+            },
+            "totalImpuestos": [
+                {
+                    "idImpuesto": "1000",
+                    "montoImpuesto": "270.00"
+                }
+            ],
+            "importeTotal": "1770.00",
+            "tipoOperacion": "0101",
+            "leyenda": [
+                {
+                    "codigo": "1000",
+                    "descripcion": "UN MIL SETECIENTOS SETENTA SOLES "
+                }
+            ],
+            "montoTotalImpuestos": "270.00"
+        },
+        "DET": [
+            {
+                "numeroItem": "1",
+                "codigoProducto": "SERVICIO FTR",
+                "descripcionProducto": "SERVICIO FTR",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "1500",
+                "precioVentaUnitario": "1770",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "1000",
+                        "montoImpuesto": "270.00",
+                        "tipoAfectacion": "10",
+                        "montoBase": "1500.00",
+                        "porcentaje": "18"
+                    }
+                ],
+                "valorVenta": "1500.00",
+                "montoTotalImpuestos": "270"
+            }
+        ],
+        "ADI": [],
+        "CUO": [
+            {
+                "idCuota": "Cuota001",
+                "montoPago": "590.00",
+                "fechaPago": "2023-08-26"
+            },
+            {
+                "idCuota": "Cuota002",
+                "montoPago": "590.00",
+                "fechaPago": "2023-09-26"
+            },
+            {
+                "idCuota": "Cuota003",
+                "montoPago": "590.00",
+                "fechaPago": "2023-10-26"
+            }
+        ]
+    }
+}

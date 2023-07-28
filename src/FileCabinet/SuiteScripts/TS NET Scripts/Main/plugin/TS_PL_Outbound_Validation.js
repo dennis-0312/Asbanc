@@ -34,7 +34,9 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
         var REASON_AUMENTO_DE_VALOR = 4;
         var FACTURA = 1;
         var BOLETA = 3;
+        var NOTA_CREDITO = 7;
         var NOTA_DEBITO = 8;
+        var GUIA_REMISION = 9;
 
         function validate(pluginContext) {
             log.debug({
@@ -256,11 +258,11 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var razon_social = '';
                 var direccion_cliente = '';
 
-
                 nmro_documento = column21;
                 razon_social = column22;
                 direccion_cliente = column23 + ' ' + column24;
-                column05 = 'PEN' //^Arreglar
+                // column05 = 'PEN' //TODO: Arreglar ===============
+
                 jsonIDE = {
                     numeracion: numeracion,
                     fechaEmision: fechaEmision,
@@ -268,7 +270,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     codTipoDocumento: codTipoDocumento,
                     tipoMoneda: column05,
                     //numeroOrdenCompra: column45,
-                    fechaVencimiento: column32
+                    formaPago: formaPagoDetr
                 }
 
                 jsonEMI = {
@@ -304,7 +306,13 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 }
 
                 var detail = getDetail(documentid, column43 /*objPromocion*/);
-                var monto = NumeroALetras(detail.importetotal, { plural: 'SOLES', singular: 'SOLES', centPlural: 'CENTIMOS', centSingular: 'CENTIMO' });
+                var monto = '';
+                if (column05 == 'PEN') {
+                    monto = NumeroALetras(detail.importetotal, { plural: 'SOLES', singular: 'SOLES', centPlural: 'CENTIMOS', centSingular: 'CENTIMO' });
+                } else {
+                    monto = NumeroALetrasDolar(detail.importetotal, { plural: 'DOLARES AMERICANOS', singular: 'DOLAR AMERICANO', centPlural: 'CENTAVOS', centSingular: 'CENTAVO' });
+                }
+
                 jsonLeyenda = [
                     {
                         codigo: "1000",
@@ -404,7 +412,6 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 if (icbper.length != '') {
                     arrayCAB.push(icbper.pop());
                 }
-
                 jsonCAB.totalImpuestos = arrayCAB;
 
 
@@ -447,6 +454,13 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 jsonADI = []
                 jsonCUO = []
 
+                if (formaPagoDetrVal == FORMA_PAGO_CREDITO) {
+                    jsonCUO = getCuotes(documentid);
+                    jsonIDE.montoNetoPendientePago = jsonCUO.suma.toString();
+                } else {
+                    jsonIDE.fechaVencimiento = column32
+                }
+
                 jsonMain = {
                     IDE: jsonIDE,
                     EMI: jsonEMI,
@@ -457,7 +471,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     ADI: jsonADI,
                     CUO: jsonCUO
                 }
-                if (codTipoDocumento == '08' && reason == REASON_AUMENTO_DE_VALOR) {
+                if (codTipoDocumento == NOTA_DEBITO && reason == REASON_AUMENTO_DE_VALOR) {
                     //IMM: se agregó este caso para ubicar bien a jsonDRF
                     jsonMain = {
                         IDE: jsonIDE,
@@ -516,9 +530,9 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 }
 
                 if (formaPagoDetrVal == FORMA_PAGO_CREDITO) {
-                    jsonCUO = getCuotes(documentid);
-                    jsonMain.CUO = jsonCUO;
+                    jsonMain.CUO = jsonCUO.jsonCUO;
                 }
+
 
                 var filename = column08 + '-' + codTipoDocumento + '-' + numeracion;
                 var ticket = codTipoDocumento + '-' + numeracion
@@ -1839,6 +1853,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
 
         function getCuotes(documentid) {
             var jsonCUO = new Array();
+            var suma = 0;
             var objInvoice = search.create({
                 type: "invoice",
                 filters:
@@ -1861,9 +1876,10 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
             var searchResultCount = objInvoice.runPaged().count;
             if (searchResultCount > 0) {
                 objInvoice.run().each(function (result) {
-                    var idCuota = "Cuota" + result.getValue({ name: "installmentnumber", join: "installment", summary: "GROUP", label: "Installment Number" });
+                    var idCuota = "Cuota00" + result.getValue({ name: "installmentnumber", join: "installment", summary: "GROUP", label: "Installment Number" });
                     var fechaPago = result.getValue({ name: "duedate", join: "installment", summary: "GROUP", label: "Due Date" });
                     var montoPago = result.getValue({ name: "amount", join: "installment", summary: "SUM", label: "Amount" });
+                    suma += parseFloat(montoPago)
                     fechaPago = formatDate(fechaPago);
                     logStatus(documentid, fechaPago);
                     jsonCUO.push({
@@ -1874,7 +1890,10 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     return true;
                 });
             }
-            return jsonCUO;
+            return {
+                jsonCUO: jsonCUO,
+                suma: suma
+            };
         }
 
         function formatDate(fechaPago) {
@@ -2023,10 +2042,40 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 enteros: Math.floor(num),
                 centavos: (((Math.round(num * 100)) - (Math.floor(num) * 100))),
                 letrasCentavos: '',
-                letrasMonedaPlural: currency.plural || 'SOLES',//'PESOS', 'Dólares', 'Bolívares', 'etcs'
-                letrasMonedaSingular: currency.singular || 'SOL', //'PESO', 'Dólar', 'Bolivar', 'etc'
+                letrasMonedaPlural: currency.plural || 'SOLES',//'PESOS', 'DOLARES AMERICANOS', 'Bolívares', 'etcs'
+                letrasMonedaSingular: currency.singular || 'SOL', //'PESO', 'DOLAR AMERICANOS'', 'Bolivar', 'etc'
                 letrasMonedaCentavoPlural: currency.centPlural || 'CENTIMOS',
                 letrasMonedaCentavoSingular: currency.centSingular || 'CENTIMO'
+            };
+
+            if (data.centavos > 0) {
+                data.letrasCentavos = 'CON ' + (function () {
+                    if (data.centavos == 1)
+                        return Millones(data.centavos) + ' ' + data.letrasMonedaCentavoSingular;
+                    else
+                        return Millones(data.centavos) + ' ' + data.letrasMonedaCentavoPlural;
+                })();
+            };
+
+            if (data.enteros == 0)
+                return 'CERO ' + data.letrasMonedaPlural + ' ' + data.letrasCentavos;
+            if (data.enteros == 1)
+                return Millones(data.enteros) + ' ' + data.letrasMonedaSingular + ' ' + data.letrasCentavos;
+            else
+                return Millones(data.enteros) + ' ' + data.letrasMonedaPlural + ' ' + data.letrasCentavos;
+        }
+
+        function NumeroALetrasDolar(num, currency) {
+            currency = currency || {};
+            var data = {
+                numero: num,
+                enteros: Math.floor(num),
+                centavos: (((Math.round(num * 100)) - (Math.floor(num) * 100))),
+                letrasCentavos: '',
+                letrasMonedaPlural: currency.plural || 'DOLARES AMERICANOS',//'PESOS', 'SOLES', 'Bolívares', 'etcs'
+                letrasMonedaSingular: currency.singular || 'DOLAR AMERICANO', //'PESO', 'SOL', 'Bolivar', 'etc'
+                letrasMonedaCentavoPlural: currency.centPlural || 'CENTAVOS',
+                letrasMonedaCentavoSingular: currency.centSingular || 'CENTAVO'
             };
 
             if (data.centavos > 0) {
