@@ -1,12 +1,12 @@
 {
     "factura": {
         "IDE": {
-            "numeracion": "F001-00000080",
-            "fechaEmision": "2023-07-27",
+            "numeracion": "F001-00000086",
+            "fechaEmision": "2023-07-31",
             "codTipoDocumento": "01",
             "tipoMoneda": "PEN",
-            "formaPago": "Contado",
-            "fechaVencimiento": "2023-07-27"
+            "formaPago": "Credito",
+            "montoNetoPendientePago": "8942.19"
         },
         "EMI": {
             "tipoDocId": "6",
@@ -46,7 +46,7 @@
                     "montoImpuesto": "1550.07"
                 }
             ],
-            "importeTotal": "9296.27",
+            "importeTotal": "10161.58",
             "tipoOperacion": "0101",
             "leyenda": [
                 {
@@ -122,15 +122,31 @@
                 "montoTotalImpuestos": "855.66"
             }
         ],
-        "CUO": [],
+        "CUO": [
+            {
+                "idCuota": "Cuota001",
+                "montoPago": "2980.73",
+                "fechaPago": "2023-08-30"
+            },
+            {
+                "idCuota": "Cuota002",
+                "montoPago": "2980.73",
+                "fechaPago": "2023-09-30"
+            },
+            {
+                "idCuota": "Cuota003",
+                "montoPago": "2980.73",
+                "fechaPago": "2023-10-30"
+            }
+        ],
         "ADI": [
             {
                 "tituloAdicional": "Forma de Pago",
-                "valorAdicional": "Contado"
+                "valorAdicional": "Credito"
             },
             {
                 "tituloAdicional": "Detracciones",
-                "valorAdicional": "Operación sujeta al Sistema de Pago de Obligaciones Tributarias.\nDepositar a la cuenta del Banco de la Nación \nNro 12-312-312345.\nMedio de Pago:001\nMonto: 354.08\nTipo de Cambio: 1.00\nPorcentaje: "
+                "valorAdicional": "Operación sujeta al Sistema de Pago de Obligaciones Tributarias.\nDepositar a la cuenta del Banco de la Nación \nNro 12-312-312345.\nMedio de Pago:001\nMonto: 1219.39\nTipo de Cambio: 1.00\nPorcentaje: 12.0"
             },
             {
                 "tituloAdicional": "METODO DE PAGO",
@@ -138,7 +154,7 @@
             },
             {
                 "tituloAdicional": "@@codBienServDetr",
-                "valorAdicional": ""
+                "valorAdicional": "022"
             },
             {
                 "tituloAdicional": "@@numCuentaBcoNacionDetr",
@@ -150,11 +166,11 @@
             },
             {
                 "tituloAdicional": "@@montoDetr",
-                "valorAdicional": "354.08"
+                "valorAdicional": "1219.39"
             },
             {
                 "tituloAdicional": "@@porcDetr",
-                "valorAdicional": ""
+                "valorAdicional": "12.0"
             }
         ]
     }

@@ -1,0 +1,118 @@
+{
+    "notaCredito": {
+        "IDE": {
+            "numeracion": "F001-00000035",
+            "fechaEmision": "2023-07-31",
+            "tipoMoneda": "USD"
+        },
+        "EMI": {
+            "tipoDocId": "6",
+            "numeroDocId": "20139491077",
+            "nombreComercial": "",
+            "razonSocial": "Asociación de Bancos del Perú",
+            "direccion": "  San Borja LIMA ",
+            "codigoPais": "PE",
+            "telefono": "",
+            "correoElectronico": "",
+            "codigoAsigSUNAT": "0000"
+        },
+        "REC": {
+            "tipoDocId": "6",
+            "numeroDocId": "20607288209",
+            "razonSocial": "STAR NEWTECH INVESTMENTS S.A.C.",
+            "direccion": "AV. MANUEL OLGUIN 375 INT. 1001 SANTIAGO DE SURCO",
+            "correoElectronico": "starnewtechinvestments@gmail.com"
+        },
+        "DRF": [
+            {
+                "tipoDocRelacionado": "01",
+                "numeroDocRelacionado": "F001-00000068",
+                "codigoMotivo": "01",
+                "descripcionMotivo": "Anulacion de la operacion"
+            }
+        ],
+        "CAB": {
+            "inafectas": {
+                "codigo": "1002",
+                "totalVentas": "290.00"
+            },
+            "totalImpuestos": [
+                {
+                    "idImpuesto": "9998",
+                    "montoImpuesto": "0.00"
+                }
+            ],
+            "importeTotal": "290.00",
+            "tipoOperacion": null,
+            "leyenda": [
+                {
+                    "codigo": "1000",
+                    "descripcion": "DOSCIENTOS NOVENTA DOLARES AMERICANOS "
+                }
+            ],
+            "montoTotalImpuestos": "0"
+        },
+        "DET": [
+            {
+                "numeroItem": "1",
+                "codigoProducto": "AUSPICIO",
+                "descripcionProducto": "AUSPICIO ESPECIAL",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "20",
+                "precioVentaUnitario": "20",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "9998",
+                        "montoImpuesto": "0",
+                        "tipoAfectacion": "30",
+                        "montoBase": "20.00",
+                        "porcentaje": "0"
+                    }
+                ],
+                "valorVenta": "20.00",
+                "montoTotalImpuestos": "0"
+            },
+            {
+                "numeroItem": "2",
+                "codigoProducto": "ALO",
+                "descripcionProducto": "ALO BANCO CUOTA SOCIOS",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "70",
+                "precioVentaUnitario": "70",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "9998",
+                        "montoImpuesto": "0",
+                        "tipoAfectacion": "30",
+                        "montoBase": "70.00",
+                        "porcentaje": "0"
+                    }
+                ],
+                "valorVenta": "70.00",
+                "montoTotalImpuestos": "0"
+            },
+            {
+                "numeroItem": "3",
+                "codigoProducto": "BANCARED",
+                "descripcionProducto": "BANCARED ENLACE 1MB ALTERNO-LIMA",
+                "cantidadItems": "1",
+                "unidad": "ZZ",
+                "valorUnitario": "200",
+                "precioVentaUnitario": "200",
+                "totalImpuestos": [
+                    {
+                        "idImpuesto": "9998",
+                        "montoImpuesto": "0",
+                        "tipoAfectacion": "30",
+                        "montoBase": "200.00",
+                        "porcentaje": "0"
+                    }
+                ],
+                "valorVenta": "200.00",
+                "montoTotalImpuestos": "0"
+            }
+        ]
+    }
+}

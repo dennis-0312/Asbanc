@@ -238,7 +238,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     //logStatus(documentid, 'montoDetr: ' + i + ' - ' + montoDetr);
                     if (montoDetr.length > 0) {
                         suma += parseFloat(montoDetr)
-                        break;
+                        // break;
                     }
                 }
                 montoDetr = suma.toFixed(2);
@@ -468,8 +468,9 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     //DRF: jsonDRF,
                     CAB: jsonCAB,
                     DET: detail.det,
-                    ADI: jsonADI,
-                    CUO: jsonCUO
+                    CUO: jsonCUO,
+                    ADI: jsonADI
+
                 }
                 if (codTipoDocumento == NOTA_DEBITO && reason == REASON_AUMENTO_DE_VALOR) {
                     //IMM: se agregó este caso para ubicar bien a jsonDRF
@@ -480,9 +481,14 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                         DRF: jsonDRF,
                         CAB: jsonCAB,
                         DET: detail.det,
-                        ADI: jsonADI,
-                        CUO: jsonCUO
+                        CUO: jsonCUO,
+                        ADI: jsonADI
                     }
+                }
+
+
+                if (formaPagoDetrVal == FORMA_PAGO_CREDITO) {
+                    jsonMain.CUO = jsonCUO.jsonCUO;
                 }
 
                 //logStatus(documentid, detail.applywh);
@@ -527,10 +533,6 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                         "descripcion": "OPERACION SUJETA AL SISTEMA DE PAGO DE OBLIGACIONES TRIBUTARIAS"
                     })
                     jsonMain.ADI = jsonADI;
-                }
-
-                if (formaPagoDetrVal == FORMA_PAGO_CREDITO) {
-                    jsonMain.CUO = jsonCUO.jsonCUO;
                 }
 
 
@@ -1292,7 +1294,12 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                 var flag = JSON.stringify(detail);
                 //generateFileTXT('errortest2', flag);
 
-                var monto = NumeroALetras(detail.importetotal, { plural: 'SOLES', singular: 'SOLES', centPlural: 'CENTIMOS', centSingular: 'CENTIMO' });
+                var monto = '';
+                if (tipoMoneda == 'PEN') {
+                    monto = NumeroALetras(detail.importetotal, { plural: 'SOLES', singular: 'SOLES', centPlural: 'CENTIMOS', centSingular: 'CENTIMO' });
+                } else {
+                    monto = NumeroALetrasDolar(detail.importetotal, { plural: 'DOLARES AMERICANOS', singular: 'DOLAR AMERICANO', centPlural: 'CENTAVOS', centSingular: 'CENTAVO' });
+                }
                 jsonLeyenda = [
                     {
                         codigo: "1000",
@@ -1889,6 +1896,39 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
                     });
                     return true;
                 });
+            } else {
+                var objInvoiceUnid = search.create({
+                    type: "invoice",
+                    filters:
+                        [
+                            ["type", "anyof", "CustInvc"],
+                            "AND",
+                            ["internalid", "anyof", documentid]
+
+                        ],
+                    columns:
+                        [
+                            search.createColumn({ name: "total", label: "total" }),
+                            search.createColumn({ name: "duedate", label: "duedate" }),
+                        ]
+                });
+                var searchResultCountUnid = objInvoiceUnid.runPaged().count;
+                if (searchResultCountUnid > 0) {
+                    objInvoiceUnid.run().each(function (result) {
+                        var idCuota = "Cuota001";
+                        var montoPago = result.getValue({ name: "total", label: "total" });
+                        var fechaPago = result.getValue({ name: "duedate", label: "duedate" });
+                        suma += parseFloat(montoPago);
+                        fechaPago = formatDate(fechaPago);
+                        jsonCUO.push({
+                            idCuota: idCuota,
+                            montoPago: parseFloat(montoPago),
+                            fechaPago: fechaPago
+                        });
+
+                    });
+
+                }
             }
             return {
                 jsonCUO: jsonCUO,
