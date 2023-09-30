@@ -728,7 +728,6 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                                 parametrosJson["subsidiary"] = selectSubs;
                                 parametrosJson["periodCon"] = selectPeri;
                                 parametrosJson["anioCon"] = selectano;
-
                                 var scriptTask = task.create({
                                     taskType: task.TaskType.MAP_REDUCE,
                                     scriptId: "customscript_pe_mr_3_12_detproveedores",
