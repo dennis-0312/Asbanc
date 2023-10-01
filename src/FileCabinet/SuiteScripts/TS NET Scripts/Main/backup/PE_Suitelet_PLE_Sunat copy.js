@@ -24,7 +24,7 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                         var form = ui.createForm({
                             title: 'Generador Libros Electrónicos - SUNAT '
                         });
-
+                        //
                         form.clientScriptModulePath = "./PE_Client_PLE_Sunat.js";
                         var field_reporte = form.addField({
                             id: 'field_reporte',
@@ -802,19 +802,20 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                         // Anual: Inv. Balance - Estado de Situacion Financiera - 3.1
                         try {
                             if (selectForm == 'PDF') {
-                                let parametrosJson = {};
+                                var parametrosJson = {};
                                 parametrosJson["recordID"] = 10;
                                 parametrosJson["reportID"] = selectRepo;
                                 parametrosJson["subsidiary"] = selectSubs;
                                 parametrosJson["periodCon"] = selectPeri;
                                 parametrosJson["anioCon"] = selectano;
+
                                 var scriptTask = task.create({
                                     taskType: task.TaskType.MAP_REDUCE,
-                                    scriptId: 'customscript_pe_mr_3_1_inventarios',
-                                    deploymentId: 'customdeploy_pe_mr_3_1_inventarios',
+                                    scriptId: "customscript_pe_mr_3_1libro",
+                                    deploymentId: "customdeploy1",
                                     params: {
-                                        custscript_pe_3_1_inventarios_params: parametrosJson
-                                    }
+                                        custscript_pe_formato_3_2_params: parametrosJson,
+                                    },
                                 });
                                 scriptTask.submit();
                             } else {
@@ -1448,50 +1449,6 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                             log.error({ title: 'Error', details: 'Error Libro: ' + selectRepo + ' - ' + e });
                         }
                     }
-                    if (selectRepo == 115) {
-                        //Mensual: Recibos por Honorarios
-
-                        try {
-                            var scriptTask = task.create({
-                                taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                scriptId: 'customscript_pe_sc_ple_9_1_registro',
-                                deploymentId: 'customdeploype_sc_ple_9_1',
-                                params: {
-                                    custscript_ts_sc_ple_9_1_subsidiary: selectSubs,
-                                    custscript_ts_sc_ple_9_1_period: selectPeri,
-                                    custscript_ts_sc_ple_9_1_format: selectForm,
-                                    custscript_ts_sc_ple_9_1_folderid: fileCabinetId
-                                }
-                            });
-                            log.debug('para1', selectSubs + 'para2' + selectPeri + 'para3' + selectForm + 'para4' + fileCabinetId);
-                            scriptTask.submit();
-
-                        } catch (e) {
-                            log.error({ title: 'Error', details: e });
-                        }
-                    }
-                    if (selectRepo == 117) {
-                        //Mensual: Recibos por Honorarios
-
-                        try {
-                            var scriptTask = task.create({
-                                taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                scriptId: 'customscriptpe_sc_ple_9_2_registro',
-                                deploymentId: 'customdeploy_pe_sc_ple_9_2_registro',
-                                params: {
-                                    custscript_ts_sc_ple_9_2_subsidiary: selectSubs,
-                                    custscript_ts_sc_ple_9_2_period: selectPeri,
-                                    custscript_ts_sc_ple_9_2_format: selectForm,
-                                    custscript_ts_sc_ple_9_2_folderid: fileCabinetId
-                                }
-                            });
-                            log.debug('para1', selectSubs + 'para2' + selectPeri + 'para3' + selectForm + 'para4' + fileCabinetId);
-                            scriptTask.submit();
-
-                        } catch (e) {
-                            log.error({ title: 'Error', details: e });
-                        }
-                    }
 
                     //IMorales 20230712 - Inicio
                     if (selectRepo == 119) {
@@ -1816,29 +1773,28 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                             log.error({ title: "Error - Formato 3.10", details: e });
                         }
                     }
-                    /*
-                      if (selectRepo == 131) {
-                          //Mensual: Formato 3.11 - LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 41
-                          let parametrosJson = {};
-                          parametrosJson["recordID"] = 10;
-                          parametrosJson["reportID"] = selectRepo;
-                          parametrosJson["subsidiary"] = selectSubs;
-                          parametrosJson["periodCon"] = selectPeri;
-                          parametrosJson["anioCon"] = selectano;
-                          try {
-                              var scriptTask = task.create({
-                                  taskType: task.TaskType.MAP_REDUCE,
-                                  scriptId: "customscript_pe_mr_3_11_detremxpagar",
-                                  deploymentId: "customdeploy_pe_mr_3_11_detremxpagar",
-                                  params: {
-                                      custscript_pe_3_11_detremxpagar_params: parametrosJson,
-                                  },
-                              });
-                              scriptTask.submit();
-                          } catch (e) {
-                              log.error({ title: "Error - Formato 3.11", details: e });
-                          }
-                      }*/
+                    if (selectRepo == 131) {
+                        //Mensual: Formato 3.11 - LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 41
+                        let parametrosJson = {};
+                        parametrosJson["recordID"] = 10;
+                        parametrosJson["reportID"] = selectRepo;
+                        parametrosJson["subsidiary"] = selectSubs;
+                        parametrosJson["periodCon"] = selectPeri;
+                        parametrosJson["anioCon"] = selectano;
+                        try {
+                            var scriptTask = task.create({
+                                taskType: task.TaskType.MAP_REDUCE,
+                                scriptId: "customscript_pe_mr_3_11_detremxpagar",
+                                deploymentId: "customdeploy_pe_mr_3_11_detremxpagar",
+                                params: {
+                                    custscript_pe_3_11_detremxpagar_params: parametrosJson,
+                                },
+                            });
+                            scriptTask.submit();
+                        } catch (e) {
+                            log.error({ title: "Error - Formato 3.11", details: e });
+                        }
+                    }
                     /*if (selectRepo == 132) {
                       //Anual: Formato 3.12 -LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 42 - PROVEEDORES
                       let parametrosJson = {};
@@ -1925,16 +1881,6 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                                     }
                                 });
                                 scriptTask.submit();
-                            } else {
-                                var scriptTask = task.create({
-                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                    scriptId: 'customscript_pe_ple_3_19_inventarios_bal',
-                                    deploymentId: 'customdeploy_pe_ple_3_19_inventarios_bal',
-                                    params: {
-                                        custscript_pe_3_19_inventarios: paramsJson
-                                    }
-                                });
-                                scriptTask.submit();
                             }
 
                         } catch (e) {
@@ -2003,29 +1949,16 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     }
 
                     if (selectRepo == 141) {
-                        // Anual: Libro de inventarios y balances - estado de flujos de efectivo - método directo 3.18
                         try {
-                            if (selectForm == 'PDF') {
-                                var scriptTask = task.create({
-                                    taskType: task.TaskType.MAP_REDUCE,
-                                    scriptId: 'customscript_pe_318libinvbal',
-                                    deploymentId: 'customdeploy_pe_318libinvbal',
-                                    params: {
-                                        custscript_pe_318libinvbal_params: paramsJson
-                                    }
-                                });
-                                scriptTask.submit();
-                            } else {
-                                var scriptTask = task.create({
-                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                    scriptId: 'customscript_pe_ple_3_18_inventarios_bal',
-                                    deploymentId: 'customdeploy_pe_ple_3_18_inventarios_bal',
-                                    params: {
-                                        custscript_pe_3_18_inventarios_params: paramsJson
-                                    }
-                                });
-                                scriptTask.submit();
-                            }
+                            var scriptTask = task.create({
+                                taskType: task.TaskType.MAP_REDUCE,
+                                scriptId: 'customscript_pe_318libinvbal',
+                                deploymentId: 'customdeploy_pe_318libinvbal',
+                                params: {
+                                    custscript_pe_318libinvbal_params: paramsJson
+                                }
+                            });
+                            scriptTask.submit();
 
                         } catch (e) {
                             log.error({ title: 'Error - Formato 3.13', details: e });
@@ -2036,22 +1969,7 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                         //  FORMATO 3.11 : "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 41"
                         try {
                             if (selectForm == 'PDF') {
-                                let parametrosJson = {};
-                                parametrosJson["recordID"] = 10;
-                                parametrosJson["reportID"] = selectRepo;
-                                parametrosJson["subsidiary"] = selectSubs;
-                                parametrosJson["periodCon"] = selectPeri;
-                                parametrosJson["anioCon"] = selectano;
-                                var scriptTask = task.create({
-                                    taskType: task.TaskType.MAP_REDUCE,
-                                    scriptId: "customscript_pe_mr_3_11_detremxpagar",
-                                    deploymentId: "customdeploy_pe_mr_3_11_detremxpagar",
-                                    params: {
-                                        custscript_pe_3_11_detremxpagar_params: parametrosJson,
-                                    },
-                                });
-                                scriptTask.submit();
-
+                                log.debug('Libro Impreso', '3.11')
                             } else {
                                 var scriptTask = task.create({
                                     taskType: task.TaskType.SCHEDULED_SCRIPT,
@@ -2068,7 +1986,7 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                         }
                     }
 
-                    /*if (selectRepo == 143) {
+                    if (selectRepo == 143) {
                         //  FORMATO 3.1 : "LIBRO DE INVENTARIOS Y BALANCES - BALANCE GENERAL"
                         try {
                             if (selectForm == 'PDF') {
@@ -2093,7 +2011,7 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                         } catch (e) {
                             log.error({ title: 'Error', details: 'Error Libro: ' + selectRepo + ' - ' + e });
                         }
-                    }*/
+                    }
 
                     if (selectRepo == 144) {
                         //  FORMATO 3.9 : "Libro de Inventario y Balances - Detalle del Saldo de la Cuenta 34 - 3.9"

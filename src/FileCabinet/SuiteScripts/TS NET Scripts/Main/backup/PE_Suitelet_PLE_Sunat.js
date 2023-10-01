@@ -344,6 +344,7 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     paramsJson['subsidiary'] = selectSubs;
                     paramsJson['periodCon'] = selectPeri;
                     paramsJson['anioCon'] = selectano;
+                    paramsJson['format'] = selectForm;
 
                     if (selectRepo == 1) {
                         var scriptTask = task.create({
@@ -566,7 +567,7 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                                     params: {
                                         custscript_pe_subsidiary_ple_iyb_3_6: selectSubs,
                                         custscript_pe_period_ple_iyb_3_6: selectPeri,
-                                        custscript_pe_format_ple_iyb_3_6: 'TXT',
+                                        custscript_pe_format_ple_iyb_3_6: selectForm,
                                         custscript_pe_filecabinetid_ple_iyb_3_6: fileCabinetId,
                                         custscript_pe_anio_ple_iyb_3_6: selectano
                                     }
@@ -728,7 +729,6 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                                 parametrosJson["subsidiary"] = selectSubs;
                                 parametrosJson["periodCon"] = selectPeri;
                                 parametrosJson["anioCon"] = selectano;
-
                                 var scriptTask = task.create({
                                     taskType: task.TaskType.MAP_REDUCE,
                                     scriptId: "customscript_pe_mr_3_12_detproveedores",
@@ -1096,18 +1096,37 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     }
                     if (selectRepo == 103) {
                         try {
-                            var scriptTask = task.create({
-                                taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                scriptId: 'customscript_pe_sc_ple_5_3_libro_diario',
-                                deploymentId: 'customdeploy_pe_sc_ple_5_3_libro_diario',
-                                params: {
-                                    custscript_pe_subsidiary_ple_ld_5_3: selectSubs,
-                                    custscript_pe_format_ple_ld_5_3: selectForm,
-                                    custscript_pe_filecabinetid_ple_ld_5_3: fileCabinetId,
-                                    custscript_pe_period_ple_ld_5_3: selectPeri
-                                }
-                            });
-                            scriptTask.submit();
+                            if (selectForm == "PDF") {
+                                //Mensual - FORMATO 5.3: "Mensual: Libro Diario 5.3 - Detalle Plan de Contable Utilizado": Results
+                                var parametrosJson = {};
+                                parametrosJson["recordID"] = 10;
+                                parametrosJson["reportID"] = selectRepo;
+                                parametrosJson["subsidiary"] = selectSubs;
+                                parametrosJson["periodCon"] = selectPeri;
+                                parametrosJson["anioCon"] = selectano;
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.MAP_REDUCE,
+                                    scriptId: "customscript_pe_mr_5_3_libro_diario",
+                                    deploymentId: "customdeploy_pe_mr_5_3_libro_diario",
+                                    params: {
+                                        custscript_pe_5_3_librod_params: parametrosJson,
+                                    },
+                                });
+                                scriptTask.submit();
+                            } else {
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
+                                    scriptId: 'customscript_pe_sc_ple_5_3_libro_diario',
+                                    deploymentId: 'customdeploy_pe_sc_ple_5_3_libro_diario',
+                                    params: {
+                                        custscript_pe_subsidiary_ple_ld_5_3: selectSubs,
+                                        custscript_pe_format_ple_ld_5_3: selectForm,
+                                        custscript_pe_filecabinetid_ple_ld_5_3: fileCabinetId,
+                                        custscript_pe_period_ple_ld_5_3: selectPeri
+                                    }
+                                });
+                                scriptTask.submit();
+                            }
                         } catch (e) {
                             log.error({ title: 'Error', details: 'Error Libro: ' + selectRepo + ' - ' + e });
                         }
@@ -1175,19 +1194,37 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     if (selectRepo == 107) {
                         // Anual: Inv. Balance - Detalle 47 - 3.14
                         try {
-                            var scriptTask = task.create({
-                                taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                scriptId: 'customscript_pe_sc_ple_3_14_lib_in_y_ba',
-                                deploymentId: 'customdeploy_pe_sc_ple_3_14_lib_in_y_ba',
-                                params: {
-                                    custscript_pe_subsidiary_ple_iyb_3_14: selectSubs,
-                                    custscript_pe_period_ple_iyb_3_14: selectPeri,
-                                    custscript_pe_format_ple_iyb_3_14: selectForm,
-                                    custscript_pe_filecabinetid_ple_iyb_3_14: fileCabinetId,
-                                    custscript_pe_anio_ple_iyb_3_14: selectano
-                                }
-                            });
-                            scriptTask.submit();
+                            if (selectForm == 'PDF') {
+                                let parametrosJson = {};
+                                parametrosJson["recordID"] = 10;
+                                parametrosJson["reportID"] = selectRepo;
+                                parametrosJson["subsidiary"] = selectSubs;
+                                parametrosJson["periodCon"] = selectPeri;
+                                parametrosJson["anioCon"] = selectano;
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.MAP_REDUCE,
+                                    scriptId: 'customscript_pe_mr_3_14_inventariosbalde',
+                                    deploymentId: 'customdeploy_pe_mr_3_14_inventariosbalde',
+                                    params: {
+                                        custscript_pe_3_14_inventariosbaldet_par: parametrosJson
+                                    }
+                                });
+                                scriptTask.submit();
+                            } else {
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
+                                    scriptId: 'customscript_pe_sc_ple_3_14_lib_in_y_ba',
+                                    deploymentId: 'customdeploy_pe_sc_ple_3_14_lib_in_y_ba',
+                                    params: {
+                                        custscript_pe_subsidiary_ple_iyb_3_14: selectSubs,
+                                        custscript_pe_period_ple_iyb_3_14: selectPeri,
+                                        custscript_pe_format_ple_iyb_3_14: selectForm,
+                                        custscript_pe_filecabinetid_ple_iyb_3_14: fileCabinetId,
+                                        custscript_pe_anio_ple_iyb_3_14: selectano
+                                    }
+                                });
+                                scriptTask.submit();
+                            }
                         } catch (e) {
                             log.error({ title: 'Error', details: 'Error Libro: ' + selectRepo + ' - ' + e });
                         }
@@ -1305,20 +1342,38 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                         }
                     }
                     if (selectRepo == 112) {
-                        //  Anual: Libro de Registro del inventario permanente valorizado -detalle del inventario valorizado - 13.1
+                        //  Mensual: Libro de Registro del inventario permanente valorizado -detalle del inventario valorizado - 13.1
                         try {
-                            var scriptTask = task.create({
-                                taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                scriptId: 'customscript_pe_sc_ple_13_1_lib_in_y_ba',
-                                deploymentId: 'customdeploy_pe_sc_ple_13_1_lib_in_y_ba',
-                                params: {
-                                    custscript_pe_subsidiary_ple_iyb_13_1: selectSubs,
-                                    custscript_pe_period_ple_iyb_13_1: selectPeri,
-                                    custscript_pe_format_ple_iyb_13_1: selectForm,
-                                    custscript_pe_filecabinetid_ple_iyb_13_1: fileCabinetId
-                                }
-                            });
-                            scriptTask.submit();
+                            if (selectForm == "PDF") {
+                                var parametrosJson = {};
+                                parametrosJson["recordID"] = 10;
+                                parametrosJson["reportID"] = selectRepo;
+                                parametrosJson["subsidiary"] = selectSubs;
+                                parametrosJson["periodCon"] = selectPeri;
+                                parametrosJson["anioCon"] = selectano;
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.MAP_REDUCE,
+                                    scriptId: "customscript_pe_mr_13_1_inv_val",
+                                    deploymentId: "customdeploy_pe_mr_13_1_inv_val",
+                                    params: {
+                                        custscript_pe_13_1_invval_params: parametrosJson,
+                                    },
+                                });
+                                scriptTask.submit();
+                            } else {
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
+                                    scriptId: 'customscript_pe_sc_ple_13_1_lib_in_y_ba',
+                                    deploymentId: 'customdeploy_pe_sc_ple_13_1_lib_in_y_ba',
+                                    params: {
+                                        custscript_pe_subsidiary_ple_iyb_13_1: selectSubs,
+                                        custscript_pe_period_ple_iyb_13_1: selectPeri,
+                                        custscript_pe_format_ple_iyb_13_1: selectForm,
+                                        custscript_pe_filecabinetid_ple_iyb_13_1: fileCabinetId
+                                    }
+                                });
+                                scriptTask.submit();
+                            }
                         } catch (e) {
                             log.error({ title: 'Error', details: 'Error Libro: ' + selectRepo + ' - ' + e });
                         }
@@ -1360,18 +1415,36 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     if (selectRepo == 114) {
                         //  Anual: LAnual: Libro de Registro del inventario permanente - detalle del inventario permanente - 12.1
                         try {
-                            var scriptTask = task.create({
-                                taskType: task.TaskType.SCHEDULED_SCRIPT,
-                                scriptId: 'customscript_pe_sc_ple_12_1_lib_in_perm',
-                                deploymentId: 'customdeploy_pe_sc_ple_12_1_lib_in_perm',
-                                params: {
-                                    custscript_pe_subsidiary_ple_iyb_12_1: selectSubs,
-                                    custscript_pe_period_ple_iyb_12_1: selectPeri,
-                                    custscript_pe_format_ple_iyb_12_1: selectForm,
-                                    custscript_pe_filecabinetid_ple_iyb_12_1: fileCabinetId
-                                }
-                            });
-                            scriptTask.submit();
+                            if (selectForm == "PDF") {
+                                var parametrosJson = {};
+                                parametrosJson["recordID"] = 10;
+                                parametrosJson["reportID"] = selectRepo;
+                                parametrosJson["subsidiary"] = selectSubs;
+                                parametrosJson["periodCon"] = selectPeri;
+                                parametrosJson["anioCon"] = selectano;
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.MAP_REDUCE,
+                                    scriptId: "customscript_pe_mr_12_1_inv_perm",
+                                    deploymentId: "customdeploy_pe_mr_12_1_inv_perm",
+                                    params: {
+                                        custscript_pe_12_1_invper_params: parametrosJson,
+                                    },
+                                });
+                                scriptTask.submit();
+                            } else {
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
+                                    scriptId: 'customscript_pe_sc_ple_12_1_lib_in_perm',
+                                    deploymentId: 'customdeploy_pe_sc_ple_12_1_lib_in_perm',
+                                    params: {
+                                        custscript_pe_subsidiary_ple_iyb_12_1: selectSubs,
+                                        custscript_pe_period_ple_iyb_12_1: selectPeri,
+                                        custscript_pe_format_ple_iyb_12_1: selectForm,
+                                        custscript_pe_filecabinetid_ple_iyb_12_1: fileCabinetId
+                                    }
+                                });
+                                scriptTask.submit();
+                            }
                         } catch (e) {
                             log.error({ title: 'Error', details: 'Error Libro: ' + selectRepo + ' - ' + e });
                         }
@@ -1681,13 +1754,11 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     if (selectRepo == 130) {
                         // Formato 3.10 - LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 40
                         let parametrosJson = {};
-
                         parametrosJson["recordID"] = 10;
                         parametrosJson["reportID"] = selectRepo;
                         parametrosJson["subsidiary"] = selectSubs;
                         parametrosJson["periodCon"] = selectPeri;
                         parametrosJson["anioCon"] = selectano;
-
                         try {
                             var scriptTask = task.create({
                                 taskType: task.TaskType.MAP_REDUCE,
@@ -1705,13 +1776,11 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     if (selectRepo == 131) {
                         //Mensual: Formato 3.11 - LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 41
                         let parametrosJson = {};
-
                         parametrosJson["recordID"] = 10;
                         parametrosJson["reportID"] = selectRepo;
                         parametrosJson["subsidiary"] = selectSubs;
                         parametrosJson["periodCon"] = selectPeri;
                         parametrosJson["anioCon"] = selectano;
-
                         try {
                             var scriptTask = task.create({
                                 taskType: task.TaskType.MAP_REDUCE,
@@ -1822,18 +1891,60 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
                     if (selectRepo == 138) {
                         //FORMATO 4.1: LIBRO DE RETENCIONES INCISOS E) Y F) DEL ART. 34 DE LA LEY DEL IMPUESTO A LA RENTA PDF
                         try {
-                            var scriptTask = task.create({
-                                taskType: task.TaskType.MAP_REDUCE,
-                                scriptId: 'customscript_pe_41libroretenciones',
-                                deploymentId: 'customdeploy_pe_41libroretenciones',
-                                params: {
-                                    custscript_pe_41libroretenciones_params: paramsJson
-                                }
-                            });
-                            scriptTask.submit();
+                            if (selectForm == 'PDF') {
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.MAP_REDUCE,
+                                    scriptId: 'customscript_pe_41libroretenciones',
+                                    deploymentId: 'customdeploy_pe_41libroretenciones',
+                                    params: {
+                                        custscript_pe_41libroretenciones_params: paramsJson
+                                    }
+                                });
+                                scriptTask.submit();
 
+                            } else {
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
+                                    scriptId: 'customscript_pe_schedule_ple_4_1',
+                                    deploymentId: 'customdeploy_pe_schedule_ple_4_1',
+                                    params: {
+                                        custscriptpe_subsidiary_ple_4_1: selectSubs,
+                                        custscript_pe_period_ple_4_1: selectPeri,
+                                        custscript_pe_formato_4_1: selectForm,
+                                        custscript_pe_filecabinetid_ple_4_1: fileCabinetId
+                                    }
+                                });
+                                scriptTask.submit();
+                            }
                         } catch (e) {
-                            log.error({ title: 'Error - Formato 3.13', details: e });
+                            log.error({ title: 'Error - Formato 3.2', details: e });
+                        }
+                    }
+
+                    if (selectRepo == 140) {
+                        //  FORMATO 6.1: Libro Mayor 6.1
+                        try {
+                            if (selectForm == 'PDF') {
+                                let parametrosJson = {};
+                                parametrosJson["recordID"] = 10;
+                                parametrosJson["reportID"] = selectRepo;
+                                parametrosJson["subsidiary"] = selectSubs;
+                                parametrosJson["periodCon"] = selectPeri;
+                                parametrosJson["anioCon"] = selectano;
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.MAP_REDUCE,
+                                    scriptId: 'customscript_pe_mr_6_1_libmay',
+                                    deploymentId: 'customdeploy_pe_mr_6_1_libmay',
+                                    params: {
+                                        custscript_pe_6_1_libmay_params: parametrosJson
+                                    }
+                                });
+                                scriptTask.submit();
+                            } else {
+                                log.debug('Libro Electrónico', '6.1')
+                            }
+                        } catch (e) {
+                            log.error({ title: 'Error', details: 'Error Libro 6.1: ' + selectRepo + ' - ' + e });
                         }
                     }
 
@@ -1851,6 +1962,27 @@ define(['N/ui/serverWidget', 'N/email', 'N/runtime', 'N/search', 'N/redirect', '
 
                         } catch (e) {
                             log.error({ title: 'Error - Formato 3.13', details: e });
+                        }
+                    }
+
+                    if (selectRepo == 142) {
+                        //  FORMATO 3.11 : "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 41"
+                        try {
+                            if (selectForm == 'PDF') {
+                                log.debug('Libro Impreso', '3.11')
+                            } else {
+                                var scriptTask = task.create({
+                                    taskType: task.TaskType.SCHEDULED_SCRIPT,
+                                    scriptId: 'customscript_ple_3_11_inventariobalance',
+                                    deploymentId: 'customdeploy_ple_3_11_inventariobalance',
+                                    params: {
+                                        custscript_pe_3_11_inventarios_params: paramsJson
+                                    }
+                                });
+                                scriptTask.submit();
+                            }
+                        } catch (e) {
+                            log.error({ title: 'Error', details: 'Error Libro: ' + selectRepo + ' - ' + e });
                         }
                     }
 
