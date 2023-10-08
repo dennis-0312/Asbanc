@@ -30,6 +30,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
     var featSubsidiary = null;
     const FOLDER_ID = 871;
 
+
     const getInputData = () => {
         try {
             getParameters();
@@ -38,6 +39,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
             log.error('[ Get Input Data Error ]', e);
         }
     }
+
 
     const map = (context) => {
         try {
@@ -60,6 +62,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
         }
 
     }
+
 
     const summarize = (context) => {
         log.debug('Entro al summarize');
@@ -126,6 +129,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
 
     }
 
+
     const getJsonData = (transactions) => {
         let userTemp = runtime.getCurrentUser(),
             useID = userTemp.id,
@@ -153,20 +157,16 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
 
         for (var k in transactions) {
             let IDD = transactions[k].dato1;
-
             if (!jsonTransacion[IDD]) {
                 let dato_3 = parseFloat(transactions[k].dato3);
                 log.debug('dato_3', dato_3);
 
-                // let debitoFormat = numberWithCommas(transactions[k].debito);
-                // log.debug('debitoFormat', debitoFormat);
                 jsonTransacion[IDD] = {
                     dato1: transactions[k].dato1,
                     dato2: transactions[k].dato2,
                     dato3: dato_3,
                 }
                 saldo += dato_3;
-                // totalCredito = totalCredito + Number(transactions[k].credito);
             }
         }
 
@@ -176,7 +176,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
             id: pGloblas.pPeriod,
             columns: ['periodname']
         });
-
+        saldo = saldo.toFixed(2);
         let jsonCompany = {
             "company": {
                 "firtsTitle": 'FORMATO 3.18: "LIBRO DE INVENTARIOS Y BALANCES - ESTADO DE FLUJOS DE EFECTIVO"',
@@ -185,7 +185,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
                 "fourthTitle": companyName.replace(/&/g, '&amp;')
             },
             "totals": {
-                dato3: Number(saldo).toFixed(2)
+                dato3: Number(saldo)
             },
             "movements": jsonTransacion
         };
@@ -228,10 +228,12 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
         libPe.loadLog(pGloblas.pRecordID, nameReport, urlfile)
     }
 
+
     const getTemplate = () => {
         var aux = file.load("../FTL/PE_Template318LibroInvBal.ftl");
         return aux.getContents();
     }
+
 
     const getTransactions = () => {
         var arrResult = [];
@@ -289,6 +291,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
         return arrResult;
     }
 
+
     const getSubdiary = () => {
 
         if (featSubsidiary) {
@@ -304,6 +307,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
             companyRuc = ''
         }
     }
+
 
     const getParameters = () => {
         pGloblas = objContext.getParameter('custscript_pe_318libinvbal_params'); // || {};
@@ -329,6 +333,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
         featSubsidiary = runtime.isFeatureInEffect({ feature: "SUBSIDIARIES" });
     }
 
+
     const isObjEmpty = (obj) => {
         for (var prop in obj) {
             if (obj.hasOwnProperty(prop)) return false;
@@ -337,6 +342,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
         return true;
     }
 
+
     const numberWithCommas = (x) => {
         x = x.toString();
         var pattern = /(-?\d+)(\d{3})/;
@@ -344,6 +350,7 @@ define(['N/runtime', 'N/search', 'N/config', 'N/render', 'N/record', 'N/file', '
             x = x.replace(pattern, "$1,$2");
         return x;
     }
+
 
     const getRUC = (filterSubsidiary) => {
         try {
