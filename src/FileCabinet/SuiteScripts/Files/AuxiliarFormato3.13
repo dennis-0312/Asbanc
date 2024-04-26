@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+   <head>
+      <meta name="title" value="Formato 3.13" />
+      <macrolist>
+         <macro id = "cabecera">
+            <table width="100%">
+                <tr>
+                  <td colspan="3" align="center" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; text-align:center;">FORMATO 3.13: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 46 - CUENTAS POR PAGAR DIVERSAS"</td>
+               </tr>
+               <tr>
+                  <td align="left" height="10px"> </td>
+               </tr>
+
+               <tr>
+                  <td width="40%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>EJERCICIO</b></td>
+                  <td width="1%" align="right"><b>:</b></td>
+                  <td width="59%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>2023</b></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>RUC</b></td>
+                  <td width="1%" align="right"><b>:</b></td>
+                  <td width="59%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>20139491077</b></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>RAZON SOCIAL</b></td>
+                  <td width="1%" align="right"><b>:</b></td>
+                  <td width="59%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>ASOCIACIÓN DE BANCOS DEL PERÚ</b></td>
+               </tr>
+
+               <tr>
+                  <td align="left" height="10px"> </td>
+               </tr>
+            </table>
+         </macro>
+      </macrolist>
+   </head>
+   <body background-color="white" font-size="8" size="A4-landscape" header = "cabecera" header-height="30mm" footer-height="10mm">
+      <table style="font-family: Verdana, Arial, Helvetica, sans-serif; width:100%;" >
+        <thead>
+         <tr>
+            <th align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center;" colspan="3">
+              <p style= "font-weight:bold; text-align: center; vertical-align: middle">INFORMACIÓN DE TERCEROS</p>
+            </th>
+            <th width="30%" align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center; vertical-align: middle;" rowspan="3">
+              <p style= "font-weight:bold; text-align: center;">DESCRIPCIÓN DE LA OBLIGACIÓN</p>
+            </th>
+            <th width="10%" align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center; vertical-align: middle" rowspan="3">
+              <p style= "font-weight:bold; text-align: center;">FECHA DE EMISIÓN DEL COMPROBANTE DE PAGO O FECHA DE INICIO DE LA OPERACIÓN</p>
+            </th>
+            <th width="10%" align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center; vertical-align: middle" rowspan="3">
+              <p style= "font-weight:bold; text-align: center;">MONTO PENDIENTE DE PAGO</p>
+            </th>
+         </tr>
+          <tr>
+            <th width="20%" align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center; ; vertical-align: middle" colspan="2">
+               <p style="text-align: center;">DOCUMENTO DE IDENTIDAD</p></th>
+            <th width="30%" align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center; vertical-align: middle" rowspan="3">
+              <p style= "font-weight:bold; text-align: center;">APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL</p>
+            </th>
+         </tr>
+         <tr>
+            <th width="10%" align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center; vertical-align: middle">
+               <p style="text-align: center;">TIPO (TABLA 2)</p>
+            </th>
+            <th width="10%" align="center" style="border:1px solid black; font-weight:bold; padding: 1px; text-align:center; vertical-align: middle" >NÚMERO</th>
+         </tr>
+        </thead>
+        <tbody style= "font-size: 8px;">
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">BANBIF - INSCR.TARI.ANTIC.CORP.DETRACCION</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">1,220.83</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">BANCO RIPLEY DEPÓSITO ERRADO</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">722.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">BBVA PERU - INSCR.TAR.ANT.</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">9,520.48</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">COB F-3500 CMAC PIURA (PAGO EN EXCESO) - DEPOS.17</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">105.78</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">CRAC RAIZ - INCR.AUSP.MOD.STAND - DETRACCION</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">906.71</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DET F-14 CEFI/BCP/POR DEVOLVER</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">241.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DET F-40837 PETROPERU</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">655.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DETRACCION F-40888 COMPARTAMOSF</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">920.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DETRACCIONES DUPLICADAS POR ERROR/ EQUIFAX</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">1,166.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DEV.DE DEPOSITO ERRADO DEL 30.11.17</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">-628.42</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DPI / DE MAPFRE PERU VIDA CO</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">56.18</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DPI 15/03/2018 - 0043</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">254.88</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">EXT.SINC. PAGO ERRADO CAVALI 30042017</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">6,874.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">EXTORNO/BANCO FALABELLA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">-518.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">F-47821 CMAC PIURA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">499.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">FT F-50089 INGRAM MICRO</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">448.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">FT F001-47833 WESTERN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">1,483.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">FT F001-51212 UPN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">1,538.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">FT-34525 PAGO DOBLE WESTERN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">195.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">HERMES PAGO A CUENTA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">174.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">PAGO DOBLE  PROSEGUR</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">820.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">PAGO DOBLE GARCILASO FT 34671</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">753.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">PAGO DOBLE PROSEGUR</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">820.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">PAGO FT F001-53782  ANULADA CON NOTA DE CREDITO</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">283.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">PAGO ERRADO  EDPYME ALTERNATIVA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">850.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">QUALITAS FACTURA DE BAJA F001-00053335</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">446.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLA/DPI 08/5/18  1016  EFECTIVO</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">131.93</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTR.EFEC. 0173121</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTR.EFEC. 0174303</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTR.EFEC. 0620635</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTR.EFEC. 0628568</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+                        <tr>
+                        
+                           <td width="10%" align="center"></td>
+                           <td width="10%" align="center"></td>
+                           <td width="30%" align="left"></td>
+                           <td width="30%" align="left">VAN</td>
+                           <td width="10%" align="center"></td>
+                           <td width="10%" align="right">30,237.37</td>
+                        </tr>
+                     
+                        <tr>
+                        
+                        <td width="10%" align="center"></td>
+                           <td width="10%" align="center"></td>
+                           <td width="30%" align="left"></td>
+                           <td width="30%" align="left">VIENE</td>
+                           <td width="10%" align="center"></td>
+                           <td width="10%" align="right">30,237.37</td>
+                        </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTR.EFEC. 0840777</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTR.EFEC. 0975040</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTR.EFEC. 0988683</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTREGA EFECTIVO 0047168</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTREGA EFECTIVO 0250652</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. ENTREGA EFECTIVO 0993629</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">100.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. TRA O/CTA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">200.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. TRA O/CTA - AGENTE</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">500.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. TRAN.CTAS.TERC.BM</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">400.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. TRANSF DE OTRA CTA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">300.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS. TRANSF.BCO.INTERBANK</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">200.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS.CH. 9596438</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">344.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS.CH. 9596446</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">118.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS.CH. 9932595</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">238.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS.CH.9933286</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">260.66</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS.CH.9933533</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">118.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS/DPI BN CAJA SIPAN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">105.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLAS/DPI BN PAGO DOBLE CAJA SIPAN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">120.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASF DPI CONTUGAS</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">2,181.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASF/DET BCO COMERCIO</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">122.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASF/DPI BN PETROPERU</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">620.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASF/DPI MITSUI AUTOMOTRIZ</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">435.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF. CAJA PRYMERA DEVOL SUNAT</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">2,066.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF/DET F-168 CAJA SIPAN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">159.64</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF/DPI BN CAJA SIPAN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">108.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF/DPI BN PETROPERU 2</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">594.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF/DPI FALABELLA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">489.70</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF/DPI INTERSEGURO</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">97.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF/DPI SAN MARTIN</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">744.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">RECLASIF/HERMES PAGO A CUENTA</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">163.00</td>
+               </tr>
+                        <tr>
+                        
+                           <td width="10%" align="center"></td>
+                           <td width="10%" align="center"></td>
+                           <td width="30%" align="left"></td>
+                           <td width="30%" align="left">VAN</td>
+                           <td width="10%" align="center"></td>
+                           <td width="10%" align="right">41,457.37</td>
+                        </tr>
+                     
+                        <tr>
+                        
+                        <td width="10%" align="center"></td>
+                           <td width="10%" align="center"></td>
+                           <td width="30%" align="left"></td>
+                           <td width="30%" align="left">VIENE</td>
+                           <td width="10%" align="center"></td>
+                           <td width="10%" align="right">41,457.37</td>
+                        </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">W CAPITAL SAFI S.A.-INSC.TAR.IND. DETRACCION</p></td>
+                  <td width="10%" align="center">31/10/2023</td>
+                  <td width="10%" align="right">304.75</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">EXTORNO CMAC PIURA S.A.C. 205886748</p></td>
+                  <td width="10%" align="center">06/11/2023</td>
+                  <td width="10%" align="right">-499.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">EXTORNO  179870210 SECURITY BREAKERS</p></td>
+                  <td width="10%" align="center">09/11/2023</td>
+                  <td width="10%" align="right">-831.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">EXTORNO 172649083 COMPARTAMOS FINANCIERA S</p></td>
+                  <td width="10%" align="center">09/11/2023</td>
+                  <td width="10%" align="right">-920.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">04321720 / RETENCION JUDICIAL</p></td>
+                  <td width="10%" align="center">28/11/2023</td>
+                  <td width="10%" align="right">-1,095.67</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;"></p></td>
+                  <td width="10%" align="center">30/11/2023</td>
+                  <td width="10%" align="right">771.70</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;"></p></td>
+                  <td width="10%" align="center">01/12/2023</td>
+                  <td width="10%" align="right">323.97</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">06954118 / RETENCION JUDICIAL</p></td>
+                  <td width="10%" align="center">05/12/2023</td>
+                  <td width="10%" align="right">-1,467.64</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;"></p></td>
+                  <td width="10%" align="center">06/12/2023</td>
+                  <td width="10%" align="right">1,391.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">04450827 / PAGO RETENCION JUDICIAL</p></td>
+                  <td width="10%" align="center">28/12/2023</td>
+                  <td width="10%" align="right">-1,265.48</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20437544248</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">EMPRESA DE CREDITO ALTERNATIVA</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">DET F-55332 ALTERNATIVA  ANULADA</p></td>
+                  <td width="10%" align="center">29/12/2023</td>
+                  <td width="10%" align="right">247.00</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20139491077</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">ASOCIACION DE BANCOS DEL PERU</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;"></p></td>
+                  <td width="10%" align="center">31/12/2023</td>
+                  <td width="10%" align="right">2,327.36</td>
+               </tr>
+               <tr>
+                  <td width="10%" align="center">6</td>
+                  <td width="10%" align="center">20607377635</td>
+                  <td width="50%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">SECURITY BREAKERS S.A.C.</p></td>
+                  <td width="40%" align="left"><p style="margin-top: 0;margin-bottom: 0;hyphens: auto; white-space: nowrap;">EXTORNO 179870210 SECURITY BREAKERS</p></td>
+                  <td width="10%" align="center">31/12/2023</td>
+                  <td width="10%" align="right">831.00</td>
+               </tr>
+            <tr>
+                  <td width="10%" align="center" style="border-top:1px solid black"></td>
+                  <td width="10%" align="center" style="border-top:1px solid black"></td>
+                  <td width="30%" align="center" style="border-top:1px solid black"></td>
+                  <td width="30%" align="center" style="border-top:1px solid black"></td>
+                  <td width="10%" align="center" style="border:1px solid black; font-weight:bold;font-size: 11px;">SALDO TOTAL</td>
+                  <td width="10%" align="right" style="border:1px solid black; font-weight:bold;font-size: 11px;">41,738.36</td>
+            </tr>
+         </tbody>
+      </table>  
+  </body>
+</pdf>

@@ -1,0 +1,2275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+   <head>
+      <meta name="title" value="Formato 3.15" />
+      <macrolist>
+         <macro id = "cabecera">
+            <table width="100%">
+                <tr>
+                  <td colspan="3" align="center" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; text-align:center;">FORMATO 3.15: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 49" - GANANCIAS DIFERIDAS"</td>
+               </tr>
+               <tr>
+                  <td align="left" height="10px"> </td>
+               </tr>
+
+               <tr>
+                  <td width="40%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>EJERCICIO</b></td>
+                  <td width="1%" align="right"><b>:</b></td>
+                  <td width="59%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>2023</b></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>RUC</b></td>
+                  <td width="1%" align="right"><b>:</b></td>
+                  <td width="59%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>20139491077</b></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>RAZON SOCIAL</b></td>
+                  <td width="1%" align="right"><b>:</b></td>
+                  <td width="59%" align="left" style="font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><b>ASOCIACIÓN DE BANCOS DEL PERÚ</b></td>
+               </tr>
+
+               <tr>
+                  <td align="left" height="10px"> </td>
+               </tr>
+            </table>
+         </macro>
+      </macrolist>
+   </head>
+   <body background-color="white" font-size="8" size="A4-landscape" header = "cabecera" header-height="30mm" footer-height="10mm">
+      <table style="font-family: Verdana, Arial, Helvetica, sans-serif; width:100%" >
+        <thead>
+         <tr>
+            <th width="60%" align="center" style="border:1px solid black; font-weight:bold; padding: 5px; text-align:center; vertical-align: middle">CONCEPTO</th>
+            <th width="20%" align="center" style="border:1px solid black; font-weight:bold; padding: 5px; text-align:center; vertical-align: middle">
+              <table>
+                <tr><td align="center" style="text-align:center;">NÚMERO DE COMPROBANTE</td></tr>
+                <tr><td align="center" style="text-align:center;">DE PAGO RELACIONADO</td></tr>
+              </table>               
+            </th>
+            <th width="20%" align="center" style="border:1px solid black; font-weight:bold; padding: 5px; text-align:center; vertical-align: middle">SALDO FINAL</th>
+         </tr>
+        </thead>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">MASTERCARD PERU INC-SUCURSAL DEL PERU</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">963.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">NOVATRONIC S.A.C</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">367.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO BBVA PERU</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">369,791.16</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO PICHINCHA</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">98,371.84</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">J.P. MORGAN BANCO DE INVERSION</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">25,073.80</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO INTERAMERICANO DE FINANZAS</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">130,367.53</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO RIPLEY PERU S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">50,122.39</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO DE COMERCIO</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">50,160.44</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO DE CREDITO DEL PERU</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">451,267.38</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">MOODY'S LOCAL PE CLASIFICADORA DE RIESGO S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">550.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO FALABELLA PERU S.A</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">104,725.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left"></td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">450.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO SANTANDER PERU S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">51,564.27</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO DE LA NACION</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">1,650.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO INTERNACIONAL DEL PERU-INTERBANK</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">273,580.55</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">CREDISCOTIA FINANCIERA S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">31,356.88</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">COMPARTAMOS FINANCIERA S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">31,681.66</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">VISA INTERNATIONAL PERU S.R.L.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">3,908.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">FINANCIERA QAPAQ S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">16,618.51</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">SERVICIOS BANCARIOS COMPARTIDOS S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">1,500.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">COMPANIA PERUANA DE MEDIOS DE PAGO S.A.C.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">175.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">MIBANCO - BANCO DE LA MICROEMPRESA S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">230,713.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">CITIBANK DEL PERU S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">55,820.86</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">ALFIN BANCO S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">37,857.23</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">SCOTIABANK PERU SAA</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">276,011.75</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">ICBC PERU BANK</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">48,371.73</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">FINANCIERA CONFIANZA S.A.A. - FINANCIERA CONFIANZA</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">16,697.64</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">FINANCIERA EFECTIVA S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">16,155.81</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">2,359,719.12</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">2,359,719.12</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO GNB PERU S.A.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">65,602.08</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">APOYO &AMP; ASOCIADOS INTERNACIONALES S.A.C.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">700.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">CAJA RURAL DE AHORRO Y CRÉDITO CENCOSUD SCOTIA PER</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">17,802.43</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">BANCO BCI PERU S.A. - BANCO BCI</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">32,223.35</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">UNIVERSIDAD TECNOLOGICA DEL PERU S.A.C.</td>
+               <td width="20%" align="center">AD-1</td>
+               <td width="20%" align="right">8,860.37</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054031</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">26,826.91</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054013</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">13,959.19</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054019</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">13,582.51</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049849</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049844</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048398</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048007</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047613</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047689</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047644</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047637</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">350.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047542</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">481.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054624</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">250.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047678</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">4,650.60</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047670</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">440.05</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047667</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">194.19</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047995</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,023.78</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054609</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">115,359.15</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054043</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">12,354.43</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054028</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">24,310.89</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049843</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">340.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049838</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">2,716,966.02</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">2,716,966.02</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049367</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048432</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048399</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048368</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047496</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">4,430.18</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047727</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047614</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054011</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">2,530.74</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054015</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">2,129.99</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047539</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">183.75</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047538</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047681</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">3,884.68</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047679</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">3,286.71</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047675</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">557.85</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047674</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">553.23</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047668</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">554.95</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054585</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">202,268.45</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054040</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054020</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">20,005.23</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049847</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049846</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049371</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049369</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049368</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048404</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048364</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048362</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">2,969,622.95</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">2,969,622.95</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048359</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047662</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047649</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047584</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">83.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047583</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">141.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047550</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047549</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047545</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054547</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">4,459.94</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00053987</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">3,127.21</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054022</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,924.96</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054018</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">5,298.72</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00055010</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">5,149.60</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047540</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047672</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">487.52</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054037</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,537.97</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047664</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">158.19</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047980</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">7,534.51</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054627</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">23,056.02</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00055007</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">43,301.09</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054016</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156,930.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00053985</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">40,119.28</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00052691</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">558.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00052248</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">463.64</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049839</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049365</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049299</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,266,702.77</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,266,702.77</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049029</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048397</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048425</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048403</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048357</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047774</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">608.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047646</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047645</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047552</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054008</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,389.13</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054603</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,670.88</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047682</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">487.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047680</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,676.57</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054010</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,851.26</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054041</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,537.97</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054021</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">69.62</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054014</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">139.24</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054038</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054032</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054023</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">29,067.38</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049988</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">250.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049942</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049850</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">437.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049842</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">141.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049840</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">254.17</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049504</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049370</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,328,090.16</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,328,090.16</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049300</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049010</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049013</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">175.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048384</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048360</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">254.17</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047551</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047543</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054544</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054448</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">150.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054632</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">3,583.88</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054027</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">3,015.37</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054543</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">905.06</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047669</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">341.86</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054035</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">3,129.98</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054026</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">661.39</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054017</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">12,253.10</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047666</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">170.32</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047665</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">154.62</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054025</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">56,574.77</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">EXT/ING NOV/GESTION MISP/MIBANCO</td>
+               <td width="20%" align="center">AD-1303</td>
+               <td width="20%" align="right">91,818.87</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049845</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049672</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049366</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049011</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048396</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048401</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048369</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">437.50</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,506,063.39</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,506,063.39</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048366</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048008</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">254.17</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048006</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048005</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047513</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">5,944.97</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047713</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">437.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047647</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">340.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047714</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047548</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047544</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047541</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054034</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,869.04</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054608</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,439.84</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047677</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,220.75</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047676</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">564.42</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047673</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">912.05</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047671</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">182.48</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054012</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">4,441.49</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054045</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">34.81</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054039</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,607.59</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054033</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">1,607.59</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00053986</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">2,158.22</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054024</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">348.10</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054044</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">107,700.49</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054036</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00050464</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049837</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,650,687.88</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,650,687.88</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049836</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049834</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049012</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00050598</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048402</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048400</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048268</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048378</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048363</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">141.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047779</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">275.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047773</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047687</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054546</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">4,664.53</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047725</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">358.45</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047663</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">258.91</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054006</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">121,611.57</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054009</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054042</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">23,381.68</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054029</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054030</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">2,443.02</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00054007</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">3,132.89</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047660</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00047688</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048358</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048361</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048365</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048367</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,823,426.42</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">3,823,426.42</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048370</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00048371</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049841</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00049848</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00051132</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/F001-00052052</td>
+               <td width="20%" align="center">AD-1049</td>
+               <td width="20%" align="right">109.09</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING NOVIEMBRE/GESTION MISP/MIBANCO</td>
+               <td width="20%" align="center">AD-1304</td>
+               <td width="20%" align="right">7,651.57</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048008</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">254.17</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048357</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049839</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054033</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,607.59</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054017</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">12,253.10</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054012</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">4,441.49</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049365</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00052691</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">558.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047673</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">912.05</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054016</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156,930.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047681</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">3,884.68</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047544</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054025</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">56,574.77</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047713</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">437.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047583</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">141.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047614</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047645</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047662</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047613</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047779</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">275.00</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,072,671.23</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,072,671.23</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048362</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048363</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">141.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048367</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048378</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048384</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049836</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049837</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049838</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054627</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">23,056.02</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048404</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00050598</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049300</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054547</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">4,459.94</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054632</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">3,583.88</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054010</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,851.26</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054608</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,439.84</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054015</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">2,129.99</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054034</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,869.04</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054008</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,389.13</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00053985</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">40,119.28</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047663</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">258.91</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047674</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">553.23</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047675</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">557.85</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047676</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">564.42</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047714</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047688</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054043</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">12,354.43</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,167,599.51</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,167,599.51</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048005</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048006</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048365</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048369</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">437.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048399</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049848</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054026</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">661.39</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054018</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">5,298.72</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054027</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">3,015.37</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049369</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00051132</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00052248</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">463.64</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049371</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049504</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054019</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">13,582.51</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047679</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">3,286.71</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047680</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,676.57</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047725</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">358.45</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047542</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">481.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047689</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054038</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047496</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">4,430.18</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048007</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048402</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049844</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049843</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">340.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049845</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,225,420.32</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,225,420.32</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054035</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">3,129.98</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049011</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054041</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,537.97</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049368</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047666</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">170.32</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047670</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">440.05</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047671</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">182.48</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047539</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">183.75</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054028</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">24,310.89</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047552</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047584</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">83.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047646</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047647</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">340.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054032</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047773</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054044</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">107,700.49</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054009</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048360</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">254.17</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048364</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048366</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054609</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">115,359.15</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048398</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048403</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048425</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049841</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049847</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049849</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,495,882.22</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,495,882.22</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049942</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054021</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">69.62</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054030</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">2,443.02</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048397</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049010</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054011</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">2,530.74</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00050464</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054039</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,607.59</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054546</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">4,664.53</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054603</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,670.88</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054448</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">150.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049370</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047665</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">154.62</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047549</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047538</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047649</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047660</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054031</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">26,826.91</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054042</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">23,381.68</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047727</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047774</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">608.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/GESTION MISP/MIBANCO</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">7,651.57</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048359</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048361</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00055007</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">43,301.09</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048370</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048401</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,615,448.13</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">4,615,448.13</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054037</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,537.97</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054029</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054544</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054624</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">250.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049367</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00052052</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">109.09</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049834</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054020</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">20,005.23</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054023</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">29,067.38</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047550</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047543</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047548</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047551</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047644</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048358</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054006</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">121,611.57</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054585</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">202,268.45</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048371</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049840</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">254.17</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048368</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">317.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048400</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049846</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">145.83</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049850</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">437.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048432</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048396</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049029</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049299</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">5,001,618.32</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">5,001,618.32</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049988</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">250.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054045</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">34.81</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054007</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">3,132.89</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00055010</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">5,149.60</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00053987</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">3,127.21</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049366</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054013</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">13,959.19</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047995</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,023.78</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047980</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">7,534.51</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047667</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">194.19</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047682</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">487.50</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047541</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">100.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047545</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">156.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047687</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00048268</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">316.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049842</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">141.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054014</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">139.24</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054024</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">348.10</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00053986</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">2,158.22</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049012</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">208.33</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054543</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">905.06</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054022</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,924.96</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00049672</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">816.67</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047664</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">158.19</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047668</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">554.95</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047669</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">341.86</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047672</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">487.52</td>
+            </tr>
+                     <tr>
+                        <td align = "right ">VAN</td>
+                        <td align = "center "></td>
+                        <td align = "center ">5,046,232.59</td>
+                     </tr>
+                     <tr>
+                        <td align = "right ">VIENE</td>
+                        <td align = "center "></td>
+                        <td align = "center ">5,046,232.59</td>
+                     </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047677</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">1,220.75</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047678</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">4,650.60</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047540</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">425.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047637</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">350.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054036</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00054040</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">6,300.00</td>
+            </tr>
+            <tr>
+               <td width="60%" style=" max-width: 20px;white-space: nowrap;" align="left">DEV ING DICIEMBRE/F001-00047513</td>
+               <td width="20%" align="center">AD-2914</td>
+               <td width="20%" align="right">5,944.97</td>
+            </tr>
+          <tr>
+               <td  align="center" style="border-top:1px solid black"></td>
+               <td  align="center" style="border-top:1px solid black; font-weight:bold;font-size: 11px;">TOTAL</td>
+               <td  align="right" style="border:1px solid black; font-weight:bold;font-size: 11px;">5,071,911.43</td>
+          </tr>
+      </table>  
+  </body>
+</pdf>
