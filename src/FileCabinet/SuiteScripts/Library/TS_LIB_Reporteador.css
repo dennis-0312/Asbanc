@@ -1,0 +1,38 @@
+.nltabcontent table table table{
+	width:100%;
+}
+.treetable .collapsed .indenter a{
+	background:url('/images/forms/plus.svg') no-repeat center center;
+   width: 12px !important;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+.treetable .expanded .indenter a{
+    background:url('/images/forms/minus.svg') no-repeat center center;
+    width: 12px !important;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.treetable td.number{
+	text-align:right;
+}
+.treetable thead tr,
+.treetable tfoot tr{
+	background:#e2e2e2;
+}
+.treetable tr.group0 td{
+	border-bottom:1px solid #ccc;
+}
+.treetable thead tr td,
+.treetable tfoot tr td{
+	color:#242424;
+	padding:4px 2px;
+	text-align:center;
+	font-size:12px;
+}
+.treetable td{
+	font-size:10px;
+}

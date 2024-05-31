@@ -13,7 +13,7 @@ define(['N/config', 'N/email', 'N/encode', 'N/file', 'N/format', 'N/https', 'N/r
      * @param{https} https
      * @param{record} record
      * @param{runtime} runtime
-     * @param{search} search
+     * @param{search} search!
      */
     /**
     * @param {Object} pluginContext

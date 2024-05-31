@@ -2,7 +2,7 @@
  *@NApiVersion 2.1
  *@NScriptType Restlet
  */
- define(['N/log', 'N/search', 'N/record', 'N/https', 'N/runtime', '../Library/TS_LIB_ControlPresupuestal.js'], function (log, search, record, https, runtime, libCP) {
+define(['N/log', 'N/search', 'N/record', 'N/https', 'N/runtime', '../Library/TS_LIB_ControlPresupuestal.js'], function (log, search, record, https, runtime, libCP) {
 
 
 
@@ -35,8 +35,8 @@
         log.debug('todo bien')
         try {
             let aprobador = runtime.getCurrentScript().getParameter({
-                    name: 'custscript_ts_zigleet_proveedo_aprovador'
-                }),
+                name: 'custscript_ts_zigleet_proveedo_aprovador'
+            }),
                 accountPEN = runtime.getCurrentScript().getParameter({
                     name: 'custscript_ts_zigleet_proveedo_soles'
                 }),
@@ -46,12 +46,12 @@
                 codeDetraccion = runtime.getCurrentScript().getParameter({
                     name: 'custscript_ts_zigleet_proveedo_detrac'
                 });
-                taxCodeUSD = runtime.getCurrentScript().getParameter({
-                    name: 'custscript_ts_zigleet_proveedo_tax_usd'
-                }); // Deberian crear 2 campos en el record PE Concept Detraction, lo deje bonito en TsNet pero sin probar.
-                taxCodePEN = runtime.getCurrentScript().getParameter({
-                    name: 'custscript_ts_zigleet_proveedo_tax_pen'
-                });
+            taxCodeUSD = runtime.getCurrentScript().getParameter({
+                name: 'custscript_ts_zigleet_proveedo_tax_usd'
+            }); // Deberian crear 2 campos en el record PE Concept Detraction, lo deje bonito en TsNet pero sin probar.
+            taxCodePEN = runtime.getCurrentScript().getParameter({
+                name: 'custscript_ts_zigleet_proveedo_tax_pen'
+            });
 
             var account = accountPEN;
 
@@ -61,29 +61,29 @@
                 id: 3,
                 columns: ['custrecord_pe_detraccion_account', 'custrecord_pe_detraccion_account_dol']
             });
-           
-            if(context.monedaFactura == "USD") var accountDetracción = subSearch.custrecord_pe_detraccion_account_dol[0].value, taxCode = taxCodeUSD;
+
+            if (context.monedaFactura == "USD") var accountDetracción = subSearch.custrecord_pe_detraccion_account_dol[0].value, taxCode = taxCodeUSD;
             else var accountDetracción = subSearch.custrecord_pe_detraccion_account[0].value, taxCode = taxCodePEN;
-            
+
             var discountitemSearchObj = search.create({
                 type: "discountitem",
                 filters:
-                [
-                   ["type","anyof","Discount"], 
-                   "AND", 
-                   ["account","anyof",accountDetracción]
-                ],
+                    [
+                        ["type", "anyof", "Discount"],
+                        "AND",
+                        ["account", "anyof", accountDetracción]
+                    ],
                 columns:
-                [
-                   search.createColumn({name: "internalid", label: "Internal ID"})
-                ]
-             });
-           
-            var searchResultCount = discountitemSearchObj.run().getRange(0,1);
-            if(searchResultCount.length != 0){
+                    [
+                        search.createColumn({ name: "internalid", label: "Internal ID" })
+                    ]
+            });
+
+            var searchResultCount = discountitemSearchObj.run().getRange(0, 1);
+            if (searchResultCount.length != 0) {
                 var columns = searchResultCount[0].columns;
                 var itemDis = searchResultCount[0].getValue(columns[0]);
-                
+
             }
 
             var detraccionSeach = search.lookupFields({
@@ -94,7 +94,7 @@
 
             let auxiliar = (detraccionSeach.custrecord_pe_percentage_detraction).split('%');
             var porcentaje_entero = Number(auxiliar[0]);
-            var porcentaje_decimal = Number(auxiliar[0])/100;
+            var porcentaje_decimal = Number(auxiliar[0]) / 100;
 
             /***/
 
@@ -167,35 +167,35 @@
             const keys = Object.keys(sumasPorCodigoServicio);
             const values = Object.values(sumasPorCodigoServicio);
             const objectFinal = {};
-              log.debug('keys',keys);
+            log.debug('keys', keys);
             for (let i = 0; i < keys.length; i++) {
                 let result = searchItemsInternalIds(keys[i]);
-               
+
                 jsonCP.lines.push({
                     department: result.department,
                     clase: result.classi,
                     amount: values[i],
                     numLine: i
                 })
-               objectFinal[keys[i]]={
-                  department: result.department,
-                  clase: result.classi,
-                  itemid : result.itemid,
-                  partida:'',
-                  numLine: i
-               }
-                
+                objectFinal[keys[i]] = {
+                    department: result.department,
+                    clase: result.classi,
+                    itemid: result.itemid,
+                    partida: '',
+                    numLine: i
+                }
+
             }
-            
+
             var resultsItems = libCP.passesControlPresupuestal(jsonCP);
-           log.error('jsonCP', jsonCP);
-             log.error('resultsItems', resultsItems);
-             if (!resultsItems.value) {
-                 return {
-                     codResp: '99',
-                     descResp: 'ERROR_CONTROL_PRESUPUESTAL - ' + resultsItems.message
-                 };
-             } 
+            log.error('jsonCP', jsonCP);
+            log.error('resultsItems', resultsItems);
+            if (!resultsItems.value) {
+                return {
+                    codResp: '99',
+                    descResp: 'ERROR_CONTROL_PRESUPUESTAL - ' + resultsItems.message
+                };
+            }
             var totalRetencion = 0;
 
             for (let index = 0; index < context.listaDetalle.length; index++) {
@@ -203,23 +203,23 @@
                 let dateIni = (context.listaDetalle[index].fechaInicio).split('/'),
                     dateFin = (context.listaDetalle[index].fechaFin).split('/');
 
-                if(index == 0){
+                if (index == 0) {
                     var classIndex = objectFinal[context.listaDetalle[index].codigoServicio].clase;
                     var departmentIndex = objectFinal[context.listaDetalle[index].codigoServicio].department;
                     var partidaIndex = resultsItems.partida[objectFinal[context.listaDetalle[index].codigoServicio].numLine][0];
                 }
 
-                newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'item', value:  objectFinal[context.listaDetalle[index].codigoServicio].itemid });
+                newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'item', value: objectFinal[context.listaDetalle[index].codigoServicio].itemid });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'description', value: context.listaDetalle[index].descServicio });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_asb_fec_ini_ln', value: new Date(dateIni[2] + '/' + dateIni[1] + '/' + dateIni[0]) });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_asb_fec_fin_ln', value: new Date(dateFin[2] + '/' + dateFin[1] + '/' + dateFin[0]) });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'quantity', value: context.listaDetalle[index].cantidad });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'amount', value: context.listaDetalle[index].MontosinIGV });
-                newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'rate', value: context.listaDetalle[index].MontosinIGV/context.listaDetalle[index].cantidad });
+                newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'rate', value: context.listaDetalle[index].MontosinIGV / context.listaDetalle[index].cantidad });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'taxcode', value: 6 }); //Setearon esto, arreglenlo. Aunque es un valor de Netsuite, quzia sirva.
                 /** Montos de la Detraccion */
                 var retencion_fila = 0;
-                var total_fila =  context.listaDetalle[index].MontoconIGV;
+                var total_fila = context.listaDetalle[index].MontoconIGV;
                 retencion_fila = porcentaje_decimal * total_fila;
 
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_4601_witaxamount', line: i, value: -retencion_fila });
@@ -227,7 +227,7 @@
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_4601_witaxbaseamount', line: i, value: total_fila });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_4601_witaxcode', line: i, value: taxCode });
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_4601_witaxrate', line: i, value: porcentaje_entero });
-                
+
                 totalRetencion = Number(totalRetencion) + Number(retencion_fila);
                 log.debug('totalRetencion', totalRetencion)
 
@@ -237,7 +237,7 @@
 
                 newBill.setCurrentSublistValue({ sublistId: 'item', fieldId: 'location', value: 1 });
 
-                
+
 
 
                 newBill.commitLine({
@@ -245,7 +245,7 @@
                 });
             }
 
-            
+
 
             // Guardar la factura
             var billId = newBill.save({
@@ -254,43 +254,43 @@
             });
             log.debug('Result', billId);
 
-           
+
             var recBill = record.load({ type: 'vendorbill', id: billId, isDynamic: true })
             recBill.setValue('custbody_pe_concept_detraction', codeDetraccion);
             log.debug('mirame', recBill.getValue('custpage_4601_witaxcode'));
             var details_item = recBill.getLineCount('item');
-              
+
             var totalAmount = 0;
             for (var k = 0; k < details_item; k++) {
                 var amount = recBill.getSublistValue({ sublistId: 'item', fieldId: 'grossamt', line: k });
-               
+
                 if (amount != 0) {
                     totalAmount += amount
-                }            
+                }
             }
             log.debug('mirame 2', totalAmount)
             log.debug('mirame 2', totalAmount * porcentaje_decimal)
             var retencion = totalAmount * porcentaje_decimal;
 
             var itemLine = recBill.selectNewLine({ sublistId: 'item' });
-            itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'item', value: itemDis});
+            itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'item', value: itemDis });
             //recordLoad.setCurrentSublistValue({ sublistId: 'item', fieldId: 'quantity', line: details_item, value: recordLoad.getSublistValue({ sublistId: ITEM, fieldId: 'quantity', line: 0 }) });
             //recordLoad.setCurrentSublistValue({ sublistId: 'item', fieldId: 'description', line: details_item, value: recordLoad.getSublistValue({ sublistId: ITEM, fieldId: 'description', line: 0 }) });
             itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'rate', value: - (retencion).toFixed(2) });
             itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'taxcode', value: 5 }); // Sera?
-            itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'department', value: departmentIndex});
-            itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'class', value: classIndex});
+            itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'department', value: departmentIndex });
+            itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'class', value: classIndex });
             itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_ts_budget_item', value: partidaIndex });
             itemLine.setCurrentSublistValue({ sublistId: 'item', fieldId: 'custcol_4601_witaxline', value: true });
             recBill.commitLine({
                 sublistId: 'item'
             });
-        
-              recBill.save({
-                      ignoreMandatoryFields: true,
-                      enableSourcing: false,
-                    });
-          
+
+            recBill.save({
+                ignoreMandatoryFields: true,
+                enableSourcing: false,
+            });
+
             return {
                 codResp: '00',
                 descResp: 'Procesado correctamente'
@@ -347,7 +347,7 @@
             let itemid = searchResult[0].getValue({ name: "internalid" });
             let department = searchResult[0].getValue({ name: "department" });
             let classi = searchResult[0].getValue({ name: "class" });
-            
+
             return {
                 itemid: itemid,
                 department: department,
