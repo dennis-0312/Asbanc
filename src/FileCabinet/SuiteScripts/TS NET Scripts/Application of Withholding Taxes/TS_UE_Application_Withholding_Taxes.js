@@ -125,40 +125,7 @@ define(['N/config', 'N/log', 'N/query', 'N/record', 'N/search'],
                         if (total > IMPORTE_MINIMO) {
                             let item = objRecord.getLineCount("item");
                             let expense = objRecord.getLineCount("expense");
-                            // sublidtid = item > 0 ? 'item' : 'expense';
-                            // lines = item > 0 ? item : expense;
-                            // log.debug(sublidtid, `Entry ${sublidtid}`);
-                            // log.debug('lines', lines);
-
-                            // let openRecord = record.load({ type: objRecord.type, id: transactionid, isDynamic: true });
-                            // openRecord.setValue('custbody_pe_concept_detraction', 23);
-                            // let witaxCode = getWitaxCode(openRecord.getValue('custbody_pe_percentage_detraccion'), openRecord.getValue('currencysymbol'));
-                            // log.debug('witaxCode', witaxCode);
-
-                            // for (let line = 0; line < lines; line++) {
-                            //     openRecord.selectLine({ sublistId: sublidtid, line: line });
-                            //     if (openRecord.getCurrentSublistValue({ sublistId: sublidtid, fieldId: 'taxcode' }) != IGV_PE_UNDEF_PE) {
-                            //         let grossamt = openRecord.getCurrentSublistValue({ sublistId: sublidtid, fieldId: 'grossamt' }); log.debug('grossamt', grossamt);
-                            //         let whtAmount = ((parseFloat(openRecord.getValue('custbody_pe_percentage_detraccion')) / 100) * grossamt); log.debug('whtAmount', whtAmount);
-                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxapplies', value: true })
-                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxcode', value: witaxCode });
-                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxrate', value: openRecord.getValue('custbody_pe_percentage_detraccion') });
-                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxbaseamount', value: grossamt });
-                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxamount', value: whtAmount });
-                            //     }
-                            //     openRecord.commitLine({ sublistId: sublidtid });
-                            // }
-
-                            // let recordId = openRecord.save({ enableSourcing: true, ignoreMandatoryFields: true });
-                            // log.debug('RecordSave', recordId);
-
-
-
-
-
-
-
-
+                            
                             if (item) {
                                 log.debug('Items', `Entry Items`);
                                 let openRecord = record.load({ type: objRecord.type, id: transactionid, isDynamic: true });
@@ -238,3 +205,30 @@ define(['N/config', 'N/log', 'N/query', 'N/record', 'N/search'],
             afterSubmit
         }
     });
+
+    // sublidtid = item > 0 ? 'item' : 'expense';
+                            // lines = item > 0 ? item : expense;
+                            // log.debug(sublidtid, `Entry ${sublidtid}`);
+                            // log.debug('lines', lines);
+
+                            // let openRecord = record.load({ type: objRecord.type, id: transactionid, isDynamic: true });
+                            // openRecord.setValue('custbody_pe_concept_detraction', 23);
+                            // let witaxCode = getWitaxCode(openRecord.getValue('custbody_pe_percentage_detraccion'), openRecord.getValue('currencysymbol'));
+                            // log.debug('witaxCode', witaxCode);
+
+                            // for (let line = 0; line < lines; line++) {
+                            //     openRecord.selectLine({ sublistId: sublidtid, line: line });
+                            //     if (openRecord.getCurrentSublistValue({ sublistId: sublidtid, fieldId: 'taxcode' }) != IGV_PE_UNDEF_PE) {
+                            //         let grossamt = openRecord.getCurrentSublistValue({ sublistId: sublidtid, fieldId: 'grossamt' }); log.debug('grossamt', grossamt);
+                            //         let whtAmount = ((parseFloat(openRecord.getValue('custbody_pe_percentage_detraccion')) / 100) * grossamt); log.debug('whtAmount', whtAmount);
+                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxapplies', value: true })
+                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxcode', value: witaxCode });
+                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxrate', value: openRecord.getValue('custbody_pe_percentage_detraccion') });
+                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxbaseamount', value: grossamt });
+                            //         openRecord.setCurrentSublistValue({ sublistId: sublidtid, fieldId: 'custcol_4601_witaxamount', value: whtAmount });
+                            //     }
+                            //     openRecord.commitLine({ sublistId: sublidtid });
+                            // }
+
+                            // let recordId = openRecord.save({ enableSourcing: true, ignoreMandatoryFields: true });
+                            // log.debug('RecordSave', recordId);

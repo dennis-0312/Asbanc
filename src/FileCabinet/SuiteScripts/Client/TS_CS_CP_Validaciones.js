@@ -6,43 +6,43 @@
 *
 */
 
-define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N/format', '../Library/TS_LIB_ControlPresupuestal.js'], (currentRecord, record, search, dialog, runtime, format, libCP) => {
-   
+define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime', 'N/format', '../Library/TS_LIB_ControlPresupuestal.js'], (currentRecord, record, search, dialog, runtime, format, libCP) => {
+
     const pageInit = (context) => {
-        if (context.currentRecord.type == 'customrecord_ts_budget_item'){
-            if (context.mode === 'edit'){
+        if (context.currentRecord.type == 'customrecord_ts_budget_item') {
+            if (context.mode === 'edit') {
                 context.currentRecord.getField({
                     fieldId: 'custrecord_ts_cp_account'
                 }).isDisabled = true;
                 context.currentRecord.getField({
-                fieldId: 'custrecord_ts_cp_department'
+                    fieldId: 'custrecord_ts_cp_department'
                 }).isDisabled = true;
                 context.currentRecord.getField({
-                fieldId: 'custrecord_ts_cp_class'
+                    fieldId: 'custrecord_ts_cp_class'
                 }).isDisabled = true;
                 context.currentRecord.getField({
-                fieldId: 'custrecord_ts_cp_subsidiary'
+                    fieldId: 'custrecord_ts_cp_subsidiary'
                 }).isDisabled = true;
                 context.currentRecord.getField({
                     fieldId: 'custrecord_ts_cp_description'
                 }).isDisabled = true;
             }
         }
-        if (context.currentRecord.type == 'customrecord_ts_monthly_budget'){
-            if (context.mode === 'edit'){
+        if (context.currentRecord.type == 'customrecord_ts_monthly_budget') {
+            if (context.mode === 'edit') {
                 context.currentRecord.getField({
                     fieldId: 'custrecord_ts_cp_detail_category'
                 }).isDisabled = true;
                 context.currentRecord.getField({
-                fieldId: 'custrecord_ts_cp_detail_anio'
+                    fieldId: 'custrecord_ts_cp_detail_anio'
                 }).isDisabled = true;
                 context.currentRecord.getField({
-                fieldId: 'custrecord_ts_cp_detail_total'
+                    fieldId: 'custrecord_ts_cp_detail_total'
                 }).isDisabled = true;
                 context.currentRecord.getField({
-                fieldId: 'custrecord_ts_cp_detail_version'
+                    fieldId: 'custrecord_ts_cp_detail_version'
                 }).isDisabled = true;
-                
+
                 for (var j = 1; j <= 12; j++) {
                     if (j < 10) j = '0' + j;
                     fieldMes = 'custrecord_ts_cp_detail_' + j;
@@ -55,7 +55,7 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
             let status = context.currentRecord.getValue('custrecord_ts_cp_detail_transfer_status'),
                 typeRequest = context.currentRecord.getValue('custrecord_ts_cp_detail_request');
 
-            if(typeRequest == 0){
+            if (typeRequest == 0) {
                 displayField(context);
             }
 
@@ -74,14 +74,14 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
     }
 
 
-    const  validateField = (context) => {
+    const validateField = (context) => {
         let currentRecord = context.currentRecord,
             fieldId = context.fieldId;
-            console.log(fieldId);
-        if(fieldId=="custrecord_ts_cp_detail_request"){
+        console.log(fieldId);
+        if (fieldId == "custrecord_ts_cp_detail_request") {
             displayField(context);
             let typeRequest = currentRecord.getValue('custrecord_ts_cp_detail_request');
-            if(typeRequest == 4){
+            if (typeRequest == 4) {
                 context.currentRecord.getSublist({
                     sublistId: 'recmachcustrecord_ts_cp_item_transfers'
                 }).isDisplay = true;
@@ -92,7 +92,7 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                 field_1.isMandatory = false;
                 let field_2 = context.currentRecord.getField({
                     fieldId: 'custrecord_ts_cp_detail_amount'
-                });  
+                });
                 field_2.isDisplay = false;
                 field_2.isMandatory = false;
                 let field_3 = context.currentRecord.getField({
@@ -105,7 +105,7 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                 });
                 field_4.isDisplay = false;
                 field_4.isMandatory = false;
-            }else{
+            } else {
 
                 let field_1 = context.currentRecord.getField({
                     fieldId: 'custrecord_ts_cp_detail_amount'
@@ -122,69 +122,69 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                 });
                 field_3.isDisplay = true;
                 field_3.isMandatory = true;
-                if(typeRequest == 2){
+                if (typeRequest == 2) {
                     context.currentRecord.getField({
                         fieldId: 'custrecord_ts_cp_to_decrease'
                     }).isDisplay = true;
-                }else if(typeRequest==3){
+                } else if (typeRequest == 3) {
                     let total = currentRecord.getValue('custrecord_ts_cp_detail_amount');
-                    if(total){
-                        currentRecord.setValue('custrecord_ts_cp_detail_amount', total*-1);
+                    if (total) {
+                        currentRecord.setValue('custrecord_ts_cp_detail_amount', total * -1);
                     }
                 }
 
                 let total = currentRecord.getValue('custrecord_ts_cp_detail_amount');
-                if(total < 0){
-                    currentRecord.setValue('custrecord_ts_cp_detail_amount', total*-1);
-                }
-          }
-          return true;
-        }
-
-       if(fieldId=="custrecord_ts_cp_detail_amount"){
-            let typeRequest = currentRecord.getValue('custrecord_ts_cp_detail_request');
-            if(typeRequest == 3){
-                let total = currentRecord.getValue('custrecord_ts_cp_detail_amount');
-                if(total > 0){
-                    currentRecord.setValue('custrecord_ts_cp_detail_amount', total*-1);
+                if (total < 0) {
+                    currentRecord.setValue('custrecord_ts_cp_detail_amount', total * -1);
                 }
             }
-       }
+            return true;
+        }
+
+        if (fieldId == "custrecord_ts_cp_detail_amount") {
+            let typeRequest = currentRecord.getValue('custrecord_ts_cp_detail_request');
+            if (typeRequest == 3) {
+                let total = currentRecord.getValue('custrecord_ts_cp_detail_amount');
+                if (total > 0) {
+                    currentRecord.setValue('custrecord_ts_cp_detail_amount', total * -1);
+                }
+            }
+        }
         return true;
     }
 
     const saveRecord = (context) => {
         try {
-            log.debug('solicitud',context.currentRecord.type)
+            log.debug('solicitud', context.currentRecord.type)
             if (context.currentRecord.type === 'customrecord_ts_addition_transfer') {
                 var solicitud = context.currentRecord.getValue('custrecord_ts_cp_detail_request')
-                log.debug('solicitud',solicitud)
-                if(solicitud == 2){
+                log.debug('solicitud', solicitud)
+                if (solicitud == 2) {
                     let partidaDes = context.currentRecord.getValue('custrecord_ts_cp_to_decrease'),
                         monto = context.currentRecord.getValue('custrecord_ts_cp_detail_amount'),
-                    disponible = 0;
-
-                    disponible = getDisponible(partidaDes);
-                    log.debug('disponible', disponible)
-                    if(disponible < monto){
-                        alert('La partida a disminuir no cuenta con saldo disponible superior al monto seleccionado.')
-                        return false;
-                    }
-                }else if(solicitud == 3){
-                    let partidaDes = context.currentRecord.getValue({fieldId:'custrecord_ts_cp_to_increase'});
-                        monto = context.currentRecord.getValue('custrecord_ts_cp_detail_amount'),
                         disponible = 0;
-                        log.debug('monto', monto)
+
                     disponible = getDisponible(partidaDes);
                     log.debug('disponible', disponible)
-                    if(disponible < Math.abs(monto)){
+                    if (disponible < monto) {
+                        alert('La partida a disminuir no cuenta con saldo disponible superior al monto seleccionado.')
+                        return false;
+                    }
+                } else if (solicitud == 3) {
+                    let partidaDes = context.currentRecord.getValue({ fieldId: 'custrecord_ts_cp_to_increase' });
+                    monto = context.currentRecord.getValue('custrecord_ts_cp_detail_amount'),
+                        disponible = 0;
+                    log.debug('monto', monto)
+                    disponible = getDisponible(partidaDes);
+                    log.debug('disponible', disponible)
+                    if (disponible < Math.abs(monto)) {
                         alert('La partida a disminuir no cuenta con saldo disponible superior al monto seleccionado.')
                         return false;
                     }
 
 
-                }else if(solicitud == 4){
-                    let linePartida = context.currentRecord.getLineCount({ sublistId: 'recmachcustrecord_ts_cp_item_transfers' }); 
+                } else if (solicitud == 4) {
+                    let linePartida = context.currentRecord.getLineCount({ sublistId: 'recmachcustrecord_ts_cp_item_transfers' });
                     log.error('XD', linePartida);
 
                     for (var s = 0; s < linePartida; s++) {
@@ -200,7 +200,7 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                         });
 
                         let disponible = getDisponible(partida);
-                        if(monto > disponible){
+                        if (monto > disponible) {
                             s++;
                             alert('La partida a disminuir en la linea ' + s + ' no cuenta con saldo disponible superior al monto seleccionado.');
                             return false;
@@ -209,7 +209,7 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                     }
                 }
 
-               
+
                 if (solicitud == 1 || solicitud == 3 || solicitud == 4) {
                     return true;
                 } else {
@@ -219,8 +219,8 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                         return false;
                     }
                 }
-                
-                
+
+
 
             }
 
@@ -233,25 +233,25 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
     const getDisponible = (paramPartida) => {
         let presupuestado = libCP.getPresupuestado(paramPartida);
         log.debug('presupuestado: ' + presupuestado);
-        let reservado = libCP.getAmountStatus(paramPartida,'customsearch_ts_cp_control_reserved');
+        let reservado = libCP.getAmountStatus(paramPartida, 'customsearch_ts_cp_control_reserved');
         log.debug('reservado: ' + reservado);
-        let comprometido = libCP.getAmountStatus(paramPartida,'customsearch_ts_cp_control_committed');
+        let comprometido = libCP.getAmountStatus(paramPartida, 'customsearch_ts_cp_control_committed');
         log.debug('comprometido: ' + comprometido);
-        let ejecutado = libCP.getAmountStatus(paramPartida,'customsearch_ts_cp_control_executed');
+        let ejecutado = libCP.getAmountStatus(paramPartida, 'customsearch_ts_cp_control_executed');
         log.debug('ejecutado: ' + ejecutado);
         let disponible = parseFloat(presupuestado) - (parseFloat(reservado) + parseFloat(comprometido) + parseFloat(ejecutado));
-        
+
         return disponible;
     }
 
-    const displayField= (context) => {
+    const displayField = (context) => {
         context.currentRecord.getSublist({
             sublistId: 'recmachcustrecord_ts_cp_item_transfers'
         }).isDisplay = false;
         context.currentRecord.getField({
             fieldId: 'custrecord_ts_cp_to_decrease'
         }).isDisplay = false;
-                    
+
     }
 
     const statusAprobacion = (paramID, paramRecord, paramRequest) => {
@@ -287,11 +287,11 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                 if (paramRequest == 2) {
                     let presupuestado = libCP.getPresupuestado(partidaDecrease);
                     console.log('presupuestado: ' + presupuestado);
-                    let reservado = libCP.getAmountStatus(partidaDecrease,'customsearch_ts_cp_control_reserved');
+                    let reservado = libCP.getAmountStatus(partidaDecrease, 'customsearch_ts_cp_control_reserved');
                     console.log('reservado: ' + reservado);
-                    let comprometido = libCP.getAmountStatus(partidaDecrease,'customsearch_ts_cp_control_committed');
+                    let comprometido = libCP.getAmountStatus(partidaDecrease, 'customsearch_ts_cp_control_committed');
                     console.log('comprometido: ' + comprometido);
-                    let ejecutado = libCP.getAmountStatus(partidaDecrease,'customsearch_ts_cp_control_executed');
+                    let ejecutado = libCP.getAmountStatus(partidaDecrease, 'customsearch_ts_cp_control_executed');
                     console.log('ejecutado: ' + ejecutado);
                     let disponible = parseFloat(presupuestado) - (parseFloat(reservado) + parseFloat(comprometido) + parseFloat(ejecutado));
                     amountDisponible = disponible - amount;
@@ -327,22 +327,22 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
             let partidaDecrease = recTranferencia.getValue('custrecord_ts_cp_item_decrease'),
                 amount = parseFloat(recTranferencia.getValue('custrecord_ts_cp_item_amount'));
 
-                var transferSearch = search.lookupFields({
-                    type: 'customrecord_ts_addition_transfer',
-                    id: paramTrasnferencia,
-                    columns: ['custrecord_ts_cp_to_increase', 'custrecord_ts_cp_date']
-                });
-                let anio = transferSearch.custrecord_ts_cp_date[0].value,
-                    partidaIncrease = transferSearch.custrecord_ts_cp_to_increase[0].value;
-                console.log('mira' + partidaIncrease +'->' + anio)
+            var transferSearch = search.lookupFields({
+                type: 'customrecord_ts_addition_transfer',
+                id: paramTrasnferencia,
+                columns: ['custrecord_ts_cp_to_increase', 'custrecord_ts_cp_date']
+            });
+            let anio = transferSearch.custrecord_ts_cp_date[0].value,
+                partidaIncrease = transferSearch.custrecord_ts_cp_to_increase[0].value;
+            console.log('mira' + partidaIncrease + '->' + anio)
             if (paramRequest == 2) {
                 let presupuestado = libCP.getPresupuestado(partidaDecrease);
                 console.log('presupuestado: ' + presupuestado);
-                let reservado = libCP.getAmountStatus(partidaDecrease,'customsearch_ts_cp_control_reserved');
+                let reservado = libCP.getAmountStatus(partidaDecrease, 'customsearch_ts_cp_control_reserved');
                 console.log('reservado: ' + reservado);
-                let comprometido = libCP.getAmountStatus(partidaDecrease,'customsearch_ts_cp_control_committed');
+                let comprometido = libCP.getAmountStatus(partidaDecrease, 'customsearch_ts_cp_control_committed');
                 console.log('comprometido: ' + comprometido);
-                let ejecutado = libCP.getAmountStatus(partidaDecrease,'customsearch_ts_cp_control_executed');
+                let ejecutado = libCP.getAmountStatus(partidaDecrease, 'customsearch_ts_cp_control_executed');
                 console.log('ejecutado: ' + ejecutado);
                 let disponible = parseFloat(presupuestado) - (parseFloat(reservado) + parseFloat(comprometido) + parseFloat(ejecutado));
                 amountDisponible = disponible - amount;
@@ -366,14 +366,14 @@ define(['N/currentRecord', 'N/record', 'N/search', 'N/ui/dialog', 'N/runtime','N
                 recTranferencia.save({ ignoreMandatoryFields: true, enableSourcing: false });
                 window.location.reload();
             }
-            
+
         }
     }
     return {
         pageInit: pageInit,
-        validateField : validateField,
-        saveRecord:saveRecord,
-        statusAprobacion:statusAprobacion,
+        validateField: validateField,
+        saveRecord: saveRecord,
+        statusAprobacion: statusAprobacion,
         statusAprobacionMasiv: statusAprobacionMasiv
     }
 });
